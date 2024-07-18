@@ -26,7 +26,10 @@ Power BI
 2. Development Indicators:
    + Column Num: 15
      
-     ![image](https://github.com/user-attachments/assets/34c74722-a840-42ad-8b4b-4f2789281adf)         ![image](https://github.com/user-attachments/assets/c2ee2b2e-bce6-43d7-8129-bf7707080f9f)
+      ![image](https://github.com/user-attachments/assets/88156a78-62e2-4c17-94b1-3aabbebb160d)
+
+     
+      ![image](https://github.com/user-attachments/assets/c2ee2b2e-bce6-43d7-8129-bf7707080f9f)
 
    + Row Num: 4009
      
