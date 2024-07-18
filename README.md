@@ -21,7 +21,10 @@ Power BI
      ![image](https://github.com/user-attachments/assets/546c38a4-15e7-4322-bf6f-58b26136d0ee)
      
    + Row Num: 206
-     ![image](https://github.com/user-attachments/assets/2202cde8-8b7d-403c-a40e-c57ba345f98a)
+     
+     ![image](https://github.com/user-attachments/assets/49c380f2-661d-4c20-82e3-e5b4cccc47c1)
+
+
 
 
 
@@ -50,7 +53,7 @@ Power BI
 1. Erros & Data Completness:
    + There were no errors.
    + There were Blanks and Nulls:
-     * Blanks were found in : [hdicode] & [region]:
+     * Blanks were found in the [hdicode] & [region]:
 
        ![image](https://github.com/user-attachments/assets/7e0ae7de-2f7e-49ef-8733-2a886d6fd424)
 
