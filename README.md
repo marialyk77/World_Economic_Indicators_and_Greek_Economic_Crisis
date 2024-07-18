@@ -111,6 +111,11 @@ Power BI
 
    ![image](https://github.com/user-attachments/assets/f0688127-15b2-4523-8a37-3b7c6a715ca9)
 
+ * Before moving forward, I clean the regional coding that was nested in the ISO 3 column:
+
+   ![image](https://github.com/user-attachments/assets/80d85163-f6d0-4f6f-82cb-7c7dd5f3c030)
+
+
 
 
 
