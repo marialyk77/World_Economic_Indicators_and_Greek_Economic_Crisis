@@ -77,7 +77,7 @@ Power BI
 
    ![image](https://github.com/user-attachments/assets/e2f4f9d3-8388-464e-83d2-9b5bf5c387f5)
 
-   + Step 1:
+   #### Step 1:
 
      Is to clean the [hdicode]. To keep things organized, i removed the corresponding hdi codes nested in the [ISO 3]:
      
@@ -85,7 +85,7 @@ Power BI
 
      The [hdicode] column contained a total of 15 blank rows. The emphasis is on the countries that have blank HDI codes (as the HDI and Regional codings will be filtered out eventually). To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
 
-     ![image](https://github.com/user-attachments/assets/69ba784f-4559-4e13-8503-40de22d68966)                  ![image](https://github.com/user-attachments/assets/fe15fc28-db2f-42db-9a02-b63c885a8b46)                                                                       ![image](https://github.com/user-attachments/assets/506c62f5-843b-4038-a131-3d141d7606d1)
+     ![image](https://github.com/user-attachments/assets/69ba784f-4559-4e13-8503-40de22d68966)                  ![image](https://github.com/user-attachments/assets/fe15fc28-db2f-42db-9a02-b63c885a8b46)                                                                                              ![image](https://github.com/user-attachments/assets/506c62f5-843b-4038-a131-3d141d7606d1)
 
    ![image](https://github.com/user-attachments/assets/d4bd5c68-2c40-491e-8360-d8f9d42f2698)                                                                    ![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
 
@@ -111,9 +111,24 @@ Power BI
 
    ![image](https://github.com/user-attachments/assets/f0688127-15b2-4523-8a37-3b7c6a715ca9)
 
- * Before moving forward, I clean the regional coding that was nested in the ISO 3 column:
+ * Before moving forward, I clean the regional coding that was nested in the [ISO 3]:
 
    ![image](https://github.com/user-attachments/assets/80d85163-f6d0-4f6f-82cb-7c7dd5f3c030)
+
+
+   #### Step 2:
+
+   Is to address the null values in the HDI fields.
+
+   Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. To proceed cautiously, I first checked for outliers.
+   
+   To decide on the appropriate imputation method, it was necessary to determine if the data followed a normal distribution. I confirmed this by plotting a bell curve for selected HDI year columns. This verification was crucial to ensure accuracy and was conducted selectively rather than for all HDI year columns.
+
+![image](https://github.com/user-attachments/assets/88f30bb1-5cc1-4487-9e56-d47a7de6feb1)
+
+
+   Confirming normal distribution allowed me to proceed with using z-scores to identify outliers. Given that no outliers were detected, I determined that imputing null values with the average is appropriate.
+
 
 
 
