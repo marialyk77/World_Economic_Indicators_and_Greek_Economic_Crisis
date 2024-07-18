@@ -61,7 +61,7 @@ Power BI
     
        ![image](https://github.com/user-attachments/assets/e69ca14f-c785-4725-b446-d0bca3978fa7)
 
-   + Data Consistency:
+ 2. Data Consistency:
      
      * The [ISO 3], a column that is expected to contain the three-letter codes for countries as defined by the ISO 3166-1 standard. However, in the current column there included the HDI Groupings and Regional Groupings as well.
     
