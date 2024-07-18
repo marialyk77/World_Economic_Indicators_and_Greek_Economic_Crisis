@@ -134,13 +134,24 @@ Power BI
    
 ![image](https://github.com/user-attachments/assets/e7d27c8d-8b84-403c-bc44-7d30aad6b252)
 
+
    
-   
-   
-   
-   
-   
-   Given that no outliers were detected, I determined that imputing null values with the average is appropriate.
+ Given that no outliers were detected, I determined that imputing null values with the average is appropriate.
+
+ 1. I replaced the null with 0 for all HDI columns.
+
+ 2. I calculated the average for all HDI years:
+    
+    ![image](https://github.com/user-attachments/assets/bfa4fb04-8206-45bb-b69a-da0d5433bb30)
+    
+ 3. I replaced the 0 with the average for all HDI years simultaneously and rounded to 2 decimals.
+    
+   ![image](https://github.com/user-attachments/assets/a8d48db4-c572-478c-84f4-517935efda3a)
+
+ #### Step 3:
+
+ To unpivot the HDI and LE years! 
+
 
 
 
