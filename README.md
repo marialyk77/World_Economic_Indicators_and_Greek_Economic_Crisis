@@ -127,7 +127,20 @@ Power BI
 ![image](https://github.com/user-attachments/assets/88f30bb1-5cc1-4487-9e56-d47a7de6feb1)
 
 
-   Confirming normal distribution allowed me to proceed with using z-scores to identify outliers. Given that no outliers were detected, I determined that imputing null values with the average is appropriate.
+   Confirming normal distribution allowed me to proceed with using z-scores to identify outliers. 
+
+![image](https://github.com/user-attachments/assets/396404de-2ad3-40a7-9c3c-f6323923a663)
+
+   
+![image](https://github.com/user-attachments/assets/e7d27c8d-8b84-403c-bc44-7d30aad6b252)
+
+   
+   
+   
+   
+   
+   
+   Given that no outliers were detected, I determined that imputing null values with the average is appropriate.
 
 
 
