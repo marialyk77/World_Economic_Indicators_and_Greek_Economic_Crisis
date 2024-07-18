@@ -70,6 +70,60 @@ Power BI
      * HDI Groupings: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
 
      * Regional Groupings: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
+   
+ ### HDI Data Preparation 
+
+ + As mentioned the [ISO 3] contained the HDI Groupings and Regional Groupings. Taken that we have dedicated columns for the hdi codes and for regional categories, I filtered out the aforementioned rows from the [ISO 3] and cleaned the respective [hdicode] and [region] as follows:
+
+   ![image](https://github.com/user-attachments/assets/e2f4f9d3-8388-464e-83d2-9b5bf5c387f5)
+
+   + Step 1:
+
+     Is to clean the [hdicode]. To keep things organized, i removed the corresponding hdi codes nested in the [ISO 3]:
+     
+     ![image](https://github.com/user-attachments/assets/00ed5377-33ae-48e0-9135-7a33a15d83d5)
+
+     The [hdicode] column contained a total of 15 blank rows. The emphasis is on the countries that have blank HDI codes (as the HDI and Regional codings will be filtered out eventually). To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
+
+     ![image](https://github.com/user-attachments/assets/69ba784f-4559-4e13-8503-40de22d68966)                  ![image](https://github.com/user-attachments/assets/fe15fc28-db2f-42db-9a02-b63c885a8b46)                                                                       ![image](https://github.com/user-attachments/assets/506c62f5-843b-4038-a131-3d141d7606d1)
+
+   ![image](https://github.com/user-attachments/assets/d4bd5c68-2c40-491e-8360-d8f9d42f2698)                                                                    ![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
+
+
+ 
+   A similar approach was followed for the [region] column, which contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I filled the blanks with the appropriate region.
+   
+* I first created a new conditional column called [Region_filled], listing only the countries whose region was missing from the original [region] column:
+      
+ ![image](https://github.com/user-attachments/assets/af53f8e4-4781-406e-92c6-c24ce333ad1d)
+
+* Then I used this conditional column to fill the blanks of the original region column: 
+
+ ![image](https://github.com/user-attachments/assets/ba444660-76b9-4b1c-95d7-b42d6d795e3a)
+
+ * Result: A complete [region] column was created, currently called as [Region_NO Blanks]. 
+
+   ![image](https://github.com/user-attachments/assets/ed0833aa-6a0f-4249-9fee-ff795750c4f4)
+
+ * To avoid redundancy: I removed the original [region] and the [Region Filled] column, and I only kept the [Region_NO Blanks] , which i renamed back to  [region].
+   
+ * Now, both the [hdicode] and [region] columns comply with the rules of consistency and readability.
+
+   ![image](https://github.com/user-attachments/assets/f0688127-15b2-4523-8a37-3b7c6a715ca9)
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
 
 
 
