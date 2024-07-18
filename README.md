@@ -21,7 +21,9 @@ Power BI
      ![image](https://github.com/user-attachments/assets/546c38a4-15e7-4322-bf6f-58b26136d0ee)
      
    + Row Num: 206
-     ![image](https://github.com/user-attachments/assets/331ab5bf-24c0-4a28-a1e9-ef10610f43e9)
+     ![image](https://github.com/user-attachments/assets/2202cde8-8b7d-403c-a40e-c57ba345f98a)
+
+
 
 2. Development Indicators:
    + Column Num: 15
@@ -34,6 +36,42 @@ Power BI
    + Row Num: 4009
      
      ![image](https://github.com/user-attachments/assets/42cf9cf1-bf00-48e6-a0b1-4ea55181c83f)
+
+
+## Cleaning 
+
+### HDI
+
+1. The analysis is focused on the 21st century. Any non related column was removed:
+
+    ![image](https://github.com/user-attachments/assets/9f1eb3ff-3c6d-4613-95ac-3662ab63f218)
+
+    
+1. Erros & Data Completness:
+   + There were no errors.
+   + There were Blanks and Nulls:
+     * Blanks were found in : [hdicode] & [region]:
+
+       ![image](https://github.com/user-attachments/assets/7e0ae7de-2f7e-49ef-8733-2a886d6fd424)
+
+     * Nulls were found in the HDI year columns ranging from 2% - 10%.
+    
+       ![image](https://github.com/user-attachments/assets/e69ca14f-c785-4725-b446-d0bca3978fa7)
+
+   + Data Consistency:
+     
+     * The [ISO 3], a column that is expected to contain the three-letter codes for countries as defined by the ISO 3166-1 standard. However, in the current column there included the HDI Groupings and Regional Groupings as well.
+    
+       ![image](https://github.com/user-attachments/assets/c0b27f45-4aa3-4402-9df9-46eba1deadf1)
+
+     * HDI Groupings: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
+
+     * Regional Groupings: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
+
+
+
+
+    
 
 
 
