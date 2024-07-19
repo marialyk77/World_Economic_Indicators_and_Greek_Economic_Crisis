@@ -163,8 +163,7 @@ By looking at the bell curve distribution, we can already gain some insights:
 ![image](https://github.com/user-attachments/assets/e7d27c8d-8b84-403c-bc44-7d30aad6b252)
 
 
-   
- Given that no outliers were detected, I determined that imputing null values with the average is appropriate.
+* Given that no outliers were detected, I determined that imputing null values with the average is appropriate.
 
  1. I replaced the null with 0 for all HDI columns.
 
