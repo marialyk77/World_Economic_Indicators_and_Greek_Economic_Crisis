@@ -176,6 +176,15 @@ By looking at the bell curve distribution, we can already gain some insights:
     
    ![image](https://github.com/user-attachments/assets/a8d48db4-c572-478c-84f4-517935efda3a)
 
+ 4. Imputation effect on the histograms. 
+
+- Following imputation with the mean, the histograms of the data have changed, reflecting the introduction of new values and potential alterations in distribution.
+  
+- This is partly due to the smoothing effect of imputation, which can fill gaps and create new bins.
+
+  ![image](https://github.com/user-attachments/assets/5e46cf54-5f81-493a-afe6-7e281d39d8b9)
+
+  
  #### Step 3:
 
  To unpivot the HDI and LE years! 
