@@ -120,9 +120,31 @@ Power BI
 
    Is to address the null values in the HDI fields.
 
-   Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. To proceed cautiously, I first checked for outliers.
+   Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. Because, outliers can pull the mean towards them, making it less representative of the central tendency of the data. So, to proceed cautiously, I first had to check for outliers. But the distribution of the data will define first the method to use in order to detect outliers.
+
+   * If data follows Normal Distribution: Z-score for detecting outliers.
+
+   * If data follows Non - Normal Distribution: better to use methods that do not assume normality, such as the interquartile range (IQR) method or the percentile method.
+
+   Approach followed for checking of distribution:
+
+1.  Plotted Histograms with bin size 1%. Normal Distribution was confirmed. 
+  
+      ![image](https://github.com/user-attachments/assets/ebfab3f2-7056-4204-a3ad-503b33f2be9e)
+
+2. Then i decided to take my analysis a step further by visualizing the Normal Distribution Bell curve. I created a dedicated subfolder to organize all the measures needed for ploting the Normal Distribution Bell Curve. This helps in maintaining order and makes it easier to access and manage the relevant measures.
    
-   To decide on the appropriate imputation method, it was necessary to determine if the data followed a normal distribution. I confirmed this by plotting a bell curve for selected HDI year columns. This verification was crucial to ensure accuracy and was conducted selectively rather than for all HDI year columns.
+      ![image](https://github.com/user-attachments/assets/9224d356-4b97-44b2-8f21-3e78a5fb7af4)
+
+4. To visualize how the original HDI values fit within the context of a normal distribution, I created a Theoretical Normal Distribution Table. This table is based on the mean and standard deviation of the initial HDI values, extended to cover the full range from the lower to the upper band. I added a calculated column of the Z score, which is important to adjust the relative position of each value within the distribution. For example, a Z-score of 1 means the value is one standard deviation above the mean, while a Z-score of -1 means it is one standard deviation below the mean. And for plotting the Normal Distribution Curve, I created the Measure for the Probability Density Function. 
+   
+      ![image](https://github.com/user-attachments/assets/f5c625df-05f4-4138-9d37-c06e1bf61909)
+
+      ![image](https://github.com/user-attachments/assets/0c362aa6-3dbb-4630-b588-7a9a6f602291)
+
+      ![image](https://github.com/user-attachments/assets/31eea945-560d-4303-8b9a-9cd898911304)
+
+
 
 ![image](https://github.com/user-attachments/assets/88f30bb1-5cc1-4487-9e56-d47a7de6feb1)
 
@@ -133,8 +155,7 @@ By looking at the bell curve distribution, we can already gain some insights:
 2. In contrast, the HDI distribution for the year 2000 (top left) is more spread out, with values dispersed farther from the mean. This indicates greater variability in HDI scores among countries in 2000, suggesting less uniform development levels compared to subsequent years.
 
 
-
-Confirming normal distribution allowed me to proceed with using z-scores to identify outliers. 
+5. Confirming normal distribution allowed me to proceed with using z-scores to identify outliers. 
 
 ![image](https://github.com/user-attachments/assets/396404de-2ad3-40a7-9c3c-f6323923a663)
 
