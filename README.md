@@ -128,61 +128,11 @@ Power BI
 
    Approach followed for checking of distribution:
 
-1.  Plotted Histograms with bin size 1%. Normal Distribution was confirmed. 
+1.  Plotted Histograms with bin size 1%.  
   
       ![image](https://github.com/user-attachments/assets/ebfab3f2-7056-4204-a3ad-503b33f2be9e)
 
-2. Then i decided to take my analysis a step further by visualizing the Normal Distribution Bell curve. I created a dedicated subfolder to organize all the measures needed for ploting the Normal Distribution Bell Curve. This helps in maintaining order and makes it easier to access and manage the relevant measures.
-   
-      ![image](https://github.com/user-attachments/assets/9224d356-4b97-44b2-8f21-3e78a5fb7af4)
-
-4. To visualize how the original HDI values fit within the context of a normal distribution, I created a Theoretical Normal Distribution Table. This table is based on the mean and standard deviation of the initial HDI values, extended to cover the full range from the lower to the upper band. I added a calculated column of the Z score, which is important to adjust the relative position of each value within the distribution. For example, a Z-score of 1 means the value is one standard deviation above the mean, while a Z-score of -1 means it is one standard deviation below the mean. And for plotting the Normal Distribution Curve, I created the Measure for the Probability Density Function. 
-   
-      ![image](https://github.com/user-attachments/assets/f5c625df-05f4-4138-9d37-c06e1bf61909)
-
-      ![image](https://github.com/user-attachments/assets/0c362aa6-3dbb-4630-b588-7a9a6f602291)
-
-      ![image](https://github.com/user-attachments/assets/31eea945-560d-4303-8b9a-9cd898911304)
-
-
-
-![image](https://github.com/user-attachments/assets/88f30bb1-5cc1-4487-9e56-d47a7de6feb1)
-
-By looking at the bell curve distribution, we can already gain some insights: 
-
-1. The distributions of HDI for the years 2005, 2010, 2015, and 2020 exhibit a high frequency of countries with HDI values near the mean. This suggests consistent development levels during these years.
-
-2. In contrast, the HDI distribution for the year 2000 (top left) is more spread out, with values dispersed farther from the mean. This indicates greater variability in HDI scores among countries in 2000, suggesting less uniform development levels compared to subsequent years.
-
-
-5. Confirming normal distribution allowed me to proceed with using z-scores to identify outliers. 
-
-![image](https://github.com/user-attachments/assets/396404de-2ad3-40a7-9c3c-f6323923a663)
-
-   
-![image](https://github.com/user-attachments/assets/e7d27c8d-8b84-403c-bc44-7d30aad6b252)
-
-
-* Given that no outliers were detected, I determined that imputing null values with the average is appropriate.
-
- 1. I replaced the null with 0 for all HDI columns.
-
- 2. I calculated the average for all HDI years:
-    
-    ![image](https://github.com/user-attachments/assets/bfa4fb04-8206-45bb-b69a-da0d5433bb30)
-    
- 3. I replaced the 0 with the average for all HDI years simultaneously and rounded to 2 decimals.
-    
-   ![image](https://github.com/user-attachments/assets/a8d48db4-c572-478c-84f4-517935efda3a)
-
- 4. Imputation effect on the histograms. 
-
-- Following imputation with the mean, the histograms of the data have changed, reflecting the introduction of new values and potential alterations in distribution.
-  
-- This is partly due to the smoothing effect of imputation, which can fill gaps and create new bins.
-
-  ![image](https://github.com/user-attachments/assets/5e46cf54-5f81-493a-afe6-7e281d39d8b9)
-
+The distributions for all years examined are right-skewed (positively skewed). This indicates that the majority of the countries have lower to middle HDI values, with a few countries having significantly higher HDI values, resulting in a longer tail on the right.
   
  #### Step 3:
 
