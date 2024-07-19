@@ -126,8 +126,15 @@ Power BI
 
 ![image](https://github.com/user-attachments/assets/88f30bb1-5cc1-4487-9e56-d47a7de6feb1)
 
+By looking at the bell curve distribution, we can already gain some insights: 
 
-   Confirming normal distribution allowed me to proceed with using z-scores to identify outliers. 
+1. The distributions of HDI for the years 2005, 2010, 2015, and 2020 exhibit a high frequency of countries with HDI values near the mean. This suggests consistent development levels during these years.
+
+2. In contrast, the HDI distribution for the year 2000 (top left) is more spread out, with values dispersed farther from the mean. This indicates greater variability in HDI scores among countries in 2000, suggesting less uniform development levels compared to subsequent years.
+
+
+
+Confirming normal distribution allowed me to proceed with using z-scores to identify outliers. 
 
 ![image](https://github.com/user-attachments/assets/396404de-2ad3-40a7-9c3c-f6323923a663)
 
