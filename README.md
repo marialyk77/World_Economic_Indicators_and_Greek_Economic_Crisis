@@ -45,12 +45,12 @@ Power BI
 
 ### HDI
 
-1. The analysis is focused on the 21st century. Any non related column was removed:
+1. The analysis is focused on the **21st century**. Any non related column was removed:
 
     ![image](https://github.com/user-attachments/assets/9f1eb3ff-3c6d-4613-95ac-3662ab63f218)
 
     
-1. Erros & Data Completness:
+1. **Erros & Data Completness**:
    + There were no errors.
    + There were Blanks and Nulls:
      * Blanks were found in the [hdicode] & [region]:
@@ -61,15 +61,15 @@ Power BI
     
        ![image](https://github.com/user-attachments/assets/e69ca14f-c785-4725-b446-d0bca3978fa7)
 
- 2. Data Consistency:
+ 2. **Data Consistency**:
      
      * The [ISO 3], a column that is expected to contain the three-letter codes for countries as defined by the ISO 3166-1 standard. However, in the current column there included the HDI Groupings and Regional Groupings as well.
     
        ![image](https://github.com/user-attachments/assets/c0b27f45-4aa3-4402-9df9-46eba1deadf1)
 
-     * **HDI Groupings**: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
+     * **HDI Groupings*: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
 
-     * **Regional Groupings**: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
+     * **Regional Groupings*: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
    
  ### HDI Data Preparation 
 
