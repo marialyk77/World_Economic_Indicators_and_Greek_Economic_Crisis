@@ -17,10 +17,10 @@ Power BI
 ## Dataset exploration 
 + The dataset contains 2 seperate Excel files :
 1. Human Development Index:
-   + Column Num: 1008
+   + **Column Num**: 1008
      ![image](https://github.com/user-attachments/assets/546c38a4-15e7-4322-bf6f-58b26136d0ee)
      
-   + Row Num: 206
+   + **Row Num**: 206
      
      ![image](https://github.com/user-attachments/assets/49c380f2-661d-4c20-82e3-e5b4cccc47c1)
 
@@ -29,14 +29,14 @@ Power BI
 
 
 2. Development Indicators:
-   + Column Num: 15
+   + **Column Num**: 15
      
       ![image](https://github.com/user-attachments/assets/88156a78-62e2-4c17-94b1-3aabbebb160d)
 
      
       ![image](https://github.com/user-attachments/assets/c2ee2b2e-bce6-43d7-8129-bf7707080f9f)
 
-   + Row Num: 4009
+   + **Row Num**: 4009
      
      ![image](https://github.com/user-attachments/assets/42cf9cf1-bf00-48e6-a0b1-4ea55181c83f)
 
@@ -67,9 +67,9 @@ Power BI
     
        ![image](https://github.com/user-attachments/assets/c0b27f45-4aa3-4402-9df9-46eba1deadf1)
 
-     * HDI Groupings: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
+     * **HDI Groupings**: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
 
-     * Regional Groupings: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
+     * **Regional Groupings**: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
    
  ### HDI Data Preparation 
 
@@ -122,9 +122,9 @@ Power BI
 
    Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. Because, outliers can pull the mean towards them, making it less representative of the central tendency of the data. So, to proceed cautiously, I first had to check for outliers. But the distribution of the data will define first the method to use in order to detect outliers.
 
-   * If data follows Normal Distribution: Z-score for detecting outliers.
+   * **If data follows Normal Distribution**: Z-score for detecting outliers.
 
-   * If data follows Non - Normal Distribution: better to use methods that do not assume normality, such as the interquartile range (IQR) method or the percentile method.
+   * **If data follows Non - Normal Distribution**: better to use methods that do not assume normality, such as the interquartile range (IQR) method or the percentile method.
 
    Approach followed for checking of distribution:
 
