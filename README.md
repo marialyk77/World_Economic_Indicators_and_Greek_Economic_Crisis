@@ -130,9 +130,11 @@ Power BI
 
 1.  Plotted Histograms with bin size 1%.  
   
-      ![image](https://github.com/user-attachments/assets/ebfab3f2-7056-4204-a3ad-503b33f2be9e)
+      ![image](https://github.com/user-attachments/assets/7b071cd6-0d9e-46a0-8be1-7c9ae824744c)
 
-The distributions for all years examined are right-skewed (positively skewed). This indicates that the majority of the countries have lower to middle HDI values, with a few countries having significantly higher HDI values, resulting in a longer tail on the right.
+- **Left-Skewed Nature**: All distributions are left-skewed, meaning that the majority of the data points (countries) have higher HDI values. However, a significant number of countries with lower HDI values (closer to 0.2-0.4) create a long tail to the left.
+- **Mean vs. Median**: The mean being lower than the median further confirms the left-skewed nature of the data.
+- **Consistency Over Years**: The general pattern remains consistent over the years, with slight improvements in HDI values (increasing mean and median).
   
  #### Step 3:
 
