@@ -128,7 +128,7 @@ Power BI
 
    Approach followed for checking of distribution:
 
-1.  Plotted Histograms with bin size 1%.  
+1.  **Plotted Histograms with bin size 1%.**  
   
       ![image](https://github.com/user-attachments/assets/7b071cd6-0d9e-46a0-8be1-7c9ae824744c)
 
@@ -144,7 +144,11 @@ Power BI
   
   ![image](https://github.com/user-attachments/assets/25c704a8-6abf-467b-81a4-5db6c1bae861)
 
-  
+  2. **Checking for Outliers**
+
+  Taken that the distribution of the data is skewed the best way to detect for outliers is using the IQR. 
+
+  The basic formula for 
 
  #### Step 3:
 
