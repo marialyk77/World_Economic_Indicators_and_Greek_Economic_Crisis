@@ -146,8 +146,6 @@ Power BI
 
   2. **Checking for Outliers**
 
-  *I should mention from the beginning that I explored two methods.*
-
   *What is better than organization and planning?*
   
   *I created subfolders to organize the measures I needed: one for building histograms to check data distribution and another for calculating the IQR to check for outliers.*
@@ -173,14 +171,29 @@ Power BI
 
   **The result is that there were found NO OUTLIERS!**
 
-  ![image](https://github.com/user-attachments/assets/9eb5f32d-ddcb-4118-b0a2-e699fca23543)
+  ![image](https://github.com/user-attachments/assets/fbfa6d3a-0e0c-42b0-b09a-3ec9458c1610)
 
+  The absence of outliers with the IQR method in a left-skewed dataset might suggest that the data has broad or mild skewness without extreme values.
+
+  However, it’s important to verify the data spread and consider additional methods. That’s why, I plotted the data in scatterplots.
+
+  ![image](https://github.com/user-attachments/assets/38d02074-1f1c-4169-b691-97afca086d03)
+
+  Overall, the data in these scatter plots do not exhibit significant outliers, as all points generally adhere to the expected linear trend.
+
+  1. **hdi_2000**: The points form a tight linear cluster without any noticeable deviations. There are no clear outliers.
+  2. **hdi_2005**: Similarly, the points are closely clustered along the diagonal, indicating no apparent outliers.
+  3. **hdi_2010**: This plot shows a similar pattern, with one point slightly deviating from the line but still close enough to not be considered a significant outlier.
+  4. **hdi_2015**: The points are tightly clustered, and there are no significant deviations from the linear trend.
+  5. **hdi_2020**: Again, the points follow a linear pattern closely, with no clear outliers.
+
+
+  **Conclusion:** The absence of outliers identified by the IQR method, combined with the visual inspection that shows no significant deviations, leads me to conclude that there are no outliers in my data. 
+
+  **Next step**: As I move forward, my next step will be to address any null values. 
+ 
+  Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. However, since the data is left-skewed, the median is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
   
-
-
-  
-
-
  #### Step 3:
 
  To unpivot the HDI and LE years! 
