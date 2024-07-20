@@ -146,9 +146,40 @@ Power BI
 
   2. **Checking for Outliers**
 
-  Taken that the distribution of the data is skewed the best way to detect for outliers is using the IQR. 
+  *I should mention from the beginning that I explored two methods.*
 
-  The basic formula for 
+  *What is better than organization and planning?*
+  
+  *I created subfolders to organize the measures I needed: one for building histograms to check data distribution and another for calculating the IQR to check for outliers.*
+
+  ![image](https://github.com/user-attachments/assets/fa060454-f680-4a02-bfc1-d063c9d866e4)
+
+
+  A. **IQR method** 
+
+  I created the measures needed to calculate the IQR using the following formula:
+
+  ![image](https://github.com/user-attachments/assets/0e1de08e-9922-4e19-bd1f-40859ca99faf)
+
+  *The image is sourced: https://janiceto.github.io/ml-knowledge-base/01-intro/stats-basics/boxplot.html*
+
+  Here is a multi-card display that includes Q1, Q3, the IQR, as well as the maximum and minimum values for each of the years: 2000, 2005, 2010, 2015, and 2020.
+
+  ![image](https://github.com/user-attachments/assets/4491936e-d92b-4ccd-8aef-ad6170495a62)
+
+  Then, I combined all the above measures to construct the IQR formula
+
+  ![image](https://github.com/user-attachments/assets/2e3f21f6-7878-4b9e-b216-adfe748aed42)
+
+  **The result is that there were found NO OUTLIERS!**
+
+  ![image](https://github.com/user-attachments/assets/9eb5f32d-ddcb-4118-b0a2-e699fca23543)
+
+  
+
+
+  
+
 
  #### Step 3:
 
