@@ -196,7 +196,7 @@ Power BI
   
  #### Step 3:
 
- To impute the nulls 
+ At this step of the data preparation I imputed the nulls with the median. 
 
 
 
