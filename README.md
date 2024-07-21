@@ -198,6 +198,17 @@ Power BI
 
  At this step of the data preparation I imputed the nulls with the median. 
 
+ 1. I replace the nulls with 0.
+
+    ![image](https://github.com/user-attachments/assets/299bbbbe-2400-4b02-97e5-31d8fe84a62b)
+
+ 2. Calculated the Median.
+
+    ![image](https://github.com/user-attachments/assets/b70eba82-b255-46a7-8413-6ccf5d86adc8)
+
+ 3. By utilizing the *Inserted Step After*, I umputed the 0 with the Median. 
+
+
 
 
 
