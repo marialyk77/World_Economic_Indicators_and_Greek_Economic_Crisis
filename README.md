@@ -206,7 +206,17 @@ Power BI
 
     ![image](https://github.com/user-attachments/assets/b70eba82-b255-46a7-8413-6ccf5d86adc8)
 
- 3. By utilizing the *Inserted Step After*, I umputed the 0 with the Median. 
+ 3. By utilizing the *Inserted Step After*, I umputed the 0 with the Median.
+
+    ![image](https://github.com/user-attachments/assets/d53638a2-efb1-48c6-a84b-d486917be22d)
+
+   
+    ![image](https://github.com/user-attachments/assets/fd8775ef-4540-4494-8fe4-e9daf69e6f81)
+
+ 
+
+
+
 
 
 
