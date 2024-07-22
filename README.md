@@ -214,7 +214,7 @@ Power BI
     ![image](https://github.com/user-attachments/assets/fd8775ef-4540-4494-8fe4-e9daf69e6f81)
 
  
-
+    The **List.Transform** function helps in transforming each item in a list. The lambda function specifies what transformation should be applied — in this case, replacing 0 with the median value in the corresponding columns.
 
 
 
