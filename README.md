@@ -53,9 +53,24 @@ Power BI
 
        ![image](https://github.com/user-attachments/assets/7e0ae7de-2f7e-49ef-8733-2a886d6fd424)
 
-     * Nulls were found in the HDI year columns ranging from 2% - 10%.
+     * Nulls were found in:
+       1.  **HDI** year columns ranging from 2% - 10%.
     
        ![image](https://github.com/user-attachments/assets/e69ca14f-c785-4725-b446-d0bca3978fa7)
+
+       2. **EYS** year columns only 2% and only between the years 2000 - 2006.
+          
+       4. **MYS** year columns only 2% and only between the years 2000 - 2009.
+          
+       6. **GNI_PC_F** year columns only 4% for all years.
+          
+       8. **GNI_PC_M** year columns only 4% for all years.
+          
+       10. **GII** year columns ranging from 8% - 25% for all years.
+           
+       12. **IFPR_F** year columns only 4% for all years.
+           
+       14. **IFPR_M** year columns only 4% for all years.
 
  2. **Data Consistency**:
      
@@ -114,7 +129,7 @@ Power BI
 
    #### Step 2:
 
-   Is to address the null values in the HDI fields.
+   **Addressing the null values in the [HDI] fields.**
 
    Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. Because, outliers can pull the mean towards them, making it less representative of the central tendency of the data. So, to proceed cautiously, I first had to check for outliers. But the distribution of the data will define first the method to use in order to detect outliers.
 
@@ -189,6 +204,20 @@ Power BI
   **Next step**: As I move forward, my next step will be to address any null values. 
  
   Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. However, since the data is left-skewed, the median is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
+
+  **Approach to Imputing Null Values for the rest columns with Nulls:**
+
+  *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical.*
+
+  **1. Addressing the null values in the [EYS] fields.**
+
+  ![image](https://github.com/user-attachments/assets/018fd4a3-2843-4506-a929-923162f5605c)
+
+  *Null values were present only in the years between 2000 and 2006; therefore, distribution analysis was conducted selectively for 2000, 2003, and 2006.*
+    
+  - **Nearly symmetrical Nature**: The close proximity of mean and median values across the years suggests that there is no significant skew.
+
+  - **Distribution Consistency**: The nearly symmetrical distribution supports the use of the mean for imputation. The consistency in the proximity of mean and median values over time indicates that the data has maintained a stable central tendency, making the **mean** a reliable measure for handling missing values.
   
  #### Step 3:
 
