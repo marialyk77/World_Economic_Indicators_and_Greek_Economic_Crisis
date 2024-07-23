@@ -218,7 +218,13 @@ Power BI
   - **Nearly symmetrical Nature**: The close proximity of mean and median values across the years suggests that there is no significant skew.
 
   - **Distribution Consistency**: The nearly symmetrical distribution supports the use of the mean for imputation. The consistency in the proximity of mean and median values over time indicates that the data has maintained a stable central tendency, making the **mean** a reliable measure for handling missing values.
-  
+
+  **2. Addressing the null values in the [MYS] fields.**
+
+  - **Left-Skewed Nature for MYS 2000:** The mean is significantly lower than the median indicating a left-skewed distribution with a longer tail towards lower values.
+
+- **Nearly Symmetrical Nature for MYS 2009:** The mean is close to the median, suggesting a nearly symmetrical distribution with slight left skew.
+- 
  #### Step 3:
 
  Imputation of nulls with the median. 
@@ -257,6 +263,8 @@ Power BI
  HDI columns Unpivot and performed *extract after delimiter* to keep only the year. 
   
 ![image](https://github.com/user-attachments/assets/77e9cbf6-8e43-439d-8bc9-fdfd500429df)                    ![image](https://github.com/user-attachments/assets/344d9d7e-97bc-44f3-88d9-aba674b55f2a)
+
+
 
 
 
