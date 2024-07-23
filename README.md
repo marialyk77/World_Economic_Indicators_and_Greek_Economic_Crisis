@@ -192,7 +192,7 @@ Power BI
   
  #### Step 3:
 
- At this step of the data preparation I imputed the nulls with the median. 
+ Imputation of nulls with the median. 
 
  1. I replace the nulls with 0.
 
@@ -211,6 +211,27 @@ Power BI
 
  
     The **List.Transform** function helps in transforming each item in a list. The lambda function specifies what transformation should be applied — in this case, replacing 0 with the median value in the corresponding columns.
+
+    **Result**
+
+    1. Nulls before imputation:
+
+    ![image](https://github.com/user-attachments/assets/bd81aad1-65e5-4ee0-bff8-71ccb7b57262)
+
+    2. Nulls after imputation:
+
+    ![image](https://github.com/user-attachments/assets/052eea37-b047-4d79-9a8d-21d61e03bb30)
+
+    
+ #### Step 3:
+
+ HDI columns Unpivot and performed *extract after delimiter* to keep only the year. 
+  
+![image](https://github.com/user-attachments/assets/77e9cbf6-8e43-439d-8bc9-fdfd500429df)                    ![image](https://github.com/user-attachments/assets/344d9d7e-97bc-44f3-88d9-aba674b55f2a)
+
+
+
+
 
 
 
