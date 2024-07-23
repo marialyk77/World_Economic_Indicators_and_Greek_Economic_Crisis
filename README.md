@@ -17,28 +17,24 @@ Power BI
 ## Dataset exploration 
 + The dataset contains 2 seperate Excel files :
 1. Human Development Index:
-   + **Column Num**: 1008
-     ![image](https://github.com/user-attachments/assets/546c38a4-15e7-4322-bf6f-58b26136d0ee)
-     
-   + **Row Num**: 206
+   * **Column Num**: 1008
+     ![image](https://github.com/user-attachments/assets/c03cb4ff-b171-4eeb-9433-e30dbbc6fd6c)
+
+   * **Row Num**: 206
      
      ![image](https://github.com/user-attachments/assets/49c380f2-661d-4c20-82e3-e5b4cccc47c1)
 
 
-
-
-
-2. Development Indicators:
+2. **Development Indicators:**
    + **Column Num**: 15
      
-      ![image](https://github.com/user-attachments/assets/88156a78-62e2-4c17-94b1-3aabbebb160d)
+      ![image](https://github.com/user-attachments/assets/54d66352-9342-42ec-af4b-464e802d053b)
 
-     
-      ![image](https://github.com/user-attachments/assets/c2ee2b2e-bce6-43d7-8129-bf7707080f9f)
 
    + **Row Num**: 4009
      
-     ![image](https://github.com/user-attachments/assets/42cf9cf1-bf00-48e6-a0b1-4ea55181c83f)
+     ![image](https://github.com/user-attachments/assets/ac026d0b-954c-46bc-9b62-3498b320574a)
+
 
 
 ## Cleaning 
