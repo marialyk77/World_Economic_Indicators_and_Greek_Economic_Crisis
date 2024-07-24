@@ -313,6 +313,9 @@ Power BI
 
 ![image](https://github.com/user-attachments/assets/046e57c5-fa3c-45d8-a906-51567f10ba1d)
 
+**Right-Skewed Nature for GNI per Capita 2000:** The mean is significantly higher than the median, indicating a right-skewed distribution with a longer tail towards higher values. The majority of countries (92) have GNI per capita between 0 and 20K USD, with fewer countries as the GNI per capita increases.
+
+
 
 **5. Addressing the null values in the [GII] fields.**
 
