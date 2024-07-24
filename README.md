@@ -16,19 +16,41 @@ Power BI
 
 ## Dataset exploration 
 + The dataset contains 2 seperate Excel files :
-1. Human Development Index:
+1. **Human Development Index:**
    * **Column Num**: 1008
      ![image](https://github.com/user-attachments/assets/c03cb4ff-b171-4eeb-9433-e30dbbc6fd6c)
+
+   - Iso 3 : The three letter code representing the country.
+   - Country: The name of the country.
+   - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
+   - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. They are: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, **Middle East and North Africa**, and **South Asia**. UNDP Development Regions and World Bank Regions regional groupings are the same.  
+
 
    * **Row Num**: 206
      
      ![image](https://github.com/user-attachments/assets/49c380f2-661d-4c20-82e3-e5b4cccc47c1)
 
 
-2. **Development Indicators:**
+1. **Development Indicators:**
    + **Column Num**: 15
      
       ![image](https://github.com/user-attachments/assets/54d66352-9342-42ec-af4b-464e802d053b)
+
+     - Country Name
+     - Country code: is a three-letter abbreviation that uniquely identifies a country. 
+     - Region: refers to the specific geographic or economic grouping assigned to a country by the World Bank. (**Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, **Middle East and North Africa**, and **South Asia**.)
+     - Income Group: refers to the classification assigned by the World Bank that categorizes countries based on their gross national income (GNI) per capita. **Low Income** (GNI per capita of $1,085 or less), **Lower-Middle Income** (GNI per capita between $1,086 and $4,255), **Upper-Middle Income** (GNI per capita between $4,256 and $13,205), **High Income** (GNI per capita of $13,206 or more).
+     - Year: The Year in which the statistics were recorded.
+     - Birth rate, crude (per 1,000 people): measures the number of live births per 1,000 individuals in the population within a year, without adjusting for age or sex distribution.
+     - Death rate, crude (per 1,000 people): measures the number of deaths per 1,000 individuals in the population within a year, without adjusting for age or sex distribution.
+     - Electric power consumption (kWh per capita): measures the average amount of electrical energy consumed per person in a country over the course of a year, expressed in kilowatt-hours.
+     - GDP (USD): refers to the total market value of all goods and services produced within a country in a year, expressed in US dollars.
+     - GDP per capita (USD): measures the average economic output per person in a country, calculated by dividing the total Gross Domestic Product (GDP) by the population, and expressed in US dollars.
+     - Individuals using the Internet (% of population):  refers to the percentage of people in a country who have accessed the internet in a given year.
+     - Infant mortality rate (per 1,000 live births): measures the number of infants who die before reaching one year of age per 1,000 live births in a given year.
+     - Life expectancy at birth (years): is the average number of years a newborn is expected to live if current mortality rates at the time of birth remain constant throughout their life.
+     - Population density (people per sq. km of land area):  measures the number of people living per square kilometer of land area in a country.
+     - Unemployment (% of total labor force) (modeled ILO estimate):  represents the percentage of the labor force that is unemployed but actively seeking work, as estimated by the International Labour Organization (ILO).
 
 
    + **Row Num**: 4009
