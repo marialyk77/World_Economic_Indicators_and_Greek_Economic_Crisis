@@ -20,10 +20,10 @@ Power BI
    * **Column Num**: 1008
      ![image](https://github.com/user-attachments/assets/c03cb4ff-b171-4eeb-9433-e30dbbc6fd6c)
 
-   - Iso 3 : The three letter code representing the country.
-   - Country: The name of the country.
-   - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
-   - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. They are: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, **Middle East and North Africa**, and **South Asia**. UNDP Development Regions and World Bank Regions regional groupings are the same.  
+     - Iso 3 : The three letter code representing the country.
+     - Country: The name of the country.
+     - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
+     - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. They are: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, **Middle East and North Africa**, and **South Asia**. UNDP Development Regions and World Bank Regions regional groupings are the same.  
 
 
    * **Row Num**: 206
