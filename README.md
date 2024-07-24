@@ -207,13 +207,13 @@ Power BI
 
   **Approach to Imputing Null Values for the rest columns with Nulls:**
 
-  *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical.*
-
+  *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical. In addition, similar to the analysis performed for the HDI columns, the distribution analysis was also conducted for selected years.
+  
   **1. Addressing the null values in the [EYS] fields.**
 
   ![image](https://github.com/user-attachments/assets/018fd4a3-2843-4506-a929-923162f5605c)
 
-  *Null values were present only in the years between 2000 and 2006; therefore, distribution analysis was conducted selectively for 2000, 2003, and 2006.*
+  *Null values were present only in the years between 2000 and 2006.*
     
   - **Nearly symmetrical Nature**: The close proximity of mean and median values across the years suggests that there is no significant skew.
 
@@ -221,10 +221,46 @@ Power BI
 
   **2. Addressing the null values in the [MYS] fields.**
 
+![image](https://github.com/user-attachments/assets/fb404774-2313-46f7-8fed-14bf5d2607e9)
+
   - **Left-Skewed Nature for MYS 2000:** The mean is significantly lower than the median indicating a left-skewed distribution with a longer tail towards lower values.
 
 - **Nearly Symmetrical Nature for MYS 2009:** The mean is close to the median, suggesting a nearly symmetrical distribution with slight left skew.
-- 
+- **Distribution Consistency**: Although the histogram for MYS 2009 shows a nearly symmetrical distribution, I will use the median for imputation because of the clear left skew in 2000. This ensures a consistent and robust approach across all MYS years columns.
+
+**3. Addressing the null values in the [GNI_PC_F] fields.**
+
+![image](https://github.com/user-attachments/assets/d59af4c6-1f27-459c-b37f-838be13ec3e6)
+
+**Right-Skewed Nature for Female GNI per Capita 2000:** The mean is significantly higher than the median, indicating a right-skewed distribution with a longer tail towards higher values.
+
+**Right-Skewed Nature for Female GNI per Capita 2010:** The mean remains higher than the median, suggesting a right-skewed distribution, though less pronounced compared to 2000.
+
+**Right-Skewed Nature for Female GNI per Capita 2020:** The mean is still higher than the median, reflecting a right-skewed distribution, and the distribution extends to even higher values up to 70K.
+
+**Distribution Consistency:** Given the right skewness observed across all selected years, using the median for imputation is a suitable choice. The **median** is less influenced by high-value outliers, providing a more robust central tendency measure for handling missing values.
+
+
+**4. Addressing the null values in the [GNI_PC_M] fields.**
+
+![image](https://github.com/user-attachments/assets/046e57c5-fa3c-45d8-a906-51567f10ba1d)
+
+
+**5. Addressing the null values in the [GII] fields.**
+
+![image](https://github.com/user-attachments/assets/6c4f655a-d4ed-4c39-bd90-02c0177dc74e)
+
+**6. Addressing the null values in the [LFPR_F] fields.**
+
+![image](https://github.com/user-attachments/assets/9e7f8f41-67ae-4c1a-9e26-21e85fb12f44)
+
+**7. Addressing the null values in the [LFPR_M] fields.**
+
+![image](https://github.com/user-attachments/assets/48c0408b-c47e-40ad-a040-e93433b06821)
+
+
+
+  
  #### Step 3:
 
  Imputation of nulls with the median. 
