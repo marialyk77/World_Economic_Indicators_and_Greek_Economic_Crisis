@@ -260,6 +260,19 @@ Power BI
 
 
 
+
+### Development Indicators
+
+1. The analysis is focused on the **21st century**. Any non related column was removed. 
+
+2. **Erros & Data Completness**:
+   + There were no errors.
+   + There were Nulls:
+     
+     1. 
+
+    
+   
   
  #### Step 3:
 
