@@ -170,19 +170,19 @@ Power BI
 
    * The **[region]** column contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I **filled the blanks with the appropriate region.**
    
-**1.** I first created a new conditional column called [Region_filled], listing only the countries whose region was missing from the original [region] column:
+   **1.** I first created a new conditional column called [Region_filled], listing only the countries whose region was missing from the original [region] column:
       
  ![image](https://github.com/user-attachments/assets/af53f8e4-4781-406e-92c6-c24ce333ad1d)
 
-**2.**  Then I used this conditional column to fill the blanks of the original region column: 
+   **2.**  Then I used this conditional column to fill the blanks of the original region column: 
 
  ![image](https://github.com/user-attachments/assets/ba444660-76b9-4b1c-95d7-b42d6d795e3a)
 
-**3.** The [Region_NO Blanks] is updated and the former blanks are now filled with the corresponding region name. 
+   **3.**  The [Region_NO Blanks] column has been updated, and the previously blank entries are now filled with the corresponding region names. 
 
    ![image](https://github.com/user-attachments/assets/ed0833aa-6a0f-4249-9fee-ff795750c4f4)
 
-**4.** The next challenge of the new [Region_NO Blanks] is the incorrect assignment of certain countries to wrong regions and the absense of the region: **Middle East & North Africa (MENA)**. 
+   **4.** The next challenge with the updated [Region_NO Blanks] is the incorrect assignment of certain countries to wrong regions and the absence of the **Middle East & North Africa (MENA)** region. 
 
   To address the issue of incorrect regional assignments for some countries, we created a new query with the correct region information, merged this with the main dataset, expanded the merged column to include the correct regions, and used a conditional formula to update the regions based on the mapping table.
 
@@ -192,7 +192,7 @@ Power BI
 
  * **Conclusion**: both the [hdicode] and [region] columns comply with the rules of consistency and readability.
 
-   ![image](https://github.com/user-attachments/assets/8b7030ee-9a0f-43e2-8b7f-9e34a15d40de)
+  ![image](https://github.com/user-attachments/assets/75f2c276-a113-4050-8b1a-0c31c2fcd69a)
 
    ## Step 2:
 
