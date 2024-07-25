@@ -23,7 +23,7 @@ Power BI
      - Iso 3 : The three letter code representing the country.
      - Country: The name of the country.
      - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
-     - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. They are: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, **Middle East and North Africa**, and **South Asia**. UNDP Development Regions and World Bank Regions regional groupings are the same.
+     - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. They are: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, and **South Asia**. UNDP Development Regions and World Bank Regions regional groupings are the same.
      - hdi_rank_2021
      - hdi_xxxx
      - le_xxxx
@@ -122,7 +122,7 @@ Power BI
        ![image](https://github.com/user-attachments/assets/7e0ae7de-2f7e-49ef-8733-2a886d6fd424)
 
      * Nulls were found in:
-       1.  **HDI** year columns ranging from 2% - 10%.
+       1. **HDI** year columns ranging from 2% - 10%.
     
        2. **EYS** year columns only 2% and only between the years 2000 - 2006.
           
@@ -140,7 +140,7 @@ Power BI
 
  2. **Data Consistency**:
      
-     * The [ISO 3], a column that is expected to contain the three-letter codes for countries as defined by the ISO 3166-1 standard. However, in the current column there included the HDI Groupings and Regional Groupings as well.
+     * **The [ISO 3]**: a column that is expected to contain the three-letter codes for countries as defined by the ISO 3166-1 standard. However, in the current column there included the HDI Groupings and Regional Groupings as well.
     
        ![image](https://github.com/user-attachments/assets/c0b27f45-4aa3-4402-9df9-46eba1deadf1)
 
@@ -148,10 +148,20 @@ Power BI
 
      * *Regional Groupings*: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
    
+     * **The [region]**: The region **Middle East & North Africa (MENA)** was missing from the dataset. As a result, countries that normally belong to MENA were incorrectly assigned to other regions. For example:
+          A. Algeria: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA).
+       
+          B. Israel: Initially assigned to "Europe and Central Asia" instead of "Middle East & North Africa (MENA).
+       
+          C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
+       
  ### HDI Cleaning Process
 
   #### Step 1:
-   * The [ISO 3] contained the HDI Groupings and Regional Groupings. Taken that we have dedicated columns for the [hdi codes] and for [regional categories], I filtered out the corresponding rows from the [ISO 3].  
+
+   * The [ISO 3] contained the HDI Groupings and Regional Groupings. Taken that we have dedicated columns for the [hdi codes] and for [regional categories], I filtered out the corresponding rows from the [ISO 3].
+
+   * The [country]: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
 
    * The [hdicode] column contained a total of 15 blank rows. To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
 
@@ -391,9 +401,7 @@ I HAVE TO COMPLETE THE DESCRIPTION
 
 ## Cleaning 
 
-### Development Indicators
-
-#### Step 1
+### Development Indicators General Observations
    
 1. The analysis is focused on the **21st century**. Any non related column was removed. 
 
@@ -411,13 +419,28 @@ I HAVE TO COMPLETE THE DESCRIPTION
      - Life expectancy at birth (years): 11%
      - Population density (people per sq. km of land area): 1%
      - Unemployment (% of total labor force) (modeled ILO estimate): 13%
+    
+ 3.  **Data Consistency**:
 
- 3. The field names listed above have been renamed to shorter versions.
+      + The data has been reviewed for consistency, and no significant issues were identified. All columns, including GDP and other economic indicators, are consistent and aligned with expected values.
+
+        However, please note that I was unable to fully validate the GDP per capita (USD) values because the dataset does not include a direct population column. GDP per capita is calculated as GDP divided by the total population, and without the population data, I could not verify the accuracy of this metric.
 
 
-   #### Step 2:
+ ### HDI Cleaning Process
 
-   ### Addressing the null values in the
+  #### Step 1:
+
+  * The field names listed above have been renamed to shorter versions.
+    
+  * The [country]: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
+
+  * [Region]:  I replaced the regional categories with their corresponding abbreviations to align with the format used in the [Region] column of the HDI dataset. Consistency in naming conventions helps in merging and comparing data accurately.
+
+  
+  #### Step 2:
+
+  ### Addressing the null values in the
 
 
 
