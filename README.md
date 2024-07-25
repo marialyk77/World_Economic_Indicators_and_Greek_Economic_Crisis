@@ -195,9 +195,9 @@ Power BI
    ![image](https://github.com/user-attachments/assets/80d85163-f6d0-4f6f-82cb-7c7dd5f3c030)
 
 
-   #### Step 2:
+   ## Step 2:
 
-   **Addressing the null values in the [HDI] fields.**
+   ### Addressing the null values in the [HDI] fields.
 
    Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. Because, outliers can pull the mean towards them, making it less representative of the central tendency of the data. So, to proceed cautiously, I first had to check for outliers. But the distribution of the data will define first the method to use in order to detect outliers.
 
@@ -217,13 +217,13 @@ Power BI
                        3. The gap between the mean and median shows a slight decrease by 2020, suggesting that the distribution is becoming more symmetrical *(1)*. 
 - **Consistency Over Years**: The general pattern remains consistent over the years, with slight improvements in HDI values (increasing mean and median).
 - **Central Tendency Interpretation**: In left-skewed distributions, the median is typically a more accurate measure of central tendency than the mean because it is less affected by the long tail of lower values.
-- **Outlier Detection**: Skewness influences the choice of outlier detection methods. The Interquartile Range (IQR) method is preferred since it does not assume normality and effectively identifies outliers in skewed distributions.
+- **Outlier Detection method**: Skewness influences the choice of outlier detection methods. The Interquartile Range (IQR) method is preferred since it does not assume normality and effectively identifies outliers in skewed distributions.
 
 *(1). Let’s be honest: after seeing the trend towards a more symmetrical distribution, I decided to check the data for 2021, the last year in my dataset. The mean is 0.72 and the median is 0.74, just like in 2020. Suggesting, that the progress might be getting stabilized in the most recent years.*
   
   ![image](https://github.com/user-attachments/assets/25c704a8-6abf-467b-81a4-5db6c1bae861)
 
-  2. **Checking for Outliers**
+  2. **Outlier Detenction with IQR**
 
   *What is better than organization and planning?*
   
@@ -232,9 +232,7 @@ Power BI
   ![image](https://github.com/user-attachments/assets/fa060454-f680-4a02-bfc1-d063c9d866e4)
 
 
-  A. **IQR method** 
-
-  I created the measures needed to calculate the IQR using the following formula:
+  **A**. **I created the measures needed to calculate the IQR using the following formula:** 
 
   ![image](https://github.com/user-attachments/assets/0e1de08e-9922-4e19-bd1f-40859ca99faf)
 
@@ -248,7 +246,9 @@ Power BI
 
   ![image](https://github.com/user-attachments/assets/2e3f21f6-7878-4b9e-b216-adfe748aed42)
 
-  **The result is that there were found NO OUTLIERS!**
+  **B**. **Coming to the result**:  
+  
+  * There were found NO OUTLIERS!
 
   ![image](https://github.com/user-attachments/assets/fbfa6d3a-0e0c-42b0-b09a-3ec9458c1610)
 
@@ -258,7 +258,9 @@ Power BI
 
   ![image](https://github.com/user-attachments/assets/38d02074-1f1c-4169-b691-97afca086d03)
 
-  Overall, the data in these scatter plots do not exhibit significant outliers, as all points generally adhere to the expected linear trend.
+  **C**. **Previous result verification:** 
+  
+  * Overall, the data in these scatter plots do not exhibit significant outliers, as all points generally adhere to the expected linear trend.
 
   1. **hdi_2000**: The points form a tight linear cluster without any noticeable deviations. There are no clear outliers.
   2. **hdi_2005**: Similarly, the points are closely clustered along the diagonal, indicating no apparent outliers.
@@ -269,13 +271,12 @@ Power BI
 
   **Conclusion:** The absence of outliers identified by the IQR method, combined with the visual inspection that shows no significant deviations, leads me to conclude that there are no outliers in my data. 
 
-  **Next step**: As I move forward, my next step will be to address any null values. 
  
-  Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. However, since the data is left-skewed, the median is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
+  **Imputation Method:** Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. However, since the data is left-skewed, the **median** is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
 
-  **Approach to Imputing Null Values for the rest columns with Nulls:**
+  ### Approach to Imputing Null Values for the rest columns of the HDI dataset:
 
-  *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical. In addition, similar to the analysis performed for the HDI columns, the distribution analysis was also conducted for selected years.
+  *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical. In addition, similar to the analysis performed for the HDI columns, the distribution analysis was also conducted for selected years.*
   
   **1. Addressing the null values in the [EYS] fields.**
 
@@ -285,45 +286,74 @@ Power BI
     
   - **Nearly symmetrical Nature**: The close proximity of mean and median values across the years suggests that there is no significant skew.
 
-  - **Distribution Consistency**: The nearly symmetrical distribution supports the use of the mean for imputation. The consistency in the proximity of mean and median values over time indicates that the data has maintained a stable central tendency, making the **mean** a reliable measure for handling missing values.
+  - **Imputation Method:** The nearly symmetrical distribution supports the use of the **mean** for imputation. The consistency in the proximity of mean and median values over time indicates that the data has maintained a stable central tendency, making the mean a reliable measure for handling missing values.
 
   **2. Addressing the null values in the [MYS] fields.**
 
 ![image](https://github.com/user-attachments/assets/fb404774-2313-46f7-8fed-14bf5d2607e9)
 
+*Null values were present only in the years between 2000 and 2009.*
+
   - **Left-Skewed Nature for MYS 2000:** The mean is significantly lower than the median indicating a left-skewed distribution with a longer tail towards lower values.
 
-- **Nearly Symmetrical Nature for MYS 2009:** The mean is close to the median, suggesting a nearly symmetrical distribution with slight left skew.
-- **Distribution Consistency**: Although the histogram for MYS 2009 shows a nearly symmetrical distribution, I will use the median for imputation because of the clear left skew in 2000. This ensures a consistent and robust approach across all MYS years columns.
+  - **Nearly Symmetrical Nature for MYS 2009:** The mean is close to the median, suggesting a nearly symmetrical distribution with slight left skew.
+  - **Imputation Method:** Although the histogram for MYS 2009 shows a nearly symmetrical distribution, I will use the **median** for imputation because of the clear left skew in 2000. This ensures a consistent and robust approach across all MYS years columns.
 
 **3. Addressing the null values in the [GNI_PC_F] fields.**
 
 ![image](https://github.com/user-attachments/assets/d59af4c6-1f27-459c-b37f-838be13ec3e6)
 
-**Right-Skewed Nature for Female GNI per Capita 2000:** The mean is significantly higher than the median, indicating a right-skewed distribution with a longer tail towards higher values.
+*Null values were observed in the data for all years.*
 
-**Right-Skewed Nature for Female GNI per Capita 2010:** The mean remains higher than the median, suggesting a right-skewed distribution, though less pronounced compared to 2000.
+- **Right-Skewed Nature for Female GNI per Capita 2000:** The mean is significantly higher than the median, indicating a right-skewed distribution with a longer tail towards higher values.
 
-**Right-Skewed Nature for Female GNI per Capita 2020:** The mean is still higher than the median, reflecting a right-skewed distribution, and the distribution extends to even higher values up to 70K.
+- **Right-Skewed Nature for Female GNI per Capita 2010:** The mean remains higher than the median, suggesting a right-skewed distribution, though less pronounced compared to 2000.
 
-**Distribution Consistency:** Given the right skewness observed across all selected years, using the median for imputation is a suitable choice. The **median** is less influenced by high-value outliers, providing a more robust central tendency measure for handling missing values.
+- **Right-Skewed Nature for Female GNI per Capita 2020:** The mean is still higher than the median, reflecting a right-skewed distribution, and the distribution extends to even higher values up to 70K.
+
+- **Imputation Method:** Given the right skewness observed across all selected years, using the **median** for imputation is a suitable choice. The median is less influenced by high-value outliers, providing a more robust central tendency measure for handling missing values.
 
 
 **4. Addressing the null values in the [GNI_PC_M] fields.**
 
 ![image](https://github.com/user-attachments/assets/046e57c5-fa3c-45d8-a906-51567f10ba1d)
 
-**Right-Skewed Nature for GNI per Capita 2000:** The mean is significantly higher than the median, indicating a right-skewed distribution with a longer tail towards higher values. The majority of countries (92) have GNI per capita between 0 and 20K USD, with fewer countries as the GNI per capita increases.
+*Null values were observed in the data for all years.*
 
+- **Right-Skewed Nature for GNI per Capita 2000:** The mean is significantly higher than the median, indicating a right-skewed distribution with a longer tail towards higher values. The majority of countries (92) have GNI per capita between 0 and 20K USD, with fewer countries as the GNI per capita increases.
 
+I HAVE TO COMPLETE THE DESCRIPTION 
+
+**Imputation Method:** 
 
 **5. Addressing the null values in the [GII] fields.**
 
-![image](https://github.com/user-attachments/assets/6c4f655a-d4ed-4c39-bd90-02c0177dc74e)
+![image](https://github.com/user-attachments/assets/f692dafd-1c09-49af-b8c9-83bb29748d49)
+
+*Null values were observed in the data for all years.*
+
+- **Symmetrical Distribution for GII 2000:** The mean is nearly equal to the median, indicating a balanced spread of GII values.
+
+- **Left-Skewed Nature for GII 2005, 2015, and 2020:** The mean is lower than the median, indicating a left-skewed distribution with a longer tail towards lower values.
+
+- **Slightly Right-Skewed Distribution for GII 2010:** The mean is higher than the median, suggesting a slight right skew with a longer tail towards higher values.
+
+- **Imputation Method:** Given the varying skewness observed across different years for GII, using the **median** for imputation is a suitable choice
 
 **6. Addressing the null values in the [LFPR_F] fields.**
 
-![image](https://github.com/user-attachments/assets/9e7f8f41-67ae-4c1a-9e26-21e85fb12f44)
+![image](https://github.com/user-attachments/assets/a5c3221b-ba9a-4adf-b7f7-e84551f9d5a8)
+
+*Null values were observed in the data for all years.*
+
+- **Normal Distribution for LFPR (Female) 2000:** The mean (50.10) and median (50.08) are nearly equal, indicating a clear normal distribution.
+  
+- **Nearly Symmetrical Distribution for LFPR (Female) 2010:** The mean (51.8) is almost equal to the median (51.9), suggesting a near-normal distribution.
+
+- **Slight Left-Skewed Distribution for LFPR (Female) 2020:** The mean (49.7) is lower than the median (51.5), indicating a slight left skew with a longer tail towards lower participation rates.
+
+- **Imputation Method:** Given the normal distribution in 2000, near-normal distribution in 2010, and slight left skew in 2020, using the **median** for imputation is a suitable choice. 
+  
 
 **7. Addressing the null values in the [LFPR_M] fields.**
 
