@@ -109,69 +109,66 @@ Power BI
 
 ### HDI General Observations 
 
-1. The analysis is focused on the **21st century**. Any non related column was removed:
+**1.** The analysis is focused on the **21st century**. Any non related column was removed:
 
-    ![image](https://github.com/user-attachments/assets/9f1eb3ff-3c6d-4613-95ac-3662ab63f218)
+  ![image](https://github.com/user-attachments/assets/9f1eb3ff-3c6d-4613-95ac-3662ab63f218)
 
     
-1. **Erros & Data Completness**:
+**2.** **Erros & Data Completness**:
    + There were no errors.
    + There were Blanks and Nulls:
      * Blanks were found in the [hdicode] & [region]:
 
-       ![image](https://github.com/user-attachments/assets/7e0ae7de-2f7e-49ef-8733-2a886d6fd424)
+  ![image](https://github.com/user-attachments/assets/7e0ae7de-2f7e-49ef-8733-2a886d6fd424)
 
-     * Nulls were found in:
-       1. **HDI** year columns ranging from 2% - 10%.
+  * Nulls were found in:
+      1. **HDI** year columns ranging from 2% - 10%.
     
-       2. **EYS** year columns only 2% and only between the years 2000 - 2006.
+      2. **EYS** year columns only 2% and only between the years 2000 - 2006.
           
-       4. **MYS** year columns only 2% and only between the years 2000 - 2009.
+      4. **MYS** year columns only 2% and only between the years 2000 - 2009.
           
-       6. **GNI_PC_F** year columns only 4% for all years.
+      6. **GNI_PC_F** year columns only 4% for all years.
           
-       8. **GNI_PC_M** year columns only 4% for all years.
+      7. **GNI_PC_M** year columns only 4% for all years.
           
-       10. **GII** year columns ranging from 8% - 25% for all years.
+      8. **GII** year columns ranging from 8% - 25% for all years.
            
-       12. **IFPR_F** year columns only 4% for all years.
+      9. **IFPR_F** year columns only 4% for all years.
            
-       14. **IFPR_M** year columns only 4% for all years.
+      10. **IFPR_M** year columns only 4% for all years.
 
- 2. **Data Consistency**:
+ **3.** **Data Consistency**:
      
-     * **The [ISO 3]**: a column that is expected to contain the three-letter codes for countries as defined by the ISO 3166-1 standard. However, in the current column there included the HDI Groupings and Regional Groupings as well.
+  * **The [ISO 3]**: a column that is expected to contain the three-letter codes for countries as defined by the ISO 3166-1 standard. However, in the current column there included the HDI Groupings and Regional Groupings as well.
     
        ![image](https://github.com/user-attachments/assets/c0b27f45-4aa3-4402-9df9-46eba1deadf1)
 
-     * *HDI Groupings*: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
+* **HDI Groupings**: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
 
-     * *Regional Groupings*: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
+* **Regional Groupings**: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
    
-     * **The [region]**: The region **Middle East & North Africa (MENA)** was missing from the dataset. As a result, countries that normally belong to MENA were incorrectly assigned to other regions. For example:
-          A. Algeria: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA).
+* **The [region]**: The region **Middle East & North Africa (MENA)** was missing from the dataset. As a result, countries that normally belong to MENA were incorrectly assigned to other regions. For example:
+  
+  A. Algeria: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA).
        
-          B. Israel: Initially assigned to "Europe and Central Asia" instead of "Middle East & North Africa (MENA).
+  B. Israel: Initially assigned to "Europe and Central Asia" instead of "Middle East & North Africa (MENA).
        
-          C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
+  C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
        
  ### HDI Cleaning Process
 
   #### Step 1:
 
-   * The [ISO 3] contained the HDI Groupings and Regional Groupings. Taken that we have dedicated columns for the [hdi codes] and for [regional categories], I filtered out the corresponding rows from the [ISO 3].
+   * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. Taken that we have dedicated columns for the [hdi codes] and for [regional categories], I filtered out the corresponding rows from the [ISO 3].
 
-   * The [country]: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
+   * The **[country]**: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
 
-   * The [hdicode] column contained a total of 15 blank rows. To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
+   * The **[hdicode]** column contained a total of 15 blank rows. To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
 
-   ![image](https://github.com/user-attachments/assets/69ba784f-4559-4e13-8503-40de22d68966)                  ![image](https://github.com/user-attachments/assets/fe15fc28-db2f-42db-9a02-b63c885a8b46)                                                                                              ![image](https://github.com/user-attachments/assets/506c62f5-843b-4038-a131-3d141d7606d1)
+![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
 
-   ![image](https://github.com/user-attachments/assets/d4bd5c68-2c40-491e-8360-d8f9d42f2698)                                                                    ![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
-
-
- 
-   * A similar approach was followed for the [region] column, which contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I **filled the blanks with the appropriate region.**
+   * The **[region]** column contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I **filled the blanks with the appropriate region.**
    
 **1.** I first created a new conditional column called [Region_filled], listing only the countries whose region was missing from the original [region] column:
       
@@ -181,16 +178,21 @@ Power BI
 
  ![image](https://github.com/user-attachments/assets/ba444660-76b9-4b1c-95d7-b42d6d795e3a)
 
-**3.** **Result:** A complete [region] column was created, currently called as [Region_NO Blanks]. 
+**3.** The [Region_NO Blanks] is updated and the former blanks are now filled with the corresponding region name. 
 
    ![image](https://github.com/user-attachments/assets/ed0833aa-6a0f-4249-9fee-ff795750c4f4)
 
-**4.**  To avoid redundancy: I removed the original [region] and the [Region Filled] column, and I only kept the [Region_NO Blanks] , which i renamed back to  [region].
-   
- * Now, both the [hdicode] and [region] columns comply with the rules of consistency and readability.
+**4.** The next challenge of the new [Region_NO Blanks] is the incorrect assignment of certain countries to wrong regions and the absense of the region: **Middle East & North Africa (MENA)**. 
 
-   ![image](https://github.com/user-attachments/assets/f0688127-15b2-4523-8a37-3b7c6a715ca9)
+  To address the issue of incorrect regional assignments for some countries, we created a new query with the correct region information, merged this with the main dataset, expanded the merged column to include the correct regions, and used a conditional formula to update the regions based on the mapping table.
 
+![image](https://github.com/user-attachments/assets/e192124f-4beb-4a81-bc62-ac837eab459d)                 ![image](https://github.com/user-attachments/assets/456506b2-ab12-4814-b634-d1c5234abdea)
+
+**5.** To avoid redundancy, I removed the original [region] and the [Region Filled] column, [Region_NO Blanks], and Country Region Mapping.Region. I kept the [Updated Region] and rename it back to [region]. 
+
+ * **Conclusion**: both the [hdicode] and [region] columns comply with the rules of consistency and readability.
+
+   ![image](https://github.com/user-attachments/assets/8b7030ee-9a0f-43e2-8b7f-9e34a15d40de)
 
    ## Step 2:
 
