@@ -223,7 +223,7 @@ Power BI
   
   ![image](https://github.com/user-attachments/assets/25c704a8-6abf-467b-81a4-5db6c1bae861)
 
-  2. **Outlier Detenction with IQR**
+  **2.** **Outlier Detenction with IQR**
 
   *What is better than organization and planning?*
   
