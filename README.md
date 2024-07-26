@@ -16,7 +16,7 @@ Power BI
 
 ## Dataset exploration 
 + The dataset contains 2 seperate Excel files :
-1. **Human Development Index:**
+**1. Human Development Index(HDI):**
    * **Column Num**: 1008
      ![image](https://github.com/user-attachments/assets/c03cb4ff-b171-4eeb-9433-e30dbbc6fd6c)
 
@@ -77,7 +77,7 @@ Power BI
      ![image](https://github.com/user-attachments/assets/49c380f2-661d-4c20-82e3-e5b4cccc47c1)
 
 
-1. **Development Indicators:**
+**1. Development Indicators:**
    + **Column Num**: 15
      
       ![image](https://github.com/user-attachments/assets/54d66352-9342-42ec-af4b-464e802d053b)
@@ -184,7 +184,7 @@ Power BI
 
    **4.** The next challenge with the updated [Region_NO Blanks] is the incorrect assignment of certain countries to wrong regions and the absence of the **Middle East & North Africa (MENA)** region. 
 
-  To address the issue of incorrect regional assignments for some countries, we created a new query with the correct region information, merged this with the main dataset, expanded the merged column to include the correct regions, and used a conditional formula to update the regions based on the mapping table.
+  - To address the issue of incorrect regional assignments for some countries, we created a new query with the correct region information, merged this with the main dataset, expanded the merged column to include the correct regions, and used a conditional formula to update the regions based on the mapping table.
 
 ![image](https://github.com/user-attachments/assets/e192124f-4beb-4a81-bc62-ac837eab459d)                 ![image](https://github.com/user-attachments/assets/456506b2-ab12-4814-b634-d1c5234abdea)
 
@@ -206,7 +206,7 @@ Power BI
 
    Approach followed for checking of distribution:
 
-1.  **Plotted Histograms with bin size 1%.**  
+1.  **Plotted Histograms.**  
   
       ![image](https://github.com/user-attachments/assets/7b071cd6-0d9e-46a0-8be1-7c9ae824744c)
 
@@ -357,10 +357,7 @@ I HAVE TO COMPLETE THE DESCRIPTION
 **7. Addressing the null values in the [LFPR_M] fields.**
 
 ![image](https://github.com/user-attachments/assets/48c0408b-c47e-40ad-a040-e93433b06821)
-
-    
-   
-  
+ 
  #### Step 3:
 
  Imputation of nulls with the median. 
@@ -429,7 +426,7 @@ I HAVE TO COMPLETE THE DESCRIPTION
         However, please note that I was unable to fully validate the GDP per capita (USD) values because the dataset does not include a direct population column. GDP per capita is calculated as GDP divided by the total population, and without the population data, I could not verify the accuracy of this metric.
 
 
- ### HDI Cleaning Process
+ ### Development Indicators Cleaning Process
 
   #### Step 1:
 
@@ -437,12 +434,18 @@ I HAVE TO COMPLETE THE DESCRIPTION
     
   * The [country]: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
 
+  * I verified the consistency of the country columns between the **HDI** and **Development Indicators** tables through a merge, and discovered that the Development Indicators table's Country column is missing 9 countries.
+
+    ![image](https://github.com/user-attachments/assets/fed89713-d830-49ff-912d-d6025fe4dcd7)
+
   * [Region]:  I replaced the regional categories with their corresponding abbreviations to align with the format used in the [Region] column of the HDI dataset. Consistency in naming conventions helps in merging and comparing data accurately.
 
   
   #### Step 2:
 
-  ### Addressing the null values in the
+  ### Addressing the null values
+
+  
 
 
 
