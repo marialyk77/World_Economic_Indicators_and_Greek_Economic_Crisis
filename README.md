@@ -17,9 +17,8 @@ Power BI
 ## Dataset exploration 
 + The dataset contains 2 seperate Excel files :
 **1. Human Development Index(HDI):**
-   * **Column Num**: 1008
-     ![image](https://github.com/user-attachments/assets/c03cb4ff-b171-4eeb-9433-e30dbbc6fd6c)
-
+   * **Column Num**: 1008,   **Row Num**: 206
+     
      - Iso 3 : The three letter code representing the country.
      - Country: The name of the country.
      - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
@@ -67,20 +66,9 @@ Power BI
      - co2_prod_xxxx
      - mf_xxxx
 
-
-
-  
-
-
-   * **Row Num**: 206
      
-     ![image](https://github.com/user-attachments/assets/49c380f2-661d-4c20-82e3-e5b4cccc47c1)
-
-
 **1. Development Indicators:**
-   + **Column Num**: 15
-     
-      ![image](https://github.com/user-attachments/assets/54d66352-9342-42ec-af4b-464e802d053b)
+   + **Column Num**: 15,  **Row Num**: 4009
 
      - Country Name
      - Country code: is a three-letter abbreviation that uniquely identifies a country. 
@@ -97,12 +85,6 @@ Power BI
      - Life expectancy at birth (years): is the average number of years a newborn is expected to live if current mortality rates at the time of birth remain constant throughout their life.
      - Population density (people per sq. km of land area):  measures the number of people living per square kilometer of land area in a country.
      - Unemployment (% of total labor force) (modeled ILO estimate):  represents the percentage of the labor force that is unemployed but actively seeking work, as estimated by the International Labour Organization (ILO).
-
-
-   + **Row Num**: 4009
-     
-     ![image](https://github.com/user-attachments/assets/ac026d0b-954c-46bc-9b62-3498b320574a)
-
 
 
 ## Cleaning 
