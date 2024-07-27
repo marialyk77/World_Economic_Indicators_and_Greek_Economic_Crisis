@@ -22,7 +22,7 @@ Power BI
      - Iso 3 : The three letter code representing the country.
      - Country: The name of the country.
      - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
-     - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. They are: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, and **South Asia**. UNDP Development Regions and World Bank Regions regional groupings are the same.
+     - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. Regions listed in the [Region column]: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, and **South Asia**. **Middle East and North Africa** is missing. 
      - hdi_rank_2021
      - hdi_xxxx
      - le_xxxx
@@ -301,11 +301,9 @@ Power BI
 
 *Null values were observed in the data for all years.*
 
-- **Right-Skewed Nature for GNI per Capita 2000:** The mean is significantly higher than the median, indicating a right-skewed distribution with a longer tail towards higher values. The majority of countries (92) have GNI per capita between 0 and 20K USD, with fewer countries as the GNI per capita increases.
-
-I HAVE TO COMPLETE THE DESCRIPTION 
-
-**Imputation Method:** 
+- **Right- skewed distributions**: Across all selected years, the distributions of GNI per Capita demonstrate a right-skewed nature, with most countries having relatively low GNI per Capita values.
+- This consistent right skewness suggests that the **majority of countries fall below the mean** GNI per Capita, with only a few outliers having significantly higher values.
+- **Imputation Method:** Given the observed right-skewed distributions, using the median for imputation is a suitable choice.
 
 **5. Addressing the null values in the [GII] fields.**
 
@@ -327,18 +325,25 @@ I HAVE TO COMPLETE THE DESCRIPTION
 
 *Null values were observed in the data for all years.*
 
-- **Normal Distribution for LFPR (Female) 2000:** The mean (50.10) and median (50.08) are nearly equal, indicating a clear normal distribution.
-  
-- **Nearly Symmetrical Distribution for LFPR (Female) 2010:** The mean (51.8) is almost equal to the median (51.9), suggesting a near-normal distribution.
+- **Nearly Symmetrical Distribution for 2000**: The distribution is fairly symmetrical, centered around the 50% labor force participation rate.
+- **Nearly Symmetrical Distribution for 2005**: The distribution is fairly symmetrical but with a minor left skew, still centered around the 50% labor force participation rate.
+- **Nearly Symmetrical Distribution for 2010**: The mean is slightly lower than the median, indicating a near-normal distribution with a slight left skew.
+- **Nearly Symmetrical Distribution for 2015**: The distribution is nearly symmetrical, centered around the 50% labor force participation rate.
+- **Nearly Symmetrical Distribution for 2020**: The distribution is fairly symmetrical but with a minor left skew, slightly shifted towards higher participation rates.
+- **Imputation Method**:
 
-- **Slight Left-Skewed Distribution for LFPR (Female) 2020:** The mean (49.7) is lower than the median (51.5), indicating a slight left skew with a longer tail towards lower participation rates.
+**7. Addressing the null values in the [LFPR_M] fields.** Given the nearly symmetrical distributions observed across all selected years, using the median for imputation is a suitable choice.
 
-- **Imputation Method:** Given the normal distribution in 2000, near-normal distribution in 2010, and slight left skew in 2020, using the **median** for imputation is a suitable choice. 
-  
+![image](https://github.com/user-attachments/assets/ed8a0adc-ee70-4781-b98f-41a6048e4e1e)
 
-**7. Addressing the null values in the [LFPR_M] fields.**
+- **Nearly Symmetrical Distributions for 2000, 2005, and 2010**:
+    1. 2000: Mean and Median are nearly equal, indicating a clear normal distribution.
+    2. 2005:  Fairly symmetrical.
+    3. 2010: Equal, indicating a perfectly symmetrical distribution.
+- **Slight Left-Skewed Distributions for 2015 and 2020**.
+    1. 2015: Mean is slightly lower than the median, suggesting a near-normal distribution with a minor left skew.
+    2. 2020: Mean is slightly lower than the median, indicating a slight left skew.
 
-![image](https://github.com/user-attachments/assets/48c0408b-c47e-40ad-a040-e93433b06821)
  
  #### Step 3:
 
@@ -427,9 +432,13 @@ I HAVE TO COMPLETE THE DESCRIPTION
 
   ### Addressing the null values
 
-  
+  ![image](https://github.com/user-attachments/assets/eb64624b-e2ee-4c9c-a53e-7a39c62118bc)
 
+- **Right Skewed Distributions:** Birth %, Death %, Infant Mortality %, Unemployment %, GDP (USD), Population % Using Internet, GDP per Capita (USD). These distributions have longer tails on the right side, indicating a few countries with significantly higher values compared to the majority.
 
+- **Left Skewed Distribution:** Life Expectancy. This distribution has a longer tail on the left side, indicating a few countries with significantly lower life expectancies compared to the majority.
+
+- **Imputation Method:** For these skewed distributions I will use the **median** for imputation. 
 
 
 
