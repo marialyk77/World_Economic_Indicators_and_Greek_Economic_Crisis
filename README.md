@@ -325,11 +325,7 @@ Power BI
 
 *Null values were observed in the data for all years.*
 
-- **Nearly Symmetrical Distribution for 2000**: The distribution is fairly symmetrical, centered around the 50% labor force participation rate.
-- **Nearly Symmetrical Distribution for 2005**: The distribution is fairly symmetrical but with a minor left skew, still centered around the 50% labor force participation rate.
-- **Nearly Symmetrical Distribution for 2010**: The mean is slightly lower than the median, indicating a near-normal distribution with a slight left skew.
-- **Nearly Symmetrical Distribution for 2015**: The distribution is nearly symmetrical, centered around the 50% labor force participation rate.
-- **Nearly Symmetrical Distribution for 2020**: The distribution is fairly symmetrical but with a minor left skew, slightly shifted towards higher participation rates.
+- **Nearly Symmetrical Distributions**: for all years selected. 
 - **Imputation Method**:
 
 **7. Addressing the null values in the [LFPR_M] fields.** Given the nearly symmetrical distributions observed across all selected years, using the median for imputation is a suitable choice.
@@ -343,7 +339,7 @@ Power BI
 - **Slight Left-Skewed Distributions for 2015 and 2020**.
     1. 2015: Mean is slightly lower than the median, suggesting a near-normal distribution with a minor left skew.
     2. 2020: Mean is slightly lower than the median, indicating a slight left skew.
-
+ - **Imputation Method**: Given the nearly symmetrical distributions observed across all selected years, with some minor left skewness in the later years, using the median for imputation is a suitable choice. 
  
  #### Step 3:
 
