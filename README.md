@@ -1,5 +1,9 @@
 # World_Economic_Indicators
 
+# Table of Contents 
+
+- [Tools used ](##Tools used)
+
 + The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
 ## Research Questions: 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
@@ -22,7 +26,7 @@ Power BI
      - Iso 3 : The three letter code representing the country.
      - Country: The name of the country.
      - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
-     - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. Regions listed in the [Region column]: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, and **South Asia**. **Middle East and North Africa** is missing. 
+     - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. Regions listed in the [Region column]: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, and **South Asia**. _**Middle East and North Africa** is missing._
      - hdi_rank_2021
      - hdi_xxxx
      - le_xxxx
@@ -90,8 +94,8 @@ Power BI
 ## Cleaning 
 
 ### HDI General Observations 
-
-**1.** The analysis is focused on the **21st century**. Any non related column was removed:
+> [!IMPORTANT]
+> **1.** The analysis is focused on the **21st century**. Any non related column was removed:
 
   ![image](https://github.com/user-attachments/assets/9f1eb3ff-3c6d-4613-95ac-3662ab63f218)
 
@@ -195,14 +199,11 @@ Power BI
 - **Left-Skewed Nature**: All distributions are left-skewed, meaning that the majority of the data points (countries) have higher HDI values. However, a significant number of countries with lower HDI values (closer to 0.2-0.4) create a long tail to the left.
 - **Mean vs. Median**: 1. The mean being lower than the median further confirms the left-skewed nature of the data.
                        2. Both the mean and median have increased over the years, indicating an overall improvement in HDI scores for the countries.
-                       3. The gap between the mean and median shows a slight decrease by 2020, suggesting that the distribution is becoming more symmetrical *(1)*. 
+                       3. The gap between the mean and median shows a slight decrease by 2020, suggesting that the distribution is becoming more symmetrical *. 
 - **Consistency Over Years**: The general pattern remains consistent over the years, with slight improvements in HDI values (increasing mean and median).
 - **Central Tendency Interpretation**: In left-skewed distributions, the median is typically a more accurate measure of central tendency than the mean because it is less affected by the long tail of lower values.
 - **Outlier Detection method**: Skewness influences the choice of outlier detection methods. The Interquartile Range (IQR) method is preferred since it does not assume normality and effectively identifies outliers in skewed distributions.
 
-*(1). Let’s be honest: after seeing the trend towards a more symmetrical distribution, I decided to check the data for 2021, the last year in my dataset. The mean is 0.72 and the median is 0.74, just like in 2020. Suggesting, that the progress might be getting stabilized in the most recent years.*
-  
-  ![image](https://github.com/user-attachments/assets/25c704a8-6abf-467b-81a4-5db6c1bae861)
 
   **2.** **Outlier Detenction with IQR**
 
@@ -288,7 +289,7 @@ Power BI
 
 - **Right-Skewed Nature for Female GNI per Capita 2000:** The mean is significantly higher than the median, indicating a right-skewed distribution with a longer tail towards higher values.
 
-- **Right-Skewed Nature for Female GNI per Capita 2010:** The mean remains higher than the median, suggesting a right-skewed distribution, though less pronounced compared to 2000.
+- **Right-Skewed Nature for Female GNI per Capita 2010:** The distribution remains right-skewed, though the skewness is less pronounced compared to 2000, with the mean still higher than the median.
 
 - **Right-Skewed Nature for Female GNI per Capita 2020:** The mean is still higher than the median, reflecting a right-skewed distribution, and the distribution extends to even higher values up to 70K.
 
@@ -325,8 +326,9 @@ Power BI
 
 *Null values were observed in the data for all years.*
 
-- **Nearly Symmetrical Distributions**: for all years selected. 
-- **Imputation Method**:
+- **Nearly Symmetrical Distributions**: Symmetrical Distribution for Female LFPR: The mean is nearly equal to the median for the selected years 2000, 2005, 2010, and 2015, indicating a balanced spread of values. In 2020, the mean and median have a small difference, still suggesting a relatively balanced distribution.
+  
+- **Imputation Method**: Mean, as it is a reliable measure of central tendency for nearly symmetrical distributions.
 
 **7. Addressing the null values in the [LFPR_M] fields.** Given the nearly symmetrical distributions observed across all selected years, using the median for imputation is a suitable choice.
 
