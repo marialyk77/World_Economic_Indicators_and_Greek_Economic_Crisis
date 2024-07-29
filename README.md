@@ -94,7 +94,7 @@ This comparative study will provide insights into the strengths and limitations 
      - mf_xxxx: Material Footprint per Capita in Year xxxx (tonnes). 
 
      
-**1. Development Indicators:**
+**2. Development Indicators:**
    + **Column Num**: 15,  **Row Num**: 4009
 
      - Country Name
