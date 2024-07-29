@@ -233,11 +233,12 @@ Power BI, Python
 
   **2.** **Outlier Detenction with IQR**
 
-  *What is better than organization and planning?*
-  
-  *I created subfolders to organize the measures I needed: one for building histograms to check data distribution and another for calculating the IQR to check for outliers.*
+> [!TIP]
+> *For better organization:*
+> *I created subfolders to organize the measures I needed: one for building histograms to check data distribution and another for calculating the IQR to check for outliers.*
 
-  ![image](https://github.com/user-attachments/assets/fa060454-f680-4a02-bfc1-d063c9d866e4)
+  ![image](https://github.com/user-attachments/assets/e5e50ce4-d9c9-4507-97fc-74b4860dd1a2)
+
 
 
   **A**. **I created the measures needed to calculate the IQR using the following formula:** 
@@ -412,8 +413,9 @@ Power BI, Python
 
 
 ## Exploratory Data Analysis - Development Indicators
-   
-1. The analysis is focused on the **21st century**. Any non related column was removed. 
+
+> [!IMPORTANT]   
+> 1. The analysis is focused on the **21st century**. Any non related column was removed. 
 
 2. **Erros & Data Completness**:
    + There were no errors.
@@ -452,7 +454,7 @@ Power BI, Python
   * [Region]:  I replaced the regional categories with their corresponding abbreviations to align with the format used in the [Region] column of the HDI dataset. Consistency in naming conventions helps in merging and comparing data accurately.
 
   
-  #### Step 2:
+  ## Step 2:
 
   ### Addressing the null values  
 
