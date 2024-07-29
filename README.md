@@ -396,7 +396,7 @@ This comparative study will provide insights into the strengths and limitations 
  > - **Imputation Method**: Given the observed right skew in the distributions for 2015 and 2020, and considering that 2010 had a normal distribution, I will impute the null values with the **median**. Even though 2010 exhibited a normal distribution there could be variations in skewness across the remaining years in the dataset. 
  
 
-
+# Power BI vs Python
 
 > [!CAUTION]
 > The process in Power BI involved multiple intricate steps, leading to challenges in accurately clarifying the distribution and selecting the appropriate imputation method.
@@ -445,6 +445,7 @@ This comparative study will provide insights into the strengths and limitations 
 
  ![image](https://github.com/user-attachments/assets/2db66417-b6a2-4829-bcea-9e407328e9e1)
  
+# Power BI vs Python
 
 > [!NOTE]
 > The solution involves two main steps: A. Determine the median value for each individual column across all rows. B. For each column, replace the zero values with the corresponding median.
