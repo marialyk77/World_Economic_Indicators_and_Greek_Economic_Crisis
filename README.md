@@ -118,9 +118,6 @@ This comparative study will provide insights into the strengths and limitations 
 
 > [!IMPORTANT]
 > **1.** The analysis is focused on the **21st century**. Any non related column was removed:
-
-  ![image](https://github.com/user-attachments/assets/9f1eb3ff-3c6d-4613-95ac-3662ab63f218)
-
     
 **2.** **Erros & Data Completness**:
    + There were no errors.
