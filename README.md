@@ -1,8 +1,10 @@
+***
+gitea: none
+include_toc: true
+***
+
+
 # World_Economic_Indicators
-
-# Table of Contents 
-
-- [Research Questions ](#Research Questions)
 
 + The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
 # Research Questions: 
