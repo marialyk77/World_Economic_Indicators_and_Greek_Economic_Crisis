@@ -39,6 +39,10 @@
 
 Power BI, Python 
 
+> [!NOTE]
+> In this analysis, I aim to explore and compare the effectiveness of Power BI and Python in handling and analyzing data. I will focus particularly on the World Economic Indicators dataset that requires imputation techniques, using descriptive statistics to address missing values. By applying methods such as mean and median imputation, I will assess how each tool manages data preprocessing and its impact on the accuracy and reliability of the analysis. 
+This comparative study will provide insights into the strengths and limitations of Power BI and Python in dealing with incomplete data and performing robust statistical analyses.
+
 ## Dataset exploration 
 + The dataset contains 2 seperate Excel files :
   
@@ -281,8 +285,8 @@ Power BI, Python
 
   **Conclusion:** The absence of outliers identified by the IQR method, combined with the visual inspection that shows no significant deviations, leads me to conclude that there are no outliers in my data. 
 
- 
-  **Imputation Method:** Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. However, since the data is left-skewed, the **median** is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
+ > [!IMPORTANT]
+ > **Imputation Method:** Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. Here we do not have outliers but the data is left-skewed. The **median** is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
 
 
    #### For the rest fields. 
@@ -300,6 +304,7 @@ Power BI, Python
   > [!IMPORTANT]
   > - **Imputation Method:** The nearly symmetrical distribution supports the use of the **mean** for imputation. The consistency in the proximity of mean and median values over time indicates that the data has maintained a stable central tendency, making the mean a reliable measure for handling missing values.
 
+
   **2. Addressing the null values in the [MYS] fields.**
 
 ![image](https://github.com/user-attachments/assets/fb404774-2313-46f7-8fed-14bf5d2607e9)
@@ -312,6 +317,7 @@ Power BI, Python
 
   > [!IMPORTANT]
   > - **Imputation Method:** Although the histogram for MYS 2009 shows a nearly symmetrical distribution, I will use the **median** for imputation because of the clear left skew in 2000. This ensures a consistent and robust approach across all MYS years columns.
+
 
 **3. Addressing the null values in the [GNI_PC_F] fields.**
 
@@ -341,6 +347,7 @@ Power BI, Python
 > [!IMPORTANT]
 > - **Imputation Method:** Given the observed right-skewed distributions, using the **median** for imputation is a suitable choice.
 
+
 **5. Addressing the null values in the [GII] fields.**
 
 ![image](https://github.com/user-attachments/assets/f692dafd-1c09-49af-b8c9-83bb29748d49)
@@ -356,6 +363,7 @@ Power BI, Python
 > [!IMPORTANT]
 > - **Imputation Method:** Given the varying skewness observed across different years for GII, using the **median** for imputation is a suitable choice
 
+
 **6. Addressing the null values in the [LFPR_F] fields.**
 
 ![image](https://github.com/user-attachments/assets/a5c3221b-ba9a-4adf-b7f7-e84551f9d5a8)
@@ -367,6 +375,7 @@ Power BI, Python
   2. 2020: The mean and median have a small difference, still suggesting a relatively balanced distribution.
 > [!IMPORTANT] 
 > - **Imputation Method**: Despite the nearly symmetrical distributions observed, the **median** is preferred for imputation.
+
 
 **7. Addressing the null values in the [LFPR_M] fields.** 
 
@@ -386,11 +395,20 @@ Power BI, Python
  > [!IMPORTANT]      
  > - **Imputation Method**: Given the observed right skew in the distributions for 2015 and 2020, and considering that 2010 had a normal distribution, I will impute the null values with the **median**. Even though 2010 exhibited a normal distribution there could be variations in skewness across the remaining years in the dataset. 
  
- ## Step 3:
 
- ### Imputation of nulls.
 
- #### HDI xxxx (median) 
+
+> [!CAUTION]
+> The process in Power BI involved multiple intricate steps, leading to challenges in accurately clarifying the distribution and selecting the appropriate imputation method. Given these complexities, **it might be more straightforward _to perform this task in Python_, where the tools and methods for data analysis and imputation are simpler and more intuitive.**
+
+
+
+
+## Step 3:
+
+### Imputation of nulls.
+
+#### HDI xxxx (median) 
 
  1. I replace the nulls with 0.
 
@@ -405,7 +423,7 @@ Power BI, Python
     ![image](https://github.com/user-attachments/assets/d53638a2-efb1-48c6-a84b-d486917be22d)
 
    
-    ![image](https://github.com/user-attachments/assets/35dd692a-1afa-48b5-a684-745b46c76c47)
+    ![image](https://github.com/user-attachments/assets/aa591fa1-7658-42a9-9fff-ad3ee4a285ec)
 
  > [!TIP]
  > _List.Transform:_
@@ -416,14 +434,25 @@ Power BI, Python
    
    A lambda function is an anonymous function often used for concise transformations or operations.
    In the context of List.Transform, the lambda function is replacing any occurrence of 0 in the columns with the median value.
+   
+
+> [!CAUTION]
+> The above process did not work! The Median is not accessed or referenced correctly. The functionality : Add Column, Statistics, Median, calculated a single median value for each row across all columns instead of calculating **a median value for each column across all rows**. 
+
+ ![image](https://github.com/user-attachments/assets/bbc90939-7151-411e-a050-22938999d1fa)
+
+ ![image](https://github.com/user-attachments/assets/2db66417-b6a2-4829-bcea-9e407328e9e1)
+ 
+
+> [!NOTE]
+> The solution involves two main steps: A. Determine the median value for each individual column across all rows. B. For each column, replace the zero values with the corresponding median.
+**Given the complexity, it might be more straightforward _to perform this task in Python_.**
+ 
+
+ 
 
 
-    
- ## Data Modeling & Transformations - HDI
 
- HDI columns Unpivot and performed *extract after delimiter* to keep only the year. 
-  
-![image](https://github.com/user-attachments/assets/77e9cbf6-8e43-439d-8bc9-fdfd500429df)                    ![image](https://github.com/user-attachments/assets/344d9d7e-97bc-44f3-88d9-aba674b55f2a)
 
 
 ## Exploratory Data Analysis - Development Indicators
