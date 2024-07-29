@@ -154,8 +154,11 @@ Power BI, Python
 * **HDI Groupings**: ZZA.VHHD: Very High Human Development | ZZB.HHD: High Human Development | ZZC.MHD: Medium Human Development | ZZD.LHD: Low Human Development
 
 * **Regional Groupings**: ZZE.AS: Asia | ZZF.EAP: East Asia and Pacific | ZZG.ECA: Europe and Central Asia | ZZH.LAC: Latin America and Caribbean | ZZI.SA: South Asia | ZZJ.SSA: Sub-Saharan Africa | ZZK.WORLD: World Aggregate
-   
-* **The [region]**: The region **Middle East & North Africa (MENA)** was missing from the dataset. As a result, countries that normally belong to MENA were incorrectly assigned to other regions. For example:
+
+> [!WARNING]
+>* **The [region]**: The region **Middle East & North Africa (MENA)** was missing from the dataset. And countries that normally belong to MENA were incorrectly assigned to other regions.
+
+  For example:
   
   A. Algeria: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA).
        
@@ -251,9 +254,10 @@ Power BI, Python
 
   ![image](https://github.com/user-attachments/assets/2e3f21f6-7878-4b9e-b216-adfe748aed42)
 
-  **B**. **Coming to the result**:  
+> [!NOTE]
+> **There were found NO OUTLIERS!**
   
-  * There were found NO OUTLIERS!
+  
 
   ![image](https://github.com/user-attachments/assets/fbfa6d3a-0e0c-42b0-b09a-3ec9458c1610)
 
