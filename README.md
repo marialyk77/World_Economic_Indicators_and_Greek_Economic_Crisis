@@ -53,48 +53,45 @@ This comparative study will provide insights into the strengths and limitations 
      - Country: The name of the country.
      - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
      - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. Regions listed in the [Region column]: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, and **South Asia**. _**Middle East and North Africa** is missing._
-     - hdi_rank_2021
-     - hdi_xxxx
-     - le_xxxx
-     - hdi_rank_2021
-     - hdi_xxxx
-     - le_xxxx
-     - eys_xxxx
-     - mys_xxxx
-     - gnipc_xxxx
-     - gdi_group_2021
-     - gdi_xxxx
-     - hdi_f_xxxx
-     - le_f_xxxx
-     - eys_f_xxxx
-     - mys_f_xxxx
-     - gni_pc_f_xxxx
-     - hdi_m_xxxx
-     - le_m_xxxx
-     - eys_m_xxxx
-     - mys_m_xxxx
-     - gni_pc_m_xxxx
-     - ihdi_xxxx
-     - coef_ineq_xxxx
-     - loss_xxxx
-     - ineq_le_xxxx
-     - ineq_edu_xxxx
-     - ineq_inc_xxxx
-     - gii_rank_2021
-     - gii_xxxx
-     - mmr_xxxx
-     - abr_xxxx
-     - se_f_xxxx
-     - se_m_xxxx
-     - pr_f_xxxx
-     - pr_m_xxxx
-     - lfpr_f_xxxx
-     - lfpr_m_xxxx
-     - rankdiff_hdi_phdi_2021
-     - phdi_xxxx
-     - diff_hdi_phdi_xxxx
-     - co2_prod_xxxx
-     - mf_xxxx
+     - hdi_rank_2021: represents the Human Development Index (HDI) rank for each country in the year 2021, with 1 being the highest rank  and 191 being the lowest.
+     - hdi_xxxx: refers to the Human Development Index (HDI) of a country for the specific year xxxx. HDI is a combined index that measures a country's average achievements in three basic aspects of human development: **health** (life expectancy at birth), **education** (mean years of schooling and expected years of schooling), and **standard of living** (gross national income per capita).
+     - le_xxxx: The country's longevity rate in year xxxx.
+     - eys_xxxx: The country's predicted years of schooling.
+     - mys_xxxx: The country's average years of education.
+     - gnipc_xxxx: The gross national income per person in dollars.
+     - gdi_group_2021: The per capita gross national income expressed in dollars.
+     - gdi_xxxx: Gender Development Measure in Year XXXX.
+     - hdi_f_xxxx: Female Human Development Index for Year XXXX.
+     - le_f_xxxx: Female Life Expectancy at Birth for Year XXXX.
+     - eys_f_xxxx:  Female Expected Years of Education in Year XXXX.
+     - mys_f_xxxx: Female Mean Years of Education in Year XXXX.
+     - gni_pc_f_xxxx:  Female Gross National Income per Capita for Year XXXX.
+     - hdi_m_xxxx: Male Human Development Index for Year XXXX.
+     - le_m_xxxx: Male Life Expectancy at Birth for Year XXXX.
+     - eys_m_xxxx: Male Expected Years of Schooling for Year XXXX.
+     - mys_m_xxxx: Average Years of Schooling for Males in XXXX.
+     - gni_pc_m_xxxx: Male Gross National Income per Capita in Year XXXX.
+     - ihdi_xxxx: Inequality-Adjusted Human Development Index for Year XXXX.
+     - coef_ineq_xxxx: Human Inequality Coefficient for Year XXXX.
+     - loss_xxxx: Percentage of Overall Loss in Year XXXX.
+     - ineq_le_xxxx:Inequality in Life Expectancy for Year XXXX.
+     - ineq_edu_xxxx: Inequality in Education for Year XXXX. 
+     - ineq_inc_xxxx: Income Inequality for Year XXXX. 
+     - gii_rank_2021: Gender Inequality Index Ranking for 2021. 
+     - gii_xxxx: Gender Inequality Index for Year xxxx. 
+     - mmr_xxxx: Maternal Mortality Rate for Year xxxx. 
+     - abr_xxxx: Adolescent Birth Rate (per 1,000 women aged 15-19) for Year xxxx. 
+     - se_f_xxxx: Female Population with Secondary Education (25+ years) in Year xxxx.
+     - se_m_xxxx: Male Population with Secondary Education (25+ years) in Year xxxx. 
+     - pr_f_xxxx: Share of Women in Parliament (% Seats) for Year xxxx. 
+     - pr_m_xxxx: Share of Men in Parliament (% Seats) for Year xxxx. 
+     - lfpr_f_xxxx: Female Labour Force Participation Rate (% ages 15 and older) in Year xxxx. 
+     - lfpr_m_xxxx: Male Labour Force Participation Rate (% ages 15 and older) in Year xxxx. 
+     - rankdiff_hdi_phdi_2021: Difference in HDI Ranking Compared to 2020. 
+     - phdi_xxxx: HDI Adjusted for Planetary Pressures (value) in Year xxxx.
+     - diff_hdi_phdi_xxxx: Difference (%) between HDI and Planetary Pressures-Adjusted HDI in Year xxxx. 
+     - co2_prod_xxxx: Carbon Dioxide Emissions per Capita (Production) in Year xxxx (tonnes). 
+     - mf_xxxx: Material Footprint per Capita in Year xxxx (tonnes). 
 
      
 **1. Development Indicators:**
