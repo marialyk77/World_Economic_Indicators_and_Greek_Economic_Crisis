@@ -399,9 +399,11 @@ This comparative study will provide insights into the strengths and limitations 
 
 
 > [!CAUTION]
-> The process in Power BI involved multiple intricate steps, leading to challenges in accurately clarifying the distribution and selecting the appropriate imputation method. Given these complexities, **it might be more straightforward _to perform this task in Python_, where the tools and methods for data analysis and imputation are simpler and more intuitive.**
+> The process in Power BI involved multiple intricate steps, leading to challenges in accurately clarifying the distribution and selecting the appropriate imputation method.
 
 
+> [!NOTE]
+> Given these complexities, **it might be more straightforward _to perform this task in Python_, where the tools and methods for data analysis and imputation are simpler and more intuitive.**
 
 
 ## Step 3:
