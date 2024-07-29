@@ -296,8 +296,9 @@ Power BI, Python
   *Null values were present only in the years between 2000 and 2006.*
     
   - **Nearly symmetrical Nature**: The close proximity of mean and median values across the years suggests that there is no significant skew.
-
-  - **Imputation Method:** The nearly symmetrical distribution supports the use of the **mean** for imputation. The consistency in the proximity of mean and median values over time indicates that the data has maintained a stable central tendency, making the mean a reliable measure for handling missing values.
+    
+  > [!IMPORTANT]
+  > - **Imputation Method:** The nearly symmetrical distribution supports the use of the **mean** for imputation. The consistency in the proximity of mean and median values over time indicates that the data has maintained a stable central tendency, making the mean a reliable measure for handling missing values.
 
   **2. Addressing the null values in the [MYS] fields.**
 
@@ -308,7 +309,9 @@ Power BI, Python
   - **Left-Skewed Nature for MYS 2000:** The mean is significantly lower than the median indicating a left-skewed distribution with a longer tail towards lower values.
 
   - **Nearly Symmetrical Nature for MYS 2009:** The mean is close to the median, suggesting a nearly symmetrical distribution with slight left skew.
-  - **Imputation Method:** Although the histogram for MYS 2009 shows a nearly symmetrical distribution, I will use the **median** for imputation because of the clear left skew in 2000. This ensures a consistent and robust approach across all MYS years columns.
+
+  > [!IMPORTANT]
+  > - **Imputation Method:** Although the histogram for MYS 2009 shows a nearly symmetrical distribution, I will use the **median** for imputation because of the clear left skew in 2000. This ensures a consistent and robust approach across all MYS years columns.
 
 **3. Addressing the null values in the [GNI_PC_F] fields.**
 
@@ -322,7 +325,8 @@ Power BI, Python
 
 - **Right-Skewed Nature for Female GNI per Capita 2020:** The mean is still higher than the median, reflecting a right-skewed distribution, and the distribution extends to even higher values up to 70K.
 
-- **Imputation Method:** Given the right skewness observed across all selected years, using the **median** for imputation is a suitable choice. The median is less influenced by high-value outliers, providing a more robust central tendency measure for handling missing values.
+> [!IMPORTANT]
+> - **Imputation Method:** Given the right skewness observed across all selected years, using the **median** for imputation is a suitable choice. The median is less influenced by high-value outliers, providing a more robust central tendency measure for handling missing values.
 
 
 **4. Addressing the null values in the [GNI_PC_M] fields.**
@@ -333,7 +337,9 @@ Power BI, Python
 
 - **Right- skewed distributions**: Across all selected years, the distributions of GNI per Capita demonstrate a right-skewed nature, with most countries having relatively low GNI per Capita values.
 - This consistent right skewness suggests that the **majority of countries fall below the mean** GNI per Capita, with only a few outliers having significantly higher values.
-- **Imputation Method:** Given the observed right-skewed distributions, using the median for imputation is a suitable choice.
+  
+> [!IMPORTANT]
+> - **Imputation Method:** Given the observed right-skewed distributions, using the **median** for imputation is a suitable choice.
 
 **5. Addressing the null values in the [GII] fields.**
 
@@ -346,8 +352,9 @@ Power BI, Python
 - **Left-Skewed Nature for GII 2005, 2015, and 2020:** The mean is lower than the median, indicating a left-skewed distribution with a longer tail towards lower values.
 
 - **Slightly Right-Skewed Distribution for GII 2010:** The mean is higher than the median, suggesting a slight right skew with a longer tail towards higher values.
-
-- **Imputation Method:** Given the varying skewness observed across different years for GII, using the **median** for imputation is a suitable choice
+  
+> [!IMPORTANT]
+> - **Imputation Method:** Given the varying skewness observed across different years for GII, using the **median** for imputation is a suitable choice
 
 **6. Addressing the null values in the [LFPR_F] fields.**
 
@@ -355,22 +362,29 @@ Power BI, Python
 
 *Null values were observed in the data for all years.*
 
-- **Nearly Symmetrical Distributions**: Symmetrical Distribution for Female LFPR: The mean is nearly equal to the median for the selected years 2000, 2005, 2010, and 2015, indicating a balanced spread of values. In 2020, the mean and median have a small difference, still suggesting a relatively balanced distribution.
-  
-- **Imputation Method**: Mean, as it is a reliable measure of central tendency for nearly symmetrical distributions.
+- **Nearly Symmetrical Distributions**:
+  1. 2000, 2005, 2010, and 2015: The mean is nearly equal to the median for the selected years , indicating a balanced spread of values.
+  2. 2020: The mean and median have a small difference, still suggesting a relatively balanced distribution.
+> [!IMPORTANT] 
+> - **Imputation Method**: Despite the nearly symmetrical distributions observed, the **median** is preferred for imputation.
 
-**7. Addressing the null values in the [LFPR_M] fields.** Given the nearly symmetrical distributions observed across all selected years, using the median for imputation is a suitable choice.
+**7. Addressing the null values in the [LFPR_M] fields.** 
 
 ![image](https://github.com/user-attachments/assets/ed8a0adc-ee70-4781-b98f-41a6048e4e1e)
 
-- **Nearly Symmetrical Distributions for 2000, 2005, and 2010**:
-    1. 2000: Mean and Median are nearly equal, indicating a clear normal distribution.
+- **Nearly Symmetrical Distributions for 2000, and 2005**:
+    1. 2000: Mean and Median are nearly equal, indicating a 
     2. 2005:  Fairly symmetrical.
-    3. 2010: Equal, indicating a perfectly symmetrical distribution.
+       
+- **Clear Normal Distribution**:
+   1. 2010: Mean and Median are equal, indicating a perfectly symmetrical distribution.
+
 - **Slight Left-Skewed Distributions for 2015 and 2020**.
-    1. 2015: Mean is slightly lower than the median, suggesting a near-normal distribution with a minor left skew.
-    2. 2020: Mean is slightly lower than the median, indicating a slight left skew.
- - **Imputation Method**: Given the nearly symmetrical distributions observed across all selected years, with some minor left skewness in the later years, using the median for imputation is a suitable choice. 
+    1. 2015: Mean is slightly higher than the median, suggesting a near-normal distribution with a minor left skew.
+    2. 2020: Mean is slightly higher than the median, indicating a slight right skew.
+       
+ > [!IMPORTANT]      
+ > - **Imputation Method**: Given the observed right skew in the distributions for 2015 and 2020, and considering that 2010 had a normal distribution, I will impute the null values with the **median**. Even though 2010 exhibited a normal distribution there could be variations in skewness across the remaining years in the dataset. 
  
  ## Step 3:
 
