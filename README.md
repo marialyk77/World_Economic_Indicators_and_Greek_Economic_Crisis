@@ -1,19 +1,31 @@
 ***
-## Table of Contents
+# Table of Contents
 
-- [World Economic Indicators](#World Economic Indicators)
-- [Research Questions](#Research Questions)
-- [Tools used](#Tools used)
-- [Dataset exploration ](#Dataset exploration)
-- [Cleaning](#Cleaning )
-- [License](#license)
-
+1. [World Economic Indicators](#world-economic-indicators)
+2. [Research Questions](#research-questions)
+3. [Tools Used](#tools-used)
+4. [Dataset Exploration](#dataset-exploration)
+   - [Human Development Index (HDI)](#human-development-index-hdi)
+   - [Development Indicators](#development-indicators)
+5. [Exploratory Data Analysis - HDI](#exploratory-data-analysis---hdi)
+   - [Errors & Data Completeness](#errors--data-completeness)
+   - [Data Consistency](#data-consistency)
+   - [Cleaning Process - HDI](#cleaning-process-hdi)
+   - [Addressing the null values](#Addressing-the-null-values)
+   - [HDI xxxx](#HDI-xxxx)
+   - [For the rest fields](#for-the-rest-fields)
+   - [Data Modeling & Transformations - HDI](#data-modeling-&-transformations-hdi)
+6. [Exploratory Data Analysis - Development Indicators](#exploratory-data-analysis-development-indicators)
+   - [Erros & Data Completness](erros-&-data-completness)
+   - [Data Consistency](data-consistency)
+   - [Cleaning Process - Development Indicators](cleaning-process-development-indicators)
+   - [Addressing the null values - Development Indicators](addressing-the-null-values-development-indicators)
 ***
 
-
-# World_Economic_Indicators
+# World Economic Indicators
 
 + The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
+  
 ## Research Questions: 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
 
@@ -29,6 +41,7 @@ Power BI, Python
 
 ## Dataset exploration 
 + The dataset contains 2 seperate Excel files :
+  
 **1. Human Development Index(HDI):**
    * **Column Num**: 1008,   **Row Num**: 206
      
@@ -100,9 +113,8 @@ Power BI, Python
      - Unemployment (% of total labor force) (modeled ILO estimate):  represents the percentage of the labor force that is unemployed but actively seeking work, as estimated by the International Labour Organization (ILO).
 
 
-## Cleaning 
+## Exploratory Data Analysis - HDI
 
-### HDI General Observations 
 > [!IMPORTANT]
 > **1.** The analysis is focused on the **21st century**. Any non related column was removed:
 
@@ -151,7 +163,7 @@ Power BI, Python
        
   C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
        
- ### HDI Cleaning Process
+ ### Cleaning Process - HDI
 
   #### Step 1:
 
@@ -191,7 +203,9 @@ Power BI, Python
 
    ## Step 2:
 
-   ### Addressing the null values in the [HDI] fields.
+   ### Addressing the null values.
+
+   #### HDI xxxx
 
    Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. Because, outliers can pull the mean towards them, making it less representative of the central tendency of the data. So, to proceed cautiously, I first had to check for outliers. But the distribution of the data will define first the method to use in order to detect outliers.
 
@@ -265,7 +279,8 @@ Power BI, Python
  
   **Imputation Method:** Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. However, since the data is left-skewed, the **median** is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
 
-  ### Approach to Imputing Null Values for the rest columns of the HDI dataset:
+
+   #### For the rest fields. 
 
   *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical. In addition, similar to the analysis performed for the HDI columns, the distribution analysis was also conducted for selected years.*
   
@@ -352,7 +367,7 @@ Power BI, Python
     2. 2020: Mean is slightly lower than the median, indicating a slight left skew.
  - **Imputation Method**: Given the nearly symmetrical distributions observed across all selected years, with some minor left skewness in the later years, using the median for imputation is a suitable choice. 
  
- #### Step 3:
+ #### Step 4:
 
  Imputation of nulls with the median. 
 
@@ -385,16 +400,14 @@ Power BI, Python
     ![image](https://github.com/user-attachments/assets/052eea37-b047-4d79-9a8d-21d61e03bb30)
 
     
- #### Step 3:
+ ## Data Modeling & Transformations - HDI
 
  HDI columns Unpivot and performed *extract after delimiter* to keep only the year. 
   
 ![image](https://github.com/user-attachments/assets/77e9cbf6-8e43-439d-8bc9-fdfd500429df)                    ![image](https://github.com/user-attachments/assets/344d9d7e-97bc-44f3-88d9-aba674b55f2a)
 
 
-## Cleaning 
-
-### Development Indicators General Observations
+## Exploratory Data Analysis - Development Indicators
    
 1. The analysis is focused on the **21st century**. Any non related column was removed. 
 
@@ -420,7 +433,7 @@ Power BI, Python
         However, please note that I was unable to fully validate the GDP per capita (USD) values because the dataset does not include a direct population column. GDP per capita is calculated as GDP divided by the total population, and without the population data, I could not verify the accuracy of this metric.
 
 
- ### Development Indicators Cleaning Process
+ ### Cleaning Process - Development Indicators 
 
   #### Step 1:
 
@@ -437,7 +450,7 @@ Power BI, Python
   
   #### Step 2:
 
-  ### Addressing the null values
+  ### Addressing the null values  
 
   ![image](https://github.com/user-attachments/assets/eb64624b-e2ee-4c9c-a53e-7a39c62118bc)
 
