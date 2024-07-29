@@ -372,9 +372,11 @@ Power BI, Python
     2. 2020: Mean is slightly lower than the median, indicating a slight left skew.
  - **Imputation Method**: Given the nearly symmetrical distributions observed across all selected years, with some minor left skewness in the later years, using the median for imputation is a suitable choice. 
  
- #### Step 4:
+ ## Step 3:
 
- Imputation of nulls with the median. 
+ ### Imputation of nulls.
+
+ #### HDI xxxx (median) 
 
  1. I replace the nulls with 0.
 
@@ -389,20 +391,18 @@ Power BI, Python
     ![image](https://github.com/user-attachments/assets/d53638a2-efb1-48c6-a84b-d486917be22d)
 
    
-    ![image](https://github.com/user-attachments/assets/fd8775ef-4540-4494-8fe4-e9daf69e6f81)
+    ![image](https://github.com/user-attachments/assets/35dd692a-1afa-48b5-a684-745b46c76c47)
 
- 
-    The **List.Transform** function helps in transforming each item in a list. The lambda function specifies what transformation should be applied — in this case, replacing 0 with the median value in the corresponding columns.
+ > [!TIP]
+ > _List.Transform:_
+   
+   This function is used to apply a transformation to each item in a list.
+ > [!TIP] 
+ > _Lambda Function:_
+   
+   A lambda function is an anonymous function often used for concise transformations or operations.
+   In the context of List.Transform, the lambda function is replacing any occurrence of 0 in the columns with the median value.
 
-    **Result**
-
-    1. Nulls before imputation:
-
-    ![image](https://github.com/user-attachments/assets/bd81aad1-65e5-4ee0-bff8-71ccb7b57262)
-
-    2. Nulls after imputation:
-
-    ![image](https://github.com/user-attachments/assets/052eea37-b047-4d79-9a8d-21d61e03bb30)
 
     
  ## Data Modeling & Transformations - HDI
