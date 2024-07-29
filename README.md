@@ -2,10 +2,10 @@
 
 # Table of Contents 
 
-- [Tools used ](##Tools used)
+- [Research Questions ](#Research Questions)
 
 + The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
-## Research Questions: 
+# Research Questions: 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
 
 2. Where regions saw the most growth in HDI in the 21st century?
@@ -14,9 +14,9 @@
 
 4. Which factors differentiate "High Income" vs "Low Income" Countries?
 
-## Tools used :
+# Tools used :
 
-Power BI 
+Power BI, Python 
 
 ## Dataset exploration 
 + The dataset contains 2 seperate Excel files :
