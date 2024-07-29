@@ -3,7 +3,7 @@
 
 1. [World Economic Indicators](#world-economic-indicators)
 2. [Research Questions](#research-questions)
-3. [Tools Used](#tools-used)
+3. [Tools used](#tools-used)
 4. [Dataset Exploration](#dataset-exploration)
    - [Human Development Index (HDI)](#human-development-index-hdi)
    - [Development Indicators](#development-indicators)
