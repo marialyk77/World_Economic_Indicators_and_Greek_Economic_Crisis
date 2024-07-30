@@ -116,10 +116,7 @@ This comparative study will provide insights into the strengths and limitations 
 
 ## Exploratory Data Analysis - HDI
 
-> [!IMPORTANT]
-> **1.** The analysis is focused on the **21st century**. Any non related column was removed:
-    
-**2.** **Erros & Data Completness**:
+**1.** **Erros & Data Completness**:
    + There were no errors.
    + There were Blanks and Nulls:
      * Blanks were found in the [hdicode] & [region]:
@@ -143,7 +140,7 @@ This comparative study will provide insights into the strengths and limitations 
            
       10. **IFPR_M** year columns only 4% for all years.
 
- **3.** **Data Consistency**:
+ **2.** **Data Consistency**:
      
   * **The [ISO 3]**: a column that is expected to contain the three-letter codes for countries as defined by the ISO 3166-1 standard. However, in the current column there included the HDI Groupings and Regional Groupings as well.
     
@@ -167,6 +164,21 @@ This comparative study will provide insights into the strengths and limitations 
  ### Cleaning Process - HDI
 
   #### Step 1:
+
+  > [!IMPORTANT]
+ > *The analysis is focused on the **21st century**. Any non related column was removed.
+ 
+ ⚔️ **Power Query vs Pandas** ⚔️
+
+  - 📊 Power Query: The process is very straightforward—simply uncheck the columns using the _Choose Columns_ functionality.
+
+    ![image](https://github.com/user-attachments/assets/5dbcc8f0-3e53-411f-8cbb-261cda410785)
+
+  - 🐍 Pandas: Quite Complicated!
+      - One method, which is at least known to me, involves using the drop command: df = df.drop(columns=["hdi_1990", "hdi_1991", "hdi_1992", "hdi_1993", "hdi_1994"]). However, listing all the column names manually can be quite tedious.
+      - Another approach is to generate the lists of columns to drop using list comprehensions, but this method also did not work as expected. While some columns were successfully removed, others remained. I checked for typographical errors and other inconsistencies, but the issue persisted.
+   
+    ![image](https://github.com/user-attachments/assets/5cc5355d-bcef-4400-8b78-650cee53e01b)
 
    * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. Taken that we have dedicated columns for the [hdi codes] and for [regional categories], I filtered out the corresponding rows from the [ISO 3].
 
