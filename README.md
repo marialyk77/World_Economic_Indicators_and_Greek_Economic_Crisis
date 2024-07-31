@@ -49,69 +49,69 @@ This comparative study will provide insights into the strengths and limitations 
 **1. Human Development Index(HDI):**
    * **Column Num**: 1008,   **Row Num**: 206
      
-     - Iso 3 : The three letter code representing the country.
-     - Country: The name of the country.
-     - hdicode: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
-     - Region: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. Regions listed in the [Region column]: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, and **South Asia**. _**Middle East and North Africa** is missing._
-     - hdi_rank_2021: represents the Human Development Index (HDI) rank for each country in the year 2021, with 1 being the highest rank  and 191 being the lowest.
-     - hdi_xxxx: refers to the Human Development Index (HDI) of a country for the specific year xxxx. HDI is a combined index that measures a country's average achievements in three basic aspects of human development: **health** (life expectancy at birth), **education** (mean years of schooling and expected years of schooling), and **standard of living** (gross national income per capita).
-     - le_xxxx: The country's longevity rate in year xxxx.
-     - eys_xxxx: The country's predicted years of schooling.
-     - mys_xxxx: The country's average years of education.
-     - gnipc_xxxx: The gross national income per person in dollars.
-     - gdi_group_2021: The per capita gross national income expressed in dollars.
-     - gdi_xxxx: Gender Development Measure in Year XXXX.
-     - hdi_f_xxxx: Female Human Development Index for Year XXXX.
-     - le_f_xxxx: Female Life Expectancy at Birth for Year XXXX.
-     - eys_f_xxxx:  Female Expected Years of Education in Year XXXX.
-     - mys_f_xxxx: Female Mean Years of Education in Year XXXX.
-     - gni_pc_f_xxxx:  Female Gross National Income per Capita for Year XXXX.
-     - hdi_m_xxxx: Male Human Development Index for Year XXXX.
-     - le_m_xxxx: Male Life Expectancy at Birth for Year XXXX.
-     - eys_m_xxxx: Male Expected Years of Schooling for Year XXXX.
-     - mys_m_xxxx: Average Years of Schooling for Males in XXXX.
-     - gni_pc_m_xxxx: Male Gross National Income per Capita in Year XXXX.
-     - ihdi_xxxx: Inequality-Adjusted Human Development Index for Year XXXX.
-     - coef_ineq_xxxx: Human Inequality Coefficient for Year XXXX.
-     - loss_xxxx: Percentage of Overall Loss in Year XXXX.
-     - ineq_le_xxxx:Inequality in Life Expectancy for Year XXXX.
-     - ineq_edu_xxxx: Inequality in Education for Year XXXX. 
-     - ineq_inc_xxxx: Income Inequality for Year XXXX. 
-     - gii_rank_2021: Gender Inequality Index Ranking for 2021. 
-     - gii_xxxx: Gender Inequality Index for Year xxxx. 
-     - mmr_xxxx: Maternal Mortality Rate for Year xxxx. 
-     - abr_xxxx: Adolescent Birth Rate (per 1,000 women aged 15-19) for Year xxxx. 
-     - se_f_xxxx: Female Population with Secondary Education (25+ years) in Year xxxx.
-     - se_m_xxxx: Male Population with Secondary Education (25+ years) in Year xxxx. 
-     - pr_f_xxxx: Share of Women in Parliament (% Seats) for Year xxxx. 
-     - pr_m_xxxx: Share of Men in Parliament (% Seats) for Year xxxx. 
-     - lfpr_f_xxxx: Female Labour Force Participation Rate (% ages 15 and older) in Year xxxx. 
-     - lfpr_m_xxxx: Male Labour Force Participation Rate (% ages 15 and older) in Year xxxx. 
-     - rankdiff_hdi_phdi_2021: Difference in HDI Ranking Compared to 2020. 
-     - phdi_xxxx: HDI Adjusted for Planetary Pressures (value) in Year xxxx.
-     - diff_hdi_phdi_xxxx: Difference (%) between HDI and Planetary Pressures-Adjusted HDI in Year xxxx. 
-     - co2_prod_xxxx: Carbon Dioxide Emissions per Capita (Production) in Year xxxx (tonnes). 
-     - mf_xxxx: Material Footprint per Capita in Year xxxx (tonnes). 
+     - **Iso 3** : The three letter code representing the country.
+     - **Country**: The name of the country.
+     - **hdicode**: refers to the HDI (Human Development Index) grouping code used by the United Nations Development Programme (UNDP) to categorize countries based on their HDI values. **Very High Human Development**, **High Human Development**, **Medium Human Development**, **Low Human Development**.
+     - **Region**: refers to the geographic or economic groupings used by the United Nations Development Programme (UNDP) to categorize countries based on their development characteristics. Regions listed in the [Region column]: **Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, and **South Asia**. _**Middle East and North Africa** is missing._
+     - **hdi_rank_2021**: represents the Human Development Index (HDI) rank for each country in the year 2021, with 1 being the highest rank  and 191 being the lowest.
+     - **hdi_xxxx**: refers to the Human Development Index (HDI) of a country for the specific year xxxx. _HDI is a combined index that measures a country's average achievements in three basic aspects of human development: **health** (life expectancy at birth), **education** (mean years of schooling and expected years of schooling), and **standard of living** (gross national income per capita)._
+     - **le_xxxx**: The country's longevity rate in year xxxx.
+     - **eys_xxxx**: The country's predicted years of schooling.
+     - **mys_xxxx**: The country's average years of education.
+     - **gnipc_xxxx**: The gross national income per person in dollars.
+     - **gdi_group_2021**: The per capita gross national income expressed in dollars.
+     - **gdi_xxxx**: Gender Development Measure in Year XXXX.
+     - **hdi_f_xxxx**: Female Human Development Index for Year XXXX.
+     - **le_f_xxxx**: Female Life Expectancy at Birth for Year XXXX.
+     - **eys_f_xxxx**:  Female Expected Years of Education in Year XXXX.
+     - **mys_f_xxxx**: Female Mean Years of Education in Year XXXX.
+     - **gni_pc_f_xxxx**:  Female Gross National Income per Capita for Year XXXX.
+     - **hdi_m_xxxx**: Male Human Development Index for Year XXXX.
+     - **le_m_xxxx**: Male Life Expectancy at Birth for Year XXXX.
+     - **eys_m_xxxx**: Male Expected Years of Schooling for Year XXXX.
+     - **mys_m_xxxx**: Average Years of Schooling for Males in XXXX.
+     - **gni_pc_m_xxxx**: Male Gross National Income per Capita in Year XXXX.
+     - **ihdi_xxxx**: Inequality-Adjusted Human Development Index for Year XXXX.
+     - **coef_ineq_xxxx**: Human Inequality Coefficient for Year XXXX.
+     - **loss_xxxx**: Percentage of Overall Loss in Year XXXX.
+     - **ineq_le_xxxx**:Inequality in Life Expectancy for Year XXXX.
+     - **ineq_edu_xxxx**: Inequality in Education for Year XXXX. 
+     - **ineq_inc_xxxx**: Income Inequality for Year XXXX. 
+     - **gii_rank_2021**: Gender Inequality Index Ranking for 2021. 
+     - **gii_xxxx**: Gender Inequality Index for Year xxxx. 
+     - **mmr_xxxx**: Maternal Mortality Rate for Year xxxx. 
+     - **abr_xxxx**: Adolescent Birth Rate (per 1,000 women aged 15-19) for Year xxxx. 
+     - **se_f_xxxx**: Female Population with Secondary Education (25+ years) in Year xxxx.
+     - **se_m_xxxx**: Male Population with Secondary Education (25+ years) in Year xxxx. 
+     - **pr_f_xxxx**: Share of Women in Parliament (% Seats) for Year xxxx. 
+     - **pr_m_xxxx**: Share of Men in Parliament (% Seats) for Year xxxx. 
+     - **lfpr_f_xxxx**: Female Labour Force Participation Rate (% ages 15 and older) in Year xxxx. 
+     - **lfpr_m_xxxx**: Male Labour Force Participation Rate (% ages 15 and older) in Year xxxx. 
+     - **rankdiff_hdi_phdi_2021**: Difference in HDI Ranking Compared to 2020. 
+     - **phdi_xxxx**: HDI Adjusted for Planetary Pressures (value) in Year xxxx.
+     - **diff_hdi_phdi_xxxx**: Difference (%) between HDI and Planetary Pressures-Adjusted HDI in Year xxxx. 
+     - **co2_prod_xxxx**: Carbon Dioxide Emissions per Capita (Production) in Year xxxx (tonnes). 
+     - **mf_xxxx**: Material Footprint per Capita in Year xxxx (tonnes). 
 
      
 **2. Development Indicators:**
    + **Column Num**: 15,  **Row Num**: 4009
 
-     - Country Name
-     - Country code: is a three-letter abbreviation that uniquely identifies a country. 
-     - Region: refers to the specific geographic or economic grouping assigned to a country by the World Bank. (**Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, **Middle East and North Africa**, and **South Asia**.)
-     - Income Group: refers to the classification assigned by the World Bank that categorizes countries based on their gross national income (GNI) per capita. **Low Income** (GNI per capita of $1,085 or less), **Lower-Middle Income** (GNI per capita between $1,086 and $4,255), **Upper-Middle Income** (GNI per capita between $4,256 and $13,205), **High Income** (GNI per capita of $13,206 or more).
-     - Year: The Year in which the statistics were recorded.
-     - Birth rate, crude (per 1,000 people): measures the number of live births per 1,000 individuals in the population within a year, without adjusting for age or sex distribution.
-     - Death rate, crude (per 1,000 people): measures the number of deaths per 1,000 individuals in the population within a year, without adjusting for age or sex distribution.
-     - Electric power consumption (kWh per capita): measures the average amount of electrical energy consumed per person in a country over the course of a year, expressed in kilowatt-hours.
-     - GDP (USD): refers to the total market value of all goods and services produced within a country in a year, expressed in US dollars.
-     - GDP per capita (USD): measures the average economic output per person in a country, calculated by dividing the total Gross Domestic Product (GDP) by the population, and expressed in US dollars.
-     - Individuals using the Internet (% of population):  refers to the percentage of people in a country who have accessed the internet in a given year.
-     - Infant mortality rate (per 1,000 live births): measures the number of infants who die before reaching one year of age per 1,000 live births in a given year.
-     - Life expectancy at birth (years): is the average number of years a newborn is expected to live if current mortality rates at the time of birth remain constant throughout their life.
-     - Population density (people per sq. km of land area):  measures the number of people living per square kilometer of land area in a country.
-     - Unemployment (% of total labor force) (modeled ILO estimate):  represents the percentage of the labor force that is unemployed but actively seeking work, as estimated by the International Labour Organization (ILO).
+     - **Country Name**
+     - **Country code**: is a three-letter abbreviation that uniquely identifies a country. 
+     - **Region**: refers to the specific geographic or economic grouping assigned to a country by the World Bank. (**Sub-Saharan Africa**, **East Asia and Pacific**, **Europe and Central Asia**, **Latin America and the Caribbean**, **Middle East and North Africa**, and **South Asia**.)
+     - **Income Group**: refers to the classification assigned by the World Bank that categorizes countries based on their gross national income (GNI) per capita. **Low Income** (GNI per capita of $1,085 or less), **Lower-Middle Income** (GNI per capita between $1,086 and $4,255), **Upper-Middle Income** (GNI per capita between $4,256 and $13,205), **High Income** (GNI per capita of $13,206 or more).
+     - **Year**: The Year in which the statistics were recorded.
+     - **Birth rate, crude (per 1,000 people)**: measures the number of live births per 1,000 individuals in the population within a year, without adjusting for age or sex distribution.
+     - **Death rate, crude (per 1,000 people)**: measures the number of deaths per 1,000 individuals in the population within a year, without adjusting for age or sex distribution.
+     - **Electric power consumption (kWh per capita)**: measures the average amount of electrical energy consumed per person in a country over the course of a year, expressed in kilowatt-hours.
+     - **GDP (USD)**: refers to the total market value of all goods and services produced within a country in a year, expressed in US dollars.
+     - **GDP per capita (USD)**: measures the average economic output per person in a country, calculated by dividing the total Gross Domestic Product (GDP) by the population, and expressed in US dollars.
+     - **Individuals using the Internet (% of population)**:  refers to the percentage of people in a country who have accessed the internet in a given year.
+     - **Infant mortality rate (per 1,000 live births)**: measures the number of infants who die before reaching one year of age per 1,000 live births in a given year.
+     - **Life expectancy at birth (years)**: is the average number of years a newborn is expected to live if current mortality rates at the time of birth remain constant throughout their life.
+     - **Population density (people per sq. km of land area)**:  measures the number of people living per square kilometer of land area in a country.
+     - **Unemployment (% of total labor force) (modeled ILO estimate)**:  represents the percentage of the labor force that is unemployed but actively seeking work, as estimated by the International Labour Organization (ILO).
 
 
 ## Exploratory Data Analysis - HDI
@@ -182,7 +182,9 @@ This comparative study will provide insights into the strengths and limitations 
 
    * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. Taken that we have dedicated columns for the [hdi codes] and for [regional categories], I filtered out the corresponding rows from the [ISO 3].
 
-   * The **[country]**: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
+   * The **[country]**: The column contained the full names of regional groupings, which were filtered out. Additionally, some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran" to standardize names and ensure uniformity across the dataset.
+     
+     ![image](https://github.com/user-attachments/assets/1dea6e6e-1259-405c-aaf6-4147aaab379e)
 
    * The **[hdicode]** column contained a total of 15 blank rows. To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
 
