@@ -172,37 +172,49 @@ This comparative study will provide insights into the strengths and limitations 
 
   📊 **Power Query**: The process is very straightforward—simply uncheck the columns using the _Choose Columns_ functionality.
 
- ![image](https://github.com/user-attachments/assets/5dbcc8f0-3e53-411f-8cbb-261cda410785)
+  ![image](https://github.com/user-attachments/assets/5dbcc8f0-3e53-411f-8cbb-261cda410785)
 
   🐍 **Pandas**: Quite Complicated!
       - One method, which is at least known to me, involves using the drop command: df = df.drop(columns=["hdi_1990", "hdi_1991", "hdi_1992", "hdi_1993", "hdi_1994"]). However, listing all the column names manually can be quite tedious.
       - Another approach is to generate the lists of columns to drop using list comprehensions, but this method also did not work as expected. While some columns were successfully removed, others remained. I checked for typographical errors and other inconsistencies, but the issue persisted.
    
-![image](https://github.com/user-attachments/assets/dc5adebd-3f8f-4708-acc5-cc7217e40fa6)
+ ![image](https://github.com/user-attachments/assets/dc5adebd-3f8f-4708-acc5-cc7217e40fa6)
 
    * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. I filtered out the corresponding rows from the [ISO 3].
 
-     ### ⚔️ **Power Query vs Pandas** ⚔️
+#### ⚔️ **Power Query vs Pandas** ⚔️
 
-     📊 **Power Query**: Straightforward process by unselecting the rows to be filtered out. 
+   📊 **Power Query**: Straightforward process by unselecting the rows to be filtered out. 
 
-     🐍 **Pandas**: Simple and efficient with a few lines of code.
+   🐍 **Pandas**: Simple and efficient with a few lines of code.
 
    ![image](https://github.com/user-attachments/assets/44a8b14c-7024-43f0-8202-d6a966b8d8db)
 
    * The **[country]**: The column contained the full names of regional groupings, which were filtered out. Additionally, some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran" to standardize names and ensure uniformity across the dataset.
-     
-     ![image](https://github.com/user-attachments/assets/1dea6e6e-1259-405c-aaf6-4147aaab379e)
+
+#### ⚔️ **Power Query vs Pandas** ⚔️
+
+   📊 **Power Query**: Simplification of country names was an easy process using the _replace_ functionality. 
+
+   🐍 **Pandas**: The process involves creating _a dictionary with original and simplified names_, then using the _replace_ method. 
+
+![image](https://github.com/user-attachments/assets/d589768b-6293-4add-b4d9-012ea10d2453)
 
    * The **[hdicode]** column contained a total of 15 blank rows. To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
 
-![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
+   ![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
+
+#### ⚔️ **Power Query vs Pandas** ⚔️
+
+ 📊 **Power Query**: The process of handling NaN and replacing categories is straightforward with user-friendly interfaces for _replacing_ values and handling nulls. 
+
+ 🐍 **Pandas**: While more code is required, Pandas offers flexibility and powerful functions like _fillna_ and _replace_ to efficiently handle such data transformations programmatically
 
    * The **[region]** column contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I **filled the blanks with the appropriate region.**
    
    **1.** I first created a new conditional column called [Region_filled], listing only the countries whose region was missing from the original [region] column:
       
- ![image](https://github.com/user-attachments/assets/af53f8e4-4781-406e-92c6-c24ce333ad1d)
+  ![image](https://github.com/user-attachments/assets/af53f8e4-4781-406e-92c6-c24ce333ad1d)
 
    **2.**  Then I used this conditional column to fill the blanks of the original region column: 
 
@@ -466,12 +478,6 @@ This comparative study will provide insights into the strengths and limitations 
 > [!NOTE]
 > The solution involves two main steps: A. Determine the median value for each individual column across all rows. B. For each column, replace the zero values with the corresponding median.
 **Given the complexity, it might be more straightforward _to perform this task in Python_.**
- 
-
- 
-
-
-
 
 
 ## Exploratory Data Analysis - Development Indicators
