@@ -161,26 +161,34 @@ This comparative study will provide insights into the strengths and limitations 
        
   C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
        
- ### Cleaning Process - HDI
+ ## Cleaning Process - HDI
 
-  #### Step 1:
+  ### Step 1:
 
   > [!IMPORTANT]
  > * The analysis is focused on the **21st century**. Any non related column was removed.
  
- ⚔️ **Power Query vs Pandas** ⚔️
+ ### ⚔️ **Power Query vs Pandas** ⚔️
 
-  📊 Power Query: The process is very straightforward—simply uncheck the columns using the _Choose Columns_ functionality.
+  📊 **Power Query**: The process is very straightforward—simply uncheck the columns using the _Choose Columns_ functionality.
 
  ![image](https://github.com/user-attachments/assets/5dbcc8f0-3e53-411f-8cbb-261cda410785)
 
-  🐍 Pandas: Quite Complicated!
+  🐍 **Pandas**: Quite Complicated!
       - One method, which is at least known to me, involves using the drop command: df = df.drop(columns=["hdi_1990", "hdi_1991", "hdi_1992", "hdi_1993", "hdi_1994"]). However, listing all the column names manually can be quite tedious.
       - Another approach is to generate the lists of columns to drop using list comprehensions, but this method also did not work as expected. While some columns were successfully removed, others remained. I checked for typographical errors and other inconsistencies, but the issue persisted.
    
 ![image](https://github.com/user-attachments/assets/dc5adebd-3f8f-4708-acc5-cc7217e40fa6)
 
-   * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. Taken that we have dedicated columns for the [hdi codes] and for [regional categories], I filtered out the corresponding rows from the [ISO 3].
+   * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. I filtered out the corresponding rows from the [ISO 3].
+
+     ### ⚔️ **Power Query vs Pandas** ⚔️
+
+     📊 **Power Query**: Straightforward process by unselecting the rows to be filtered out. 
+
+     🐍 **Pandas**: Simple and efficient with a few lines of code.
+
+   ![image](https://github.com/user-attachments/assets/44a8b14c-7024-43f0-8202-d6a966b8d8db)
 
    * The **[country]**: The column contained the full names of regional groupings, which were filtered out. Additionally, some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran" to standardize names and ensure uniformity across the dataset.
      
