@@ -164,9 +164,10 @@ This comparative study will provide insights into the strengths and limitations 
  ## Cleaning Process - HDI
 
   ### Step 1:
-
+***
   > [!IMPORTANT]
  > * The analysis is focused on the **21st century**. Any non related column was removed.
+***
  
  ### ⚔️ **Power Query vs Pandas** ⚔️
 
@@ -180,7 +181,9 @@ This comparative study will provide insights into the strengths and limitations 
    
  ![image](https://github.com/user-attachments/assets/dc5adebd-3f8f-4708-acc5-cc7217e40fa6)
 
+***
    * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. I filtered out the corresponding rows from the [ISO 3].
+***
 
 #### ⚔️ **Power Query vs Pandas** ⚔️
 
@@ -190,7 +193,9 @@ This comparative study will provide insights into the strengths and limitations 
 
    ![image](https://github.com/user-attachments/assets/44a8b14c-7024-43f0-8202-d6a966b8d8db)
 
+***
    * The **[country]**: The column contained the full names of regional groupings, which were filtered out. Additionally, some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran" to standardize names and ensure uniformity across the dataset.
+***
 
 #### ⚔️ **Power Query vs Pandas** ⚔️
 
@@ -200,8 +205,9 @@ This comparative study will provide insights into the strengths and limitations 
 
 ![image](https://github.com/user-attachments/assets/d589768b-6293-4add-b4d9-012ea10d2453)
 
+***
    * The **[hdicode]** column contained a total of 15 blank rows. To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
-
+***
    ![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
 
 #### ⚔️ **Power Query vs Pandas** ⚔️
@@ -210,8 +216,12 @@ This comparative study will provide insights into the strengths and limitations 
 
  🐍 **Pandas**: While more code is required, Pandas offers flexibility and powerful functions like _fillna_ and _replace_ to efficiently handle such data transformations programmatically
 
+***
    * The **[region]** column contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I **filled the blanks with the appropriate region.**
-   
+***
+
+   📊 **Implementation with Power Query**:
+
    **1.** I first created a new conditional column called [Region_filled], listing only the countries whose region was missing from the original [region] column:
       
   ![image](https://github.com/user-attachments/assets/af53f8e4-4781-406e-92c6-c24ce333ad1d)
@@ -224,7 +234,15 @@ This comparative study will provide insights into the strengths and limitations 
 
    ![image](https://github.com/user-attachments/assets/ed0833aa-6a0f-4249-9fee-ff795750c4f4)
 
-   **4.** The next challenge with the updated [Region_NO Blanks] is the incorrect assignment of certain countries to wrong regions and the absence of the **Middle East & North Africa (MENA)** region. 
+   🐍 **Implementation with Pandas**:
+
+![image](https://github.com/user-attachments/assets/d1b8d94c-a5ed-4afd-9229-b4d8b2def8b5)
+
+***
+   **4.** The next challenge with the updated [Region_NO Blanks] is the incorrect assignment of certain countries to wrong regions and the absence of the **Middle East & North Africa (MENA)** region.
+***
+
+   📊 **Implementation with Power Query**:
 
   - To address the issue of incorrect regional assignments for some countries, we created a new query with the correct region information, merged this with the main dataset, expanded the merged column to include the correct regions, and used a conditional formula to update the regions based on the mapping table.
 
@@ -235,6 +253,19 @@ This comparative study will provide insights into the strengths and limitations 
  * **Conclusion**: both the [hdicode] and [region] columns comply with the rules of consistency and readability.
 
   ![image](https://github.com/user-attachments/assets/75f2c276-a113-4050-8b1a-0c31c2fcd69a)
+  
+ 🐍 **Implementation with Pandas**: 
+
+![image](https://github.com/user-attachments/assets/a4c3aec5-ca3b-40d7-a180-0941e5432f11)
+
+
+ #### ⚔️ **Power Query vs Pandas** ⚔️
+
+📊 **Power BI**: Created and used a conditional column to identify and fill missing region values. And Merged datasets and used conditional formulas to correct regions.
+
+🐍 **Pandas**: Used list-based assignment to identify MENA countries and directly updated the region column. And Used a dictionary-based mapping to update incorrect regions.
+
+
 
    ## Step 2:
 
