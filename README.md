@@ -176,10 +176,9 @@ This comparative study will provide insights into the strengths and limitations 
   ![image](https://github.com/user-attachments/assets/5dbcc8f0-3e53-411f-8cbb-261cda410785)
 
   🐍 **Pandas**:  The process is also simple by creating a list of columns to keep. 
-     
-     
 
-
+  ![image](https://github.com/user-attachments/assets/eb3dfcc0-0f33-4aef-a4ea-a3cd326a5b71)
+   
 ***
    * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. I filtered out the corresponding rows from the [ISO 3].
 ***
