@@ -161,9 +161,8 @@ This comparative study will provide insights into the strengths and limitations 
        
   C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
        
- ## Cleaning Process - HDI
+ ## Cleaning Process - HDI dataset
 
-  ### Step 1:
 ***
   > [!IMPORTANT]
  > * The analysis is focused on the **21st century**. Any non related column was removed.
@@ -256,11 +255,9 @@ This comparative study will provide insights into the strengths and limitations 
 
 
 
-   ## Step 2:
-
-   ### Addressing the null values in the HDI dataset.
-
-   #### For HDI xxxx
+   ## Addressing the null values in the HDI dataset.
+   
+   #### For HDI xxxx Columns 
 
    ##### 📊 Implementation with Power Query:
 
