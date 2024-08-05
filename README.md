@@ -161,7 +161,7 @@ This comparative study will provide insights into the strengths and limitations 
        
   C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
        
- ## Cleaning Process - HDI dataset
+ ## Cleaning Process with Power BI and Python - HDI dataset
 
 ***
   > [!IMPORTANT]
