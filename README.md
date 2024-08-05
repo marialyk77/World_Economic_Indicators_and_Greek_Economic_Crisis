@@ -443,10 +443,9 @@ This comparative study will provide insights into the strengths and limitations 
  > - **Imputation Method**: Given the observed right skew in the distributions for 2015 and 2020, and considering that 2010 had a normal distribution, I will impute the null values with the **median**. Even though 2010 exhibited a normal distribution there could be variations in skewness across the remaining years in the dataset. 
  
 
-
- 🐍 **Implementation with Python**:
-
-The process of checking the distribution, calculating the skewness and imputating the nulls is by far easier with Python. As you can apply a script which automates the process for all your collumns and you do not have to repeat the same step for multiple columns. 
+ ##### 🐍 Implementation with Python:
+ 
+The process of checking the distribution, calculating the skewness and imputating the nulls is **by far easier with Python**. As you can apply a script which automates the process for all your collumns and you do not have to repeat the same step for multiple columns. 
 
 My script in Python is: 
 
