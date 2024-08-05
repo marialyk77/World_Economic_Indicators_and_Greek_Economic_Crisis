@@ -168,8 +168,6 @@ This comparative study will provide insights into the strengths and limitations 
   > [!IMPORTANT]
  > * The analysis is focused on the **21st century**. Any non related column was removed.
 ***
- 
- ### ⚔️ **Power Query vs Pandas** ⚔️
 
   📊 **Power Query**: The process is very straightforward—simply uncheck the columns using the _Choose Columns_ functionality.
 
@@ -183,8 +181,6 @@ This comparative study will provide insights into the strengths and limitations 
    * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. I filtered out the corresponding rows from the [ISO 3].
 ***
 
-#### ⚔️ **Power Query vs Pandas** ⚔️
-
    📊 **Power Query**: Straightforward process by unselecting the rows to be filtered out. 
 
    🐍 **Pandas**: Simple and efficient with a few lines of code.
@@ -194,8 +190,6 @@ This comparative study will provide insights into the strengths and limitations 
 ***
    * The **[country]**: The column contained the full names of regional groupings, which were filtered out. Additionally, some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran" to standardize names and ensure uniformity across the dataset.
 ***
-
-#### ⚔️ **Power Query vs Pandas** ⚔️
 
    📊 **Power Query**: Simplification of country names was an easy process using the _replace_ functionality. 
 
@@ -208,7 +202,6 @@ This comparative study will provide insights into the strengths and limitations 
 ***
    ![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
 
-#### ⚔️ **Power Query vs Pandas** ⚔️
 
  📊 **Power Query**: The process of handling NaN and replacing categories is straightforward with user-friendly interfaces for _replacing_ values and handling nulls. 
 
@@ -256,8 +249,6 @@ This comparative study will provide insights into the strengths and limitations 
 
 ![image](https://github.com/user-attachments/assets/a4c3aec5-ca3b-40d7-a180-0941e5432f11)
 
-
- #### ⚔️ **Power Query vs Pandas** ⚔️
 
 📊 **Power BI**: Created and used a conditional column to identify and fill missing region values. And Merged datasets and used conditional formulas to correct regions.
 
