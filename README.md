@@ -262,7 +262,7 @@ This comparative study will provide insights into the strengths and limitations 
 
    #### For HDI xxxx
 
-   📊 **Implementation with Power Query**:
+   ##### 📊 Implementation with Power Query:
 
    Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. Because, outliers can pull the mean towards them, making it less representative of the central tendency of the data. So, to proceed cautiously, I first had to check for outliers. But the distribution of the data will define first the method to use in order to detect outliers.
 
