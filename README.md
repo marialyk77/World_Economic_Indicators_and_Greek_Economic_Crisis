@@ -257,7 +257,7 @@ This comparative study will provide insights into the strengths and limitations 
 
    ## Addressing the null values - HDI dataset.
    
-   #### For HDI xxxx Columns 
+   #### A. HDI xxxx Fields 
 
    ##### 📊 Implementation with Power Query:
 
@@ -336,8 +336,8 @@ This comparative study will provide insights into the strengths and limitations 
  > **Imputation Method:** Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. Here we do not have outliers but the data is left-skewed. The **median** is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
 
 
-   #### For the rest fields of the HDI dataset. 
-
+   #### B. Rest Fields 
+   
   *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical. In addition, similar to the analysis performed for the HDI columns, the distribution analysis was also conducted for selected years.*
   
   **1. Addressing the null values in the [EYS] fields.**
