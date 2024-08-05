@@ -460,7 +460,8 @@ _import seaborn as sns_
 _from scipy.stats import skew_
 
  **Identify columns with null values**
-null_columns = df.columns[df.isnull().any()]
+ 
+_null_columns = df.columns[df.isnull().any()]_
 
 **Function to check distribution and calculate skewness**
 
@@ -520,30 +521,32 @@ _return_
     
 _if abs(skewness) < 0.5:_
 
-   - Use mean if the distribution is approximately symmetrical
-        imputation_value = df[column].mean()
-    else:
-   - Use median if the distribution is skewed
-        //imputation_value = df[column].median()
-    df[column].fillna(imputation_value, inplace=True)
-    print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')
+_Use mean if the distribution is approximately symmetrical
+        imputation_value = df[column].mean()_
+_else:_
+_Use median if the distribution is skewed_
+_imputation_value = df[column].median()_
+_df[column].fillna(imputation_value, inplace=True)_
+_print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')_
 
 # Apply imputation to each column with null values
-for column in null_columns:
-    impute_nulls(column)
+
+_for column in null_columns:
+    impute_nulls(column)_
 
 # Verify there are no more null values
-print(df.isnull().sum())
+
+_print(df.isnull().sum())_
 
 # Function to plot histogram of a specific column and show skewness
-def plot_histogram(column):
-    print(f"Processing column: {column}")
-    print(f"Data type: {df[column].dtype}")
-    print(f"Number of non-null values: {df[column].notnull().sum()}")
+_def plot_histogram(column):
+print(f"Processing column: {column}")
+print(f"Data type: {df[column].dtype}")
+print(f"Number of non-null values: {df[column].notnull().sum()}")_
     
-    if df[column].dtype not in ['int64', 'float64']:
-        print(f"Skipping non-numeric column: {column}")
-        return
+_if df[column].dtype not in ['int64', 'float64']:
+ print(f"Skipping non-numeric column: {column}")
+ return_
     
     # Plot histogram if there are non-null values
     if df[column].notnull().sum() > 0:
