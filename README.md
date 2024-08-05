@@ -114,7 +114,7 @@ This comparative study will provide insights into the strengths and limitations 
      - **Unemployment (% of total labor force) (modeled ILO estimate)**:  represents the percentage of the labor force that is unemployed but actively seeking work, as estimated by the International Labour Organization (ILO).
 
 
-## Exploratory Data Analysis - HDI
+## Exploratory Data Analysis - HDI dataset 
 
 **1.** **Erros & Data Completness**:
    + There were no errors.
