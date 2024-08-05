@@ -255,7 +255,7 @@ This comparative study will provide insights into the strengths and limitations 
 
 
 
-   ## Addressing the null values in the HDI dataset.
+   ## Addressing the null values - HDI dataset.
    
    #### For HDI xxxx Columns 
 
