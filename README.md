@@ -258,9 +258,11 @@ This comparative study will provide insights into the strengths and limitations 
 
    ## Step 2:
 
-   ### Addressing the null values.
+   ### Addressing the null values in the HDI dataset.
 
-   #### HDI xxxx
+   #### For HDI xxxx
+
+   📊 **Implementation with Power Query**:
 
    Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. Because, outliers can pull the mean towards them, making it less representative of the central tendency of the data. So, to proceed cautiously, I first had to check for outliers. But the distribution of the data will define first the method to use in order to detect outliers.
 
@@ -337,7 +339,7 @@ This comparative study will provide insights into the strengths and limitations 
  > **Imputation Method:** Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. Here we do not have outliers but the data is left-skewed. The **median** is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
 
 
-   #### For the rest fields. 
+   #### For the rest fields of the HDI dataset. 
 
   *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical. In addition, similar to the analysis performed for the HDI columns, the distribution analysis was also conducted for selected years.*
   
@@ -444,6 +446,139 @@ This comparative study will provide insights into the strengths and limitations 
  > - **Imputation Method**: Given the observed right skew in the distributions for 2015 and 2020, and considering that 2010 had a normal distribution, I will impute the null values with the **median**. Even though 2010 exhibited a normal distribution there could be variations in skewness across the remaining years in the dataset. 
  
 
+
+ 🐍 **Implementation with Python**:
+
+The process of checking the distribution, calculating the skewness and imputating the nulls is by far easier with Python. As you can apply a script which automates the process for all your collumns and you do not have to repeat the same step for multiple columns. 
+
+My script in Python is: 
+
+***
+_import pandas as pd_ 
+
+_import matplotlib.pyplot as plt_
+
+_import seaborn as sns_
+
+_from scipy.stats import skew_
+
+ **Identify columns with null values**
+null_columns = df.columns[df.isnull().any()]
+
+**Function to check distribution and calculate skewness**
+
+_def check_distribution(column):_
+
+_print(f"Processing column: {column}")_
+    
+_print(f"Data type: {df[column].dtype}")_
+    
+_print(f"Number of non-null values: {df[column].notnull().sum()}")_
+    
+_if df[column].dtype not in ['int64', 'float64']:_
+
+_print(f"Skipping non-numeric column: {column}")_
+
+_return None_
+    
+**Plot histogram if there are non-null values**
+
+_if df[column].notnull().sum() > 0:_
+    
+_plt.figure(figsize=(5, 3))_
+        
+_df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')_
+        
+_plt.title(f'Distribution of {column}')_
+        
+_plt.xlabel(column)_
+        
+_plt.ylabel('Frequency')_
+        
+_plt.show()_
+
+**Calculate skewness**
+
+_skewness = skew(df[column].dropna())_
+        
+_print(f'Skewness of {column}: {skewness}')_
+        
+_return skewness_
+    
+_else:_
+    
+_print(f"No non-null values to plot for column: {column}")_
+        
+_return None_
+
+**Function to impute nulls based on skewness**
+
+_def impute_nulls(column):_
+
+_skewness = check_distribution(column)_
+
+_if skewness is None:_
+
+_return_
+    
+_if abs(skewness) < 0.5:_
+
+   - Use mean if the distribution is approximately symmetrical
+        imputation_value = df[column].mean()
+    else:
+   - Use median if the distribution is skewed
+        //imputation_value = df[column].median()
+    df[column].fillna(imputation_value, inplace=True)
+    print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')
+
+# Apply imputation to each column with null values
+for column in null_columns:
+    impute_nulls(column)
+
+# Verify there are no more null values
+print(df.isnull().sum())
+
+# Function to plot histogram of a specific column and show skewness
+def plot_histogram(column):
+    print(f"Processing column: {column}")
+    print(f"Data type: {df[column].dtype}")
+    print(f"Number of non-null values: {df[column].notnull().sum()}")
+    
+    if df[column].dtype not in ['int64', 'float64']:
+        print(f"Skipping non-numeric column: {column}")
+        return
+    
+    # Plot histogram if there are non-null values
+    if df[column].notnull().sum() > 0:
+        plt.figure(figsize=(5, 3))
+        ax = df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
+        plt.title(f'Distribution of {column}')
+        plt.xlabel(column)
+        plt.ylabel('Frequency')
+        
+        # Calculate skewness
+        skewness = skew(df[column].dropna())
+        
+        
+         # Adjust text annotation placement
+        plt.text(
+            x=0.98, y=0.95,  # Position relative to the axes (0 to 1)
+            s=f'Skewness: {skewness:.2f}', 
+            ha='right', va='top', 
+            transform=ax.transAxes,  # Use axis coordinates
+            fontsize=9, color='black',
+            bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
+        )//
+        
+        
+# Example of calling the function for a specific column
+plot_histogram('hdi_2005')  # Replace 'hdi_2000' with your specific column name
+***
+
+
+
+
+ 
 ### Power BI vs Python
 
 > [!CAUTION]
