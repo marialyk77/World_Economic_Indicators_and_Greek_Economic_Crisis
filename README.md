@@ -565,7 +565,7 @@ My script in Python is:
 
 
  
-# Conclusions on Power BI vs Python: Checking Distribution & Imputing Nulls.
+# Conclusions on: Power BI vs Python - Checking Distribution & Imputing Nulls.
 
 > [!NOTE]
 > I explored imputation methods for handling missing values using Power BI and Python. While both approaches aimed to address null values effectively, **the Python method demonstrated clear advantages in automation, consistency, and efficiency.**
