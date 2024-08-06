@@ -446,133 +446,116 @@ This comparative study will provide insights into the strengths and limitations 
 
  ### 🐍 Implementation with Python:
  
-The process of checking the distribution, calculating the skewness and imputating the nulls is **by far easier with Python**. As you can apply a script which automates the process for all your collumns and you do not have to repeat the same step for multiple columns. 
+The process of checking the distribution, calculating the skewness and imputating the nulls is **by far easier with Python**. As you can apply a script which automates the process and you do not have to repeat the same step for multiple columns. 
 
 My script in Python is: 
 
 ***
-_import pandas as pd_ 
-
-_import matplotlib.pyplot as plt_
-
-_import seaborn as sns_
-
-_from scipy.stats import skew_
+       import pandas as pd
+      
+       import matplotlib.pyplot as plt
+      
+       import seaborn as sns
+      
+       from scipy.stats import skew
 
  **Identify columns with null values**
  
-_null_columns = df.columns[df.isnull().any()]_
+       null_columns = df.columns[df.isnull().any()]
 
 **Function to check distribution and calculate skewness**
 
-_def check_distribution(column):_
-
-_print(f"Processing column: {column}")_
+    def check_distribution(column):
+       print(f"Processing column: {column}")
+       print(f"Data type: {df[column].dtype}")
+       print(f"Number of non-null values: {df[column].notnull().sum()}")
     
-_print(f"Data type: {df[column].dtype}")_
-    
-_print(f"Number of non-null values: {df[column].notnull().sum()}")_
-    
-_if df[column].dtype not in ['int64', 'float64']:_
-
-_print(f"Skipping non-numeric column: {column}")_
-
-_return None_
+    if df[column].dtype not in ['int64', 'float64']:
+        print(f"Skipping non-numeric column: {column}")
+        return None
     
 **Plot histogram if there are non-null values**
 
-_if df[column].notnull().sum() > 0:_
-    
-_plt.figure(figsize=(5, 3))_
-        
-_df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')_
-        
-_plt.title(f'Distribution of {column}')_
-        
-_plt.xlabel(column)_
-        
-_plt.ylabel('Frequency')_
-        
-_plt.show()_
+    if df[column].notnull().sum() > 0:
+        plt.figure(figsize=(5, 3))
+        df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
+        plt.title(f'Distribution of {column}')
+        plt.xlabel(column)
+        plt.ylabel('Frequency')
+        plt.show()
 
 **Calculate skewness**
 
-_skewness = skew(df[column].dropna())_
-        
-_print(f'Skewness of {column}: {skewness}')_
-        
-_return skewness_
-    
-_else:_
-    
-_print(f"No non-null values to plot for column: {column}")_
-        
-_return None_
+        skewness = skew(df[column].dropna())
+        print(f'Skewness of {column}: {skewness}')
+        return skewness
+    else:
+        print(f"No non-null values to plot for column: {column}")
+        return None
 
 **Function to impute nulls based on skewness**
 
-_def impute_nulls(column):_
+      def impute_nulls(column):
+          skewness = check_distribution(column)
+          if skewness is None:
+              return
+          
+          if abs(skewness) < 0.5:
+              # Use mean if the distribution is approximately symmetrical
+              imputation_value = df[column].mean()
+          else:
+              # Use median if the distribution is skewed
+              imputation_value = df[column].median()
+          df[column].fillna(imputation_value, inplace=True)
+          print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}
 
-_skewness = check_distribution(column)_
+**Apply imputation to each column with null values**
 
-_if skewness is None:_
+      for column in null_columns:
+          impute_nulls(column)
 
-_return_
-    
-_if abs(skewness) < 0.5:_
+**Verify there are no more null values**
 
-_Use mean if the distribution is approximately symmetrical
-        imputation_value = df[column].mean()_
-_else:_
-_Use median if the distribution is skewed_
-_imputation_value = df[column].median()_
-_df[column].fillna(imputation_value, inplace=True)_
-_print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')_
+      print(df.isnull().sum())
 
-# Apply imputation to each column with null values
+**Function to plot histogram of a specific column and show skewness**
 
-_for column in null_columns:
-    impute_nulls(column)_
+      def plot_histogram(column):
+          print(f"Processing column: {column}")
+          print(f"Data type: {df[column].dtype}")
+          print(f"Number of non-null values: {df[column].notnull().sum()}")
+          
+          if df[column].dtype not in ['int64', 'float64']:
+              print(f"Skipping non-numeric column: {column}")
+              return
+             
+**Plot histogram if there are non-null values**
 
-# Verify there are no more null values
-
-_print(df.isnull().sum())_
-
-# Function to plot histogram of a specific column and show skewness
-_def plot_histogram(column):
-print(f"Processing column: {column}")
-print(f"Data type: {df[column].dtype}")
-print(f"Number of non-null values: {df[column].notnull().sum()}")_
-    
-_if df[column].dtype not in ['int64', 'float64']:
- print(f"Skipping non-numeric column: {column}")
- return_
-    
-    # Plot histogram if there are non-null values
-    if df[column].notnull().sum() > 0:
+     if df[column].notnull().sum() > 0:
         plt.figure(figsize=(5, 3))
         ax = df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
         plt.title(f'Distribution of {column}')
         plt.xlabel(column)
         plt.ylabel('Frequency')
         
-        # Calculate skewness
+**Calculate skewness**
+
         skewness = skew(df[column].dropna())
         
         
-         # Adjust text annotation placement
-        plt.text(
-            x=0.98, y=0.95,  # Position relative to the axes (0 to 1)
-            s=f'Skewness: {skewness:.2f}', 
-            ha='right', va='top', 
-            transform=ax.transAxes,  # Use axis coordinates
-            fontsize=9, color='black',
-            bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
-        )//
+**Adjust text annotation placement**
+       plt.text(
+                  x=0.98, y=0.95,  # Position relative to the axes (0 to 1)
+                  s=f'Skewness: {skewness:.2f}', 
+                  ha='right', va='top', 
+                  transform=ax.transAxes,  # Use axis coordinates
+                  fontsize=9, color='black',
+                  bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
+              )
         
-        
-# Example of calling the function for a specific column
-plot_histogram('hdi_2005')  # Replace 'hdi_2000' with your specific column name
+**Calling the function for a specific column**
+
+plot_histogram('hdi_2005')
 ***
 
 
