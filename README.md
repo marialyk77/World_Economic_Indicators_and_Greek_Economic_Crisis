@@ -606,6 +606,7 @@ My script in Python is:
 
 
 
+# Development Indicators 
 
 ## Exploratory Data Analysis - Development Indicators
 
@@ -634,9 +635,9 @@ My script in Python is:
         However, please note that I was unable to fully validate the GDP per capita (USD) values because the dataset does not include a direct population column. GDP per capita is calculated as GDP divided by the total population, and without the population data, I could not verify the accuracy of this metric.
 
 
- ### Cleaning Process - Development Indicators 
+ ## Cleaning Process with Power BI and Python - Development Indicators 
 
-  #### Step 1:
+ 📊 **Power Query**:
 
   * The field names listed above have been renamed to shorter versions.
     
@@ -647,6 +648,8 @@ My script in Python is:
     ![image](https://github.com/user-attachments/assets/fed89713-d830-49ff-912d-d6025fe4dcd7)
 
   * [Region]:  I replaced the regional categories with their corresponding abbreviations to align with the format used in the [Region] column of the HDI dataset. Consistency in naming conventions helps in merging and comparing data accurately.
+
+    ![image](https://github.com/user-attachments/assets/359a2d38-750b-441a-8e9f-234d71671f4d)
 
   
   ## Step 2:
