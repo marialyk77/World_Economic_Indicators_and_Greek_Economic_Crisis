@@ -446,7 +446,7 @@ This comparative study will provide insights into the strengths and limitations 
 
  ### 🐍 Implementation with Python:
  
-I applied a script which automates the process and you do not have to repeat the same step for multiple columns. 
+I applied a script that automates the process, eliminating the need to repeat the same steps for multiple columns. 
 
 My script in Python is: 
 
@@ -565,7 +565,7 @@ My script in Python is:
 
 
  
-### Power BI vs Python on checking the Distribution & Imputing the Nulls
+### Power BI vs Python: Checking Distribution & Imputing Nulls.
 
 > [!NOTE]
 > I explored imputation methods for handling missing values using Power BI and Python. While both approaches aimed to address null values effectively, **the Python method demonstrated clear advantages in automation, consistency, and efficiency.**
@@ -573,7 +573,7 @@ My script in Python is:
 > **Power BI Approach:**
 
 > Detailed Manual Analysis:
-Steps Involved:
+> Steps Involved:
  - Plotted histograms to understand data distribution.
  - Used IQR method for outlier detection.
  - Visual verification with scatterplots.
@@ -585,7 +585,7 @@ Steps Involved:
 > **Python Approach:**
 
 > Automated Analysis:
-Steps Involved:
+> Steps Involved:
   - Identified columns with null values.
   - Function to check distribution and calculate skewness.
   - Plotted histograms for visual confirmation.
