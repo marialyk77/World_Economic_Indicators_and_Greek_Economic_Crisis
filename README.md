@@ -574,7 +574,7 @@ My script in Python is:
 
 > Detailed Manual Analysis.
 
-* Steps Involved:
+  Steps Involved:
  - Plotted histograms to understand data distribution.
  - Used IQR method for outlier detection.
  - Visual verification with scatterplots.
@@ -587,7 +587,7 @@ My script in Python is:
 
 > Automated Analysis.
 
- * Steps Involved:
+   Steps Involved:
   - Identified columns with null values.
   - Function to check distribution and calculate skewness.
   - Plotted histograms for visual confirmation.
