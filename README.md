@@ -605,50 +605,6 @@ My script in Python is:
 
 
 
-## Step 3:
-
-### Imputation of nulls.
-
-#### HDI xxxx (median) 
-
- 1. I replace the nulls with 0.
-
-    ![image](https://github.com/user-attachments/assets/299bbbbe-2400-4b02-97e5-31d8fe84a62b)
-
- 2. Calculated the Median.
-
-    ![image](https://github.com/user-attachments/assets/b70eba82-b255-46a7-8413-6ccf5d86adc8)
-
- 3. By utilizing the *Inserted Step After*, I umputed the 0 with the Median.
-
-    ![image](https://github.com/user-attachments/assets/d53638a2-efb1-48c6-a84b-d486917be22d)
-
-   
-    ![image](https://github.com/user-attachments/assets/aa591fa1-7658-42a9-9fff-ad3ee4a285ec)
-
- > [!TIP]
- > _List.Transform:_
-   
-   This function is used to apply a transformation to each item in a list.
- > [!TIP] 
- > _Lambda Function:_
-   
-   A lambda function is an anonymous function often used for concise transformations or operations.
-   In the context of List.Transform, the lambda function is replacing any occurrence of 0 in the columns with the median value.
-   
-
-> [!CAUTION]
-> The above process did not work! The Median is not accessed or referenced correctly. The functionality : Add Column, Statistics, Median, calculated a single median value for each row across all columns instead of calculating **a median value for each column across all rows**. 
-
- ![image](https://github.com/user-attachments/assets/bbc90939-7151-411e-a050-22938999d1fa)
-
- ![image](https://github.com/user-attachments/assets/2db66417-b6a2-4829-bcea-9e407328e9e1)
- 
-### Power BI vs Python
-
-> [!NOTE]
-> The solution involves two main steps: A. Determine the median value for each individual column across all rows. B. For each column, replace the zero values with the corresponding median.
-**Given the complexity, it might be more straightforward _to perform this task in Python_.**
 
 
 ## Exploratory Data Analysis - Development Indicators
