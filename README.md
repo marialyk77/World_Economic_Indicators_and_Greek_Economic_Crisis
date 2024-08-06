@@ -606,7 +606,7 @@ My script in Python is:
 
 
 
-# Development Indicators 
+# Development Indicators dataset
 
 ## Exploratory Data Analysis - Development Indicators
 
