@@ -572,9 +572,9 @@ My script in Python is:
 
 > **Power BI Approach:**
 
-> Detailed Manual Analysis:
+> Detailed Manual Analysis.
 
-> Steps Involved:
+  Steps Involved:
  - Plotted histograms to understand data distribution.
  - Used IQR method for outlier detection.
  - Visual verification with scatterplots.
@@ -585,9 +585,9 @@ My script in Python is:
 
 > **Python Approach:**
 
-> Automated Analysis:
+> Automated Analysis.
 
-> Steps Involved:
+  Steps Involved:
   - Identified columns with null values.
   - Function to check distribution and calculate skewness.
   - Plotted histograms for visual confirmation.
