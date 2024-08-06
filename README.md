@@ -446,7 +446,7 @@ This comparative study will provide insights into the strengths and limitations 
 
  ### 🐍 Implementation with Python:
  
-The process of checking the distribution, calculating the skewness and imputating the nulls is **by far easier with Python**. As you can apply a script which automates the process and you do not have to repeat the same step for multiple columns. 
+I applied a script which automates the process and you do not have to repeat the same step for multiple columns. 
 
 My script in Python is: 
 
@@ -459,7 +459,7 @@ My script in Python is:
       
        from scipy.stats import skew
 
- **Identify columns with null values**
+ **First let's find all the columns in the DataFrame that contain null values**
  
        null_columns = df.columns[df.isnull().any()]
 
@@ -501,15 +501,15 @@ My script in Python is:
               return
           
           if abs(skewness) < 0.5:
-              # Use mean if the distribution is approximately symmetrical
+               Use mean if the distribution is approximately symmetrical
               imputation_value = df[column].mean()
           else:
-              # Use median if the distribution is skewed
+               Use median if the distribution is skewed
               imputation_value = df[column].median()
           df[column].fillna(imputation_value, inplace=True)
           print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}
 
-**Apply imputation to each column with null values**
+**Apply imputation to each column with null values by iterating over all columns**
 
       for column in null_columns:
           impute_nulls(column)
@@ -557,20 +557,50 @@ My script in Python is:
 **Calling the function for a specific column**
    
             plot_histogram('hdi_2005')
+
+
+![image](https://github.com/user-attachments/assets/4756e4b6-c3f9-4da7-935e-000a4ccfeebc)
+
 ***
 
 
-
-
  
-### Power BI vs Python
-
-> [!CAUTION]
-> The process in Power BI involved multiple intricate steps, leading to challenges in accurately clarifying the distribution and selecting the appropriate imputation method.
-
+### Power BI vs Python on checking the Distribution & Imputing the Nulls
 
 > [!NOTE]
-> Given these complexities, **it might be more straightforward _to perform this task in Python_, where the tools and methods for data analysis and imputation are simpler and more intuitive.**
+> I explored imputation methods for handling missing values using Power BI and Python. While both approaches aimed to address null values effectively, **the Python method demonstrated clear advantages in automation, consistency, and efficiency.**
+
+> **Power BI Approach:**
+
+> Detailed Manual Analysis:
+Steps Involved:
+ - Plotted histograms to understand data distribution.
+ - Used IQR method for outlier detection.
+ - Visual verification with scatterplots.
+ - Chose imputation methods based on data distribution (mean for symmetrical, median for skewed).
+   
+> [!TIP] 
+> **While thorough, providing a clear visual understanding of data distribution, this method was time-consuming and prone to subjective interpretation and hunman bias.**
+
+> **Python Approach:**
+
+> Automated Analysis:
+Steps Involved:
+  - Identified columns with null values.
+  - Function to check distribution and calculate skewness.
+  - Plotted histograms for visual confirmation.
+  - Automated imputation based on skewness:
+  - Mean for symmetrical distributions (|skewness| < 0.5).
+  - Median for skewed distributions (|skewness| ≥ 0.5).
+    
+> [!TIP]     
+> **Ensured consistent and objective imputation across all columns, saving time and reducing potential errors.**
+
+> [!IMPORTANT]
+> Power BI is ideal for users who prefer a visual, hands-on approach and are working with smaller datasets where detailed manual inspection is feasible.
+> Python is best suited for users who require an efficient, consistent, and automated process, especially when dealing with large datasets.
+
+
 
 
 ## Step 3:
