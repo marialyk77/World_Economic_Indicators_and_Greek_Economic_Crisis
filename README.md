@@ -113,7 +113,7 @@ This comparative study will provide insights into the strengths and limitations 
      - **Population density (people per sq. km of land area)**:  measures the number of people living per square kilometer of land area in a country.
      - **Unemployment (% of total labor force) (modeled ILO estimate)**:  represents the percentage of the labor force that is unemployed but actively seeking work, as estimated by the International Labour Organization (ILO).
 
-# HDI dataset
+# HDI table
 
 ## Exploratory Data Analysis - HDI dataset 
 
@@ -606,7 +606,7 @@ My script in Python is:
 
 
 
-# Development Indicators dataset
+# Development Indicators table
 
 ## Exploratory Data Analysis - Development Indicators
 
