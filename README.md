@@ -540,22 +540,23 @@ My script in Python is:
         
 **Calculate skewness**
 
-        skewness = skew(df[column].dropna())
+          skewness = skew(df[column].dropna())
         
         
 **Adjust text annotation placement**
-       plt.text(
+
+          plt.text(
                   x=0.98, y=0.95,  # Position relative to the axes (0 to 1)
                   s=f'Skewness: {skewness:.2f}', 
                   ha='right', va='top', 
                   transform=ax.transAxes,  # Use axis coordinates
                   fontsize=9, color='black',
                   bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
-              )
+                       )
         
 **Calling the function for a specific column**
-
-plot_histogram('hdi_2005')
+   
+            plot_histogram('hdi_2005')
 ***
 
 
