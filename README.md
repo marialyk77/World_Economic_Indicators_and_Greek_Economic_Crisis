@@ -450,119 +450,67 @@ I applied a script that automates the process, eliminating the need to repeat th
 
 My script in Python is: 
 
-***
-       import pandas as pd
-      
-       import matplotlib.pyplot as plt
-      
-       import seaborn as sns
-      
-       from scipy.stats import skew
+```ruby
+# Identify columns with null values
+null_columns = df.columns[df.isnull().any()]
 
- **First let's find all the columns in the DataFrame that contain null values**
- 
-       null_columns = df.columns[df.isnull().any()]
-
-**Function to check distribution and calculate skewness**
-
-    def check_distribution(column):
-       print(f"Processing column: {column}")
-       print(f"Data type: {df[column].dtype}")
-       print(f"Number of non-null values: {df[column].notnull().sum()}")
+# Combined function to check distribution, plot histogram, and calculate skewness
+def analyze_column(column):
+    print(f"Processing column: {column}")
+    print(f"Data type: {df[column].dtype}")
+    print(f"Number of non-null values: {df[column].notnull().sum()}")
     
     if df[column].dtype not in ['int64', 'float64']:
         print(f"Skipping non-numeric column: {column}")
         return None
-    
-**Plot histogram if there are non-null values**
 
+    # Plot histogram if there are non-null values
     if df[column].notnull().sum() > 0:
         plt.figure(figsize=(5, 3))
-        df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
+        ax = df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
         plt.title(f'Distribution of {column}')
         plt.xlabel(column)
         plt.ylabel('Frequency')
-        plt.show()
 
-**Calculate skewness**
-
+        # Calculate skewness
         skewness = skew(df[column].dropna())
+        plt.text(
+            x=0.98, y=0.95,
+            s=f'Skewness: {skewness:.2f}', 
+            ha='right', va='top',
+            transform=ax.transAxes,
+            fontsize=9, color='black',
+            bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
+        )
+        plt.show()
+        
         print(f'Skewness of {column}: {skewness}')
         return skewness
     else:
         print(f"No non-null values to plot for column: {column}")
         return None
 
-**Function to impute nulls based on skewness**
+# Function to impute nulls based on skewness
+def impute_nulls(column):
+    skewness = analyze_column(column)
+    if skewness is None:
+        return
+    
+    # Use mean if the distribution is approximately symmetrical
+    imputation_value = df[column].mean() if abs(skewness) < 0.5 else df[column].median()
+    df[column].fillna(imputation_value, inplace=True)
+    print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')
 
-      def impute_nulls(column):
-          skewness = check_distribution(column)
-          if skewness is None:
-              return
-          
-          if abs(skewness) < 0.5:
-               Use mean if the distribution is approximately symmetrical
-              imputation_value = df[column].mean()
-          else:
-               Use median if the distribution is skewed
-              imputation_value = df[column].median()
-          df[column].fillna(imputation_value, inplace=True)
-          print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}
+# Apply imputation to each column with null values
+for column in null_columns:
+    impute_nulls(column)
 
-**Apply imputation to each column with null values by iterating over all columns**
+# Verify there are no more null values
+print(df.isnull().sum())
 
-      for column in null_columns:
-          impute_nulls(column)
-
-**Verify there are no more null values**
-
-      print(df.isnull().sum())
-
-**Function to plot histogram of a specific column and show skewness**
-
-      def plot_histogram(column):
-          print(f"Processing column: {column}")
-          print(f"Data type: {df[column].dtype}")
-          print(f"Number of non-null values: {df[column].notnull().sum()}")
-          
-          if df[column].dtype not in ['int64', 'float64']:
-              print(f"Skipping non-numeric column: {column}")
-              return
-             
-**Plot histogram if there are non-null values**
-
-     if df[column].notnull().sum() > 0:
-        plt.figure(figsize=(5, 3))
-        ax = df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
-        plt.title(f'Distribution of {column}')
-        plt.xlabel(column)
-        plt.ylabel('Frequency')
-        
-**Calculate skewness**
-
-          skewness = skew(df[column].dropna())
-        
-        
-**Adjust text annotation placement**
-
-          plt.text(
-                  x=0.98, y=0.95,  # Position relative to the axes (0 to 1)
-                  s=f'Skewness: {skewness:.2f}', 
-                  ha='right', va='top', 
-                  transform=ax.transAxes,  # Use axis coordinates
-                  fontsize=9, color='black',
-                  bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
-                       )
-        
-**Calling the function for a specific column**
-   
-            plot_histogram('hdi_2005')
-
-
-![image](https://github.com/user-attachments/assets/4756e4b6-c3f9-4da7-935e-000a4ccfeebc)
-
-***
-
+# Example of calling the function for a specific column
+plot_histogram('hdi_2005')
+```
 
  
 # Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
@@ -639,30 +587,78 @@ My script in Python is:
 
   * The field names listed above have been renamed to shorter versions.
 
-    ![image](https://github.com/user-attachments/assets/5f1bf951-83cb-430d-8ac8-a0d664857df0)
+   ```ruby
+## Changing Column Names 
+
+new_col_names = {
+   'Birth rate, crude (per 1,000 people)': 'Birth %',
+    'Death rate, crude (per 1,000 people)' : 'Death %',
+    'Electric power consumption (kWh per capita)' : 'Electric Power Consumption',
+    'Individuals using the Internet (% of population)': 'Population % using Internet',
+    'Infant mortality rate (per 1,000 live births)' : 'Infant mortality %',
+    'Life expectancy at birth (years)': 'Life Expectacy',
+    'Population density (people per sq. km of land area)': 'Population Density',
+    'Unemployment (% of total labor force) (modeled ILO estimate)' : 'Unemployment %'
+    
+}
+
+df.rename(columns=new_col_names, inplace=True)
+
+df.head(3)
+ ```
 
   * The [country]: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
 
-    ![image](https://github.com/user-attachments/assets/a841a97a-3320-4477-9041-3b3e3a1c41e9)
+ ```ruby
+ ## simplifying country names
+
+country_rename = {
+    'Bahamas, The': 'Bahamas', 
+    'Egypt, Arab Rep.': 'Egypt',
+    'Gambia, The': 'Gambia',
+    'Hong Kong SAR, China': 'Hong Kong',
+    'Iran, Islamic Rep.': 'Iran',
+    'Korea, Rep.': 'South Korea',
+    'Macao SAR, China': 'Macao',
+    'Syrian Arab Republic': 'Syria',
+     'Venezuela, RB': 'Venezuela',
+    'Yemen, Rep.': 'Yemen'
+}
+
+df['Country Name'] = df['Country Name'].replace(country_rename)
+```
 
   * [Region]:  I replaced the regional categories with their corresponding abbreviations to align with the format used in the HDI dataset. Consistency in naming conventions helps in merging and comparing data accurately.
 
-    ![image](https://github.com/user-attachments/assets/eadca8b9-622b-40d2-bceb-e8ed0a06eb86)
+ ```ruby
+ ## Replacing Long Regions Names 
+
+region_name = {
+    'South Asia': 'SA',
+    'Europe & Central Asia': 'ECA',
+    'Middle East & North Africa': 'MENA',
+    'East Asia & Pacific': 'EAP',
+     'Sub-Saharan Africa': 'SSA',
+    'Latin America & Caribbean': 'LAC',
+    'North America': 'NA'
+    
+}
+
+df['Region'] = df['Region'].replace(region_name)
+```
 
 
-  
-  ## Step 2:
+  ## Addressing the null values - Development Indicators Dataset
 
-  ### Addressing the null values  
+``` ruby
+## Checking if Nulls :  found in 10 columns 
 
-  ![image](https://github.com/user-attachments/assets/eb64624b-e2ee-4c9c-a53e-7a39c62118bc)
+df.isna().sum()
+```
+![image](https://github.com/user-attachments/assets/10b2fa66-7423-4de8-9c58-8980a494b4b9)
 
-- **Right Skewed Distributions:** Birth %, Death %, Infant Mortality %, Unemployment %, GDP (USD), Population % Using Internet, GDP per Capita (USD). These distributions have longer tails on the right side, indicating a few countries with significantly higher values compared to the majority.
 
-- **Left Skewed Distribution:** Life Expectancy. This distribution has a longer tail on the left side, indicating a few countries with significantly lower life expectancies compared to the majority.
-
-- **Imputation Method:** For these skewed distributions I will use the **median** for imputation. 
-
+``` ruby
 
 
 
