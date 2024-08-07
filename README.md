@@ -635,21 +635,22 @@ My script in Python is:
         However, please note that I was unable to fully validate the GDP per capita (USD) values because the dataset does not include a direct population column. GDP per capita is calculated as GDP divided by the total population, and without the population data, I could not verify the accuracy of this metric.
 
 
- ## Cleaning Process with Power BI and Python - Development Indicators 
+ ## Cleaning Process - Development Indicators 
 
- 📊 **Power Query**:
+ 🐍 **Python**:
 
   * The field names listed above have been renamed to shorter versions.
-    
+
+    ![image](https://github.com/user-attachments/assets/5f1bf951-83cb-430d-8ac8-a0d664857df0)
+
   * The [country]: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
 
-  * I verified the consistency of the country columns between the **HDI** and **Development Indicators** tables through a merge, and discovered that the Development Indicators table's Country column is missing 9 countries.
+![image](https://github.com/user-attachments/assets/a841a97a-3320-4477-9041-3b3e3a1c41e9)
 
-    ![image](https://github.com/user-attachments/assets/fed89713-d830-49ff-912d-d6025fe4dcd7)
+  * [Region]:  I replaced the regional categories with their corresponding abbreviations to align with the format used in the HDI dataset. Consistency in naming conventions helps in merging and comparing data accurately.
 
-  * [Region]:  I replaced the regional categories with their corresponding abbreviations to align with the format used in the [Region] column of the HDI dataset. Consistency in naming conventions helps in merging and comparing data accurately.
+  ![image](https://github.com/user-attachments/assets/eadca8b9-622b-40d2-bceb-e8ed0a06eb86)
 
-    ![image](https://github.com/user-attachments/assets/359a2d38-750b-441a-8e9f-234d71671f4d)
 
   
   ## Step 2:
