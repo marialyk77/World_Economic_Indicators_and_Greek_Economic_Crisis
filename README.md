@@ -659,8 +659,78 @@ df.isna().sum()
 
 
 ``` ruby
+# Identifying columns with null values
+null_columns = df.columns[df.isnull().any()]
 
+# Function to plot histogram and show skewness
+def plot_histogram(column):
+    print(f"\nProcessing column: {column}")
+    print(f"Data type: {df[column].dtype}")
+    print(f"Number of non-null values: {df[column].notnull().sum()}")
+    
+    if df[column].dtype not in ['int64', 'float64']:
+        print(f"Skipping non-numeric column: {column}")
+        return None
+    
+    if df[column].notnull().sum() > 0:
+        plt.figure(figsize=(3, 3))  
+        ax = df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
+        plt.title(f'Distribution of {column}')
+        plt.xlabel(column)
+        plt.ylabel('Frequency')
 
+# Calculating skewness
+        skewness = skew(df[column].dropna())
+        plt.text(
+            x=0.97, y=0.95,
+            s=f'Skewness: {skewness:.2f}', 
+            ha='right', va='top',
+            transform=ax.transAxes,
+            fontsize=9, color='black',
+            bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
+        )
+        plt.show()
+        
+        return skewness
+    else:
+        print(f"No non-null values to plot for column: {column}")
+        return None
+
+# Function to impute nulls based on skewness
+def impute_nulls(column):
+    print(f"\nImputing column: {column}")
+    
+# Get skewness and plot histogram
+    skewness = plot_histogram(column)
+    if skewness is None:
+        print(f"Skipping imputation for {column} as no valid skewness value.")
+        return
+    
+# Determine imputation method
+    if abs(skewness) < 0.5:
+        imputation_value = df[column].mean()
+        imputation_method = 'mean'
+    else:
+        imputation_value = df[column].median()
+        imputation_method = 'median'
+    
+# Perform imputation
+    df[column].fillna(imputation_value, inplace=True)
+    print(f'Imputed {column} with {imputation_method}: {imputation_value}')
+
+# Apply imputation to each column with null values
+print("Starting imputation process...")
+for column in null_columns:
+    impute_nulls(column)
+
+# Verify there are no more null values
+print("\nRemaining null values in each column:")
+print(df.isnull().sum())
+
+# Example of calling the function for a specific column
+print("\nAnalyzing specific column:")
+plot_histogram('Birth %')
+```
 
 
 
