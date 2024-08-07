@@ -1,26 +1,4 @@
-***
-# Table of Contents
 
-1. [World Economic Indicators](#world-economic-indicators)
-2. [Research Questions](#research-questions)
-3. [Tools used](#tools-used)
-4. [Dataset Exploration](#dataset-exploration)
-   - [Human Development Index (HDI)](#human-development-index-hdi)
-   - [Development Indicators](#development-indicators)
-5. [Exploratory Data Analysis - HDI](#exploratory-data-analysis---hdi)
-   - [Errors & Data Completeness](#errors--data-completeness)
-   - [Data Consistency](#data-consistency)
-   - [Cleaning Process - HDI](#cleaning-process-hdi)
-   - [Addressing the null values](#Addressing-the-null-values)
-   - [HDI xxxx](#HDI-xxxx)
-   - [For the rest fields](#for-the-rest-fields)
-   - [Data Modeling & Transformations - HDI](#data-modeling-&-transformations-hdi)
-6. [Exploratory Data Analysis - Development Indicators](#exploratory-data-analysis-development-indicators)
-   - [Erros & Data Completness](erros-&-data-completness)
-   - [Data Consistency](data-consistency)
-   - [Cleaning Process - Development Indicators](cleaning-process-development-indicators)
-   - [Addressing the null values - Development Indicators](addressing-the-null-values-development-indicators)
-***
 
 # World Economic Indicators
 
