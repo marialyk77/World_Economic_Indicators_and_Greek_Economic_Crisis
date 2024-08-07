@@ -635,9 +635,7 @@ My script in Python is:
         However, please note that I was unable to fully validate the GDP per capita (USD) values because the dataset does not include a direct population column. GDP per capita is calculated as GDP divided by the total population, and without the population data, I could not verify the accuracy of this metric.
 
 
- ## Cleaning Process - Development Indicators 
-
- 🐍 **Python**:
+ ## Cleaning Process with Python - Development Indicators 
 
   * The field names listed above have been renamed to shorter versions.
 
@@ -645,11 +643,11 @@ My script in Python is:
 
   * The [country]: Some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran". This was done to standardize names and ensure uniformity across the dataset.
 
-![image](https://github.com/user-attachments/assets/a841a97a-3320-4477-9041-3b3e3a1c41e9)
+    ![image](https://github.com/user-attachments/assets/a841a97a-3320-4477-9041-3b3e3a1c41e9)
 
   * [Region]:  I replaced the regional categories with their corresponding abbreviations to align with the format used in the HDI dataset. Consistency in naming conventions helps in merging and comparing data accurately.
 
-  ![image](https://github.com/user-attachments/assets/eadca8b9-622b-40d2-bceb-e8ed0a06eb86)
+    ![image](https://github.com/user-attachments/assets/eadca8b9-622b-40d2-bceb-e8ed0a06eb86)
 
 
   
