@@ -731,6 +731,7 @@ print(df.isnull().sum())
 print("\nAnalyzing specific column:")
 plot_histogram('Birth %')
 ```
+![image](https://github.com/user-attachments/assets/934b2e1d-64d2-48ca-a040-f9bea1ceffb2)
 
 
 
