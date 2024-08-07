@@ -175,7 +175,55 @@ This comparative study will provide insights into the strengths and limitations 
 
   🐍 **Pandas**:  The process is also simple by creating a list of columns to keep. 
 
-  ![image](https://github.com/user-attachments/assets/eb3dfcc0-0f33-4aef-a4ea-a3cd326a5b71)
+  ```ruby
+  columns_to_keep = [
+    'iso3', 'country', 'hdicode', 'region', 'hdi_rank_2021',
+    'hdi_2000', 'hdi_2001', 'hdi_2002', 'hdi_2003', 'hdi_2004', 'hdi_2005', 'hdi_2006', 'hdi_2007',
+    'hdi_2008', 'hdi_2009', 'hdi_2010', 'hdi_2011', 'hdi_2012', 'hdi_2013', 'hdi_2014', 'hdi_2015',
+    'hdi_2016', 'hdi_2017', 'hdi_2018', 'hdi_2019', 'hdi_2020', 'hdi_2021',
+    'le_2000','le_2001', 'le_2002', 'le_2003', 'le_2004', 'le_2005', 'le_2006', 'le_2007', 'le_2008', 
+    'le_2009', 'le_2010', 'le_2011', 'le_2012', 'le_2013', 'le_2014', 'le_2015', 'le_2016', 'le_2017',
+    'le_2018', 'le_2019', 'le_2020', 'le_2021',
+    'eys_2000', 'eys_2001', 'eys_2002', 'eys_2003', 'eys_2004', 'eys_2005', 'eys_2006', 'eys_2007',
+    'eys_2008', 'eys_2009', 'eys_2010', 'eys_2011', 'eys_2012', 'eys_2013', 'eys_2014', 'eys_2015',
+    'eys_2016', 'eys_2017', 'eys_2018', 'eys_2019', 'eys_2020', 'eys_2021',
+    'mys_2000', 'mys_2001', 'mys_2002', 'mys_2003', 'mys_2004', 'mys_2005', 'mys_2006', 'mys_2007',
+    'mys_2008', 'mys_2009', 'mys_2010', 'mys_2011', 'mys_2012', 'mys_2013', 'mys_2014', 'mys_2015',
+    'mys_2016', 'mys_2017', 'mys_2018', 'mys_2019', 'mys_2020', 'mys_2021',
+    'gnipc_2000', 'gnipc_2001', 'gnipc_2002', 'gnipc_2003', 'gnipc_2004', 'gnipc_2005', 'gnipc_2006',
+    'gnipc_2007', 'gnipc_2008', 'gnipc_2009', 'gnipc_2010', 'gnipc_2011', 'gnipc_2012', 'gnipc_2013',
+    'gnipc_2014', 'gnipc_2015', 'gnipc_2016', 'gnipc_2017', 'gnipc_2018', 'gnipc_2019', 'gnipc_2020',
+    'gnipc_2021',
+    'gni_pc_f_2000', 'gni_pc_f_2001', 'gni_pc_f_2002', 'gni_pc_f_2003', 'gni_pc_f_2004', 
+    'gni_pc_f_2005', 'gni_pc_f_2006',
+    'gni_pc_f_2007', 'gni_pc_f_2008', 'gni_pc_f_2009', 'gni_pc_f_2010', 'gni_pc_f_2011',
+    'gni_pc_f_2012', 'gni_pc_f_2013', 'gni_pc_f_2014', 'gni_pc_f_2015', 'gni_pc_f_2016',
+    'gni_pc_f_2017', 'gni_pc_f_2018', 'gni_pc_f_2019', 'gni_pc_f_2020', 'gni_pc_f_2021',
+    'gni_pc_m_2000', 'gni_pc_m_2001', 'gni_pc_m_2002', 'gni_pc_m_2003',
+    'gni_pc_m_2004', 'gni_pc_m_2005', 'gni_pc_m_2006', 'gni_pc_m_2007', 'gni_pc_m_2008',
+    'gni_pc_m_2009', 'gni_pc_m_2010', 'gni_pc_m_2011', 'gni_pc_m_2012', 'gni_pc_m_2013',
+    'gni_pc_m_2014', 'gni_pc_m_2015', 'gni_pc_m_2016', 'gni_pc_m_2017', 'gni_pc_m_2018',
+    'gni_pc_m_2019', 'gni_pc_m_2020', 'gni_pc_m_2021',
+    'gii_2000', 'gii_2001', 'gii_2002',
+    'gii_2003', 'gii_2004', 'gii_2005', 'gii_2006', 'gii_2007', 'gii_2008', 'gii_2009', 'gii_2010',
+    'gii_2011', 'gii_2012', 'gii_2013', 'gii_2014', 'gii_2015', 'gii_2016', 'gii_2017', 'gii_2018',
+    'gii_2019', 'gii_2020', 'gii_2021', 
+    'lfpr_f_2000', 'lfpr_f_2001', 'lfpr_f_2002', 'lfpr_f_2003',
+    'lfpr_f_2004', 'lfpr_f_2005', 'lfpr_f_2006', 'lfpr_f_2007', 'lfpr_f_2008', 'lfpr_f_2009',
+    'lfpr_f_2010', 'lfpr_f_2011', 'lfpr_f_2012', 'lfpr_f_2013', 'lfpr_f_2014', 'lfpr_f_2015', 
+    'lfpr_f_2016', 'lfpr_f_2017', 'lfpr_f_2018', 'lfpr_f_2019', 'lfpr_f_2020', 'lfpr_f_2021', 
+    'lfpr_m_2000', 'lfpr_m_2001',
+    'lfpr_m_2002', 'lfpr_m_2003', 'lfpr_m_2004', 'lfpr_m_2005', 'lfpr_m_2006', 'lfpr_m_2007',
+    'lfpr_m_2008', 'lfpr_m_2009', 'lfpr_m_2010', 'lfpr_m_2011', 'lfpr_m_2012', 'lfpr_m_2013',
+    'lfpr_m_2014', 'lfpr_m_2015', 'lfpr_m_2016', 'lfpr_m_2017', 'lfpr_m_2018', 'lfpr_m_2019', 
+    'lfpr_m_2020', 'lfpr_m_2021'
+]
+
+# Drop columns not in the list of columns to keep
+df = df[columns_to_keep]
+
+df.head()
+```
    
 ***
    * The **[ISO 3]**: contained the HDI Groupings and Regional Groupings. I filtered out the corresponding rows from the [ISO 3].
@@ -185,7 +233,16 @@ This comparative study will provide insights into the strengths and limitations 
 
    🐍 **Pandas**: Simple and efficient with a few lines of code.
 
-   ![image](https://github.com/user-attachments/assets/44a8b14c-7024-43f0-8202-d6a966b8d8db)
+ ```ruby
+  rows_to_filter_out = [
+    'ZZA.VHHD', 'ZZB.HHD', 'ZZC.MHD', 'ZZD.LHD', 'ZZE.AS',
+    'ZZF.EAP', 'ZZG.ECA', 'ZZH.LAC', 'ZZI.SA', 'ZZJ.SSA'
+]
+
+df = df[~df['iso3'].isin(rows_to_filter_out)]
+
+df['iso3'].tail(10)
+```
 
 ***
    * The **[country]**: The column contained the full names of regional groupings, which were filtered out. Additionally, some country names were simplified for consistency and ease of use. For example, "Iran, Islamic Rep" was renamed to "Iran" to standardize names and ensure uniformity across the dataset.
@@ -195,7 +252,35 @@ This comparative study will provide insights into the strengths and limitations 
 
    🐍 **Pandas**: The process involves creating _a dictionary with original and simplified names_, then using the _replace_ method. 
 
-![image](https://github.com/user-attachments/assets/d589768b-6293-4add-b4d9-012ea10d2453)
+```ruby
+country_rename = {
+    "Iran, Islamic Rep": "Iran",
+    "United States of America": "USA",
+    "United Kingdom": "UK",
+    "Russian Federation": "Russia",
+    "Venezuela, Bolivarian Republic of": "Venezuela",
+    "Bolivia (Plurinational State of)": "Bolivia",
+    "Congo (Democratic Republic of the)": "Congo, Dem. Rep.",
+    "Congo": "Congo, Rep.",
+    "Eswatini (Kingdom of)": "Eswatini",
+    "Hong Kong, China (SAR)": "Hong Kong",
+    "Korea (Democratic People's Rep. of)" : "North Korea",
+    "Korea (Republic of)": "South Korea",
+    "Micronesia (Federated States of)": "Micronesia",
+    "Moldova (Republic of)": "Moldova",
+    "Palestine, State of": "Palestine",
+    "Syrian Arab Republic": "Syria",
+    "Tanzania (United Republic of)": "Tanzania",
+    "Venezuela (Bolivarian Republic of)" : "Venezuela",
+    "Viet Nam": "Vietnam",
+    "Lao People's Democratic Republic": "Laos",
+    "Iran (Islamic Republic of)": "Iran"
+    
+}
+
+df.loc[:, 'country'] = df['country'].replace(country_rename)
+print(df['country'])
+```
 
 ***
    * The **[hdicode]** column contained a total of 15 blank rows. To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
@@ -206,6 +291,19 @@ This comparative study will provide insights into the strengths and limitations 
  📊 **Power Query**: The process of handling NaN and replacing categories is straightforward with user-friendly interfaces for _replacing_ values and handling nulls. 
 
  🐍 **Pandas**: While more code is required, Pandas offers flexibility and powerful functions like _fillna_ and _replace_ to efficiently handle such data transformations programmatically
+
+```ruby
+df.loc[:, 'hdicode'] = df['hdicode'].fillna('N/A')
+
+category_replacing = {
+    'Low': 'LHD',
+    'Medium': 'MHD',
+    'High': 'HHD',
+    'Very High': 'VHHD'
+}
+
+df.loc[:, 'hdicode'] = df['hdicode'].replace(category_replacing)
+```
 
 ***
    * The **[region]** column contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I **filled the blanks with the appropriate region.**
@@ -227,15 +325,31 @@ This comparative study will provide insights into the strengths and limitations 
 
    🐍 **Implementation with Pandas**:
 
-![image](https://github.com/user-attachments/assets/d1b8d94c-a5ed-4afd-9229-b4d8b2def8b5)
+```ruby
+## Filling the blanks with the appropriate region
+
+region_correct = {
+    'Andorra': 'ECA', 'Australia': 'EAP', 'Austria': 'ECA', 'Belgium': 'ECA', 'Bulgaria': 'ECA',
+    'Canada': 'NA', 'Switzerland': 'ECA', 'Cyprus': 'ECA', 'Czechia': 'ECA', 'Germany': 'ECA',
+    'Denmark': 'ECA', 'Spain': 'ECA', 'Estonia': 'ECA', 'Finland': 'ECA', 'France': 'ECA',
+    'UK': 'ECA', 'Greece': 'ECA', 'Hong Kong': 'EAP', 'Croatia': 'ECA', 'Hungary': 'ECA',
+    'Ireland': 'ECA', 'Iceland': 'ECA', 'Israel': 'MENA', 'Italy': 'ECA', 'Japan': 'EAP',
+    'South Korea': 'EAP', 'Liechtenstein': 'ECA', 'Lithuania': 'ECA', 'Luxembourg': 'ECA',
+    'Latvia': 'ECA', 'Monaco': 'ECA', 'Netherlands': 'ECA', 'Norway': 'ECA', 'New Zealand': 'EAP',
+    'Portugal': 'ECA', 'Romania': 'ECA', 'Russia': 'ECA', 'San Marino': 'ECA', 'Slovakia': 'ECA',
+    'Slovenia': 'ECA', 'Sweden': 'ECA', 'United States': 'NA', 'Malta': 'ECA', 'Poland': 'ECA', 'World': 'World'
+}
+
+df.loc[df['region'].isna(), 'region'] = df.loc[df['region'].isna(), 'country'].map(region_correct)
+```
 
 ***
    **4.** The next challenge with the updated [Region_NO Blanks] is the incorrect assignment of certain countries to wrong regions and the absence of the **Middle East & North Africa (MENA)** region.
 ***
 
-   📊 **Implementation with Power Query**:
+   📊 **Implementation with Power Query**:  
 
-  - To address the issue of incorrect regional assignments for some countries, we created a new query with the correct region information, merged this with the main dataset, expanded the merged column to include the correct regions, and used a conditional formula to update the regions based on the mapping table.
+  - To address the issue of incorrect regional assignments for some countries, I created a new query with the correct region information, merged this with the main dataset, expanded the merged column to include the correct regions, and used a conditional formula to update the regions based on the mapping table.
 
 ![image](https://github.com/user-attachments/assets/e192124f-4beb-4a81-bc62-ac837eab459d)                 ![image](https://github.com/user-attachments/assets/456506b2-ab12-4814-b634-d1c5234abdea)
 
@@ -245,15 +359,20 @@ This comparative study will provide insights into the strengths and limitations 
 
   ![image](https://github.com/user-attachments/assets/75f2c276-a113-4050-8b1a-0c31c2fcd69a)
   
- 🐍 **Implementation with Pandas**: 
+ 🐍 **Implementation with Pandas**: Used list-based assignment to identify MENA countries and directly updated the region column. And Used a dictionary-based mapping to update incorrect regions.
 
-![image](https://github.com/user-attachments/assets/a4c3aec5-ca3b-40d7-a180-0941e5432f11)
+```ruby
+## Working with [region] and assigning the region MENA to the appropriate countries. 
 
+mena = [
+    'Algeria', 'Bahrain', 'Djibouti', 'Egypt', 'Iran', 'Iraq', 'Israel', 'Jordan',
+    'Kuwait', 'Lebanon', 'Libya', 'Morocco', 'Oman', 'Qatar', 'Saudi Arabia', 
+    'Syria', 'Tunisia', 'United Arab Emirates', 'Yemen'
+]
 
-📊 **Power BI**: Created and used a conditional column to identify and fill missing region values. And Merged datasets and used conditional formulas to correct regions.
+df.loc[df['country'].isin(mena), 'region'] = 'MENA'
 
-🐍 **Pandas**: Used list-based assignment to identify MENA countries and directly updated the region column. And Used a dictionary-based mapping to update incorrect regions.
-
+```
 
 
    ## Addressing the null values - HDI dataset.
