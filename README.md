@@ -863,7 +863,7 @@ plot_histogram('Birth %')
 
 
 
-## Exploratory Data Analysis (EDA) with Python 
+# Exploratory Data Analysis (EDA) with Python 
 
 1. **Initial Data Preparation:** Before proceeding with the actual analysis, it was necessary to merge the two datasets into a single dataframe.
 
