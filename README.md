@@ -619,9 +619,9 @@ print(df.isnull().sum())
 print("\nAnalyzing specific column:")
 analyze_column('hdi_2005')
 ```
-![image](https://github.com/user-attachments/assets/0694fb0a-3bea-40e6-9e2f-8ca5516232eb)
+![image](https://github.com/user-attachments/assets/b0ad100b-7b1d-4d0d-b019-724890ad777b)
 
-![image](https://github.com/user-attachments/assets/e7428ae5-f1c3-4a73-92be-c3063ab6d20f)
+![image](https://github.com/user-attachments/assets/dc4aedb4-8719-49bb-bcf2-49d81126f08c)
 
 
 
@@ -845,9 +845,11 @@ print(df.isnull().sum())
 print("\nAnalyzing specific column:")
 plot_histogram('Birth %')
 ```
-![image](https://github.com/user-attachments/assets/e404e02e-ff6f-4303-a386-37b8996e69e8)
+![image](https://github.com/user-attachments/assets/ea9e899e-e80b-47a9-96bd-79a2b693a9f2)
 
-![image](https://github.com/user-attachments/assets/b6315d60-a81a-4048-b8b0-6892cacc8df2)
+![image](https://github.com/user-attachments/assets/089a4392-2d99-415c-95e6-e010cd70a291)
+
+
 
 
 
