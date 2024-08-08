@@ -619,6 +619,11 @@ print(df.isnull().sum())
 print("\nAnalyzing specific column:")
 analyze_column('hdi_2005')
 ```
+![image](https://github.com/user-attachments/assets/0694fb0a-3bea-40e6-9e2f-8ca5516232eb)
+
+![image](https://github.com/user-attachments/assets/e7428ae5-f1c3-4a73-92be-c3063ab6d20f)
+
+
 
  
 # Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
@@ -840,7 +845,11 @@ print(df.isnull().sum())
 print("\nAnalyzing specific column:")
 plot_histogram('Birth %')
 ```
-![image](https://github.com/user-attachments/assets/934b2e1d-64d2-48ca-a040-f9bea1ceffb2)
+![image](https://github.com/user-attachments/assets/e404e02e-ff6f-4303-a386-37b8996e69e8)
+
+![image](https://github.com/user-attachments/assets/b6315d60-a81a-4048-b8b0-6892cacc8df2)
+
+
 
 
 
