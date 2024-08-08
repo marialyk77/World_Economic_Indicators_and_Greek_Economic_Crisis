@@ -553,24 +553,29 @@ null_columns = df.columns[df.isnull().any()]
 
 # Combined function to check distribution, plot histogram, and calculate skewness
 def analyze_column(column):
-    print(f"Processing column: {column}")
+    print(f"\nProcessing column: {column}")
     print(f"Data type: {df[column].dtype}")
     print(f"Number of non-null values: {df[column].notnull().sum()}")
     
     if df[column].dtype not in ['int64', 'float64']:
         print(f"Skipping non-numeric column: {column}")
-        return None
+        return None, None
 
-    # Plot histogram if there are non-null values
     if df[column].notnull().sum() > 0:
+        skewness = skew(df[column].dropna())
+        imputation_value = df[column].mean() if abs(skewness) < 0.5 else df[column].median()
+        
+# Print skewness and imputation details before plotting! I tried to have things organized and all printed info presented together on top of the Histogram.
+        print(f'Skewness of {column}: {skewness:.6f}')
+        print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')
+
+# Plot the histogram
         plt.figure(figsize=(5, 3))
         ax = df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
         plt.title(f'Distribution of {column}')
         plt.xlabel(column)
         plt.ylabel('Frequency')
-
-        # Calculate skewness
-        skewness = skew(df[column].dropna())
+        
         plt.text(
             x=0.98, y=0.95,
             s=f'Skewness: {skewness:.2f}', 
@@ -581,32 +586,37 @@ def analyze_column(column):
         )
         plt.show()
         
-        print(f'Skewness of {column}: {skewness}')
-        return skewness
+        return skewness, imputation_value
     else:
         print(f"No non-null values to plot for column: {column}")
-        return None
+        return None, None
 
 # Function to impute nulls based on skewness
 def impute_nulls(column):
-    skewness = analyze_column(column)
+    print(f"\nImputing column: {column}")
+    
+# Get skewness and plot histogram
+    skewness, imputation_value = analyze_column(column)
     if skewness is None:
+        print(f"Skipping imputation for {column} as no valid skewness value.")
         return
     
-    # Use mean if the distribution is approximately symmetrical
-    imputation_value = df[column].mean() if abs(skewness) < 0.5 else df[column].median()
+    # Perform imputation
     df[column].fillna(imputation_value, inplace=True)
     print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')
 
 # Apply imputation to each column with null values
+print("Starting imputation process...")
 for column in null_columns:
     impute_nulls(column)
 
 # Verify there are no more null values
+print("\nRemaining null values in each column:")
 print(df.isnull().sum())
 
 # Example of calling the function for a specific column
-plot_histogram('hdi_2005')
+print("\nAnalyzing specific column:")
+analyze_column('hdi_2005')
 ```
 
  
@@ -756,10 +766,10 @@ df.isna().sum()
 
 
 ``` ruby
-# Identifying columns with null values
+# To Identify columns with null values
 null_columns = df.columns[df.isnull().any()]
 
-# Function to plot histogram and show skewness
+# A Combined function to check distribution, plot histogram, and calculate skewness
 def plot_histogram(column):
     print(f"\nProcessing column: {column}")
     print(f"Data type: {df[column].dtype}")
@@ -767,17 +777,23 @@ def plot_histogram(column):
     
     if df[column].dtype not in ['int64', 'float64']:
         print(f"Skipping non-numeric column: {column}")
-        return None
+        return None, None
     
     if df[column].notnull().sum() > 0:
-        plt.figure(figsize=(3, 3))  
+        skewness = skew(df[column].dropna())
+        imputation_value = df[column].mean() if abs(skewness) < 0.5 else df[column].median()
+        
+# Print skewness and imputation details before plotting. This is very important to improve the readability and presentation of data output!!! I HAVE TO BE HONEST I HAD SOME STRUGGLE WITH THIS PART!
+        print(f'Skewness of {column}: {skewness:.6f}')
+        print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')
+
+# To Plot the histogram
+        plt.figure(figsize=(3, 3))
         ax = df[column].plot(kind='hist', bins=10, edgecolor='black', color='#4527A0')
         plt.title(f'Distribution of {column}')
         plt.xlabel(column)
         plt.ylabel('Frequency')
-
-# Calculating skewness
-        skewness = skew(df[column].dropna())
+        
         plt.text(
             x=0.97, y=0.95,
             s=f'Skewness: {skewness:.2f}', 
@@ -788,32 +804,24 @@ def plot_histogram(column):
         )
         plt.show()
         
-        return skewness
+        return skewness, imputation_value
     else:
         print(f"No non-null values to plot for column: {column}")
-        return None
+        return None, None
 
 # Function to impute nulls based on skewness
 def impute_nulls(column):
     print(f"\nImputing column: {column}")
     
 # Get skewness and plot histogram
-    skewness = plot_histogram(column)
+    skewness, imputation_value = plot_histogram(column)
     if skewness is None:
         print(f"Skipping imputation for {column} as no valid skewness value.")
         return
     
-# Determine imputation method
-    if abs(skewness) < 0.5:
-        imputation_value = df[column].mean()
-        imputation_method = 'mean'
-    else:
-        imputation_value = df[column].median()
-        imputation_method = 'median'
-    
 # Perform imputation
     df[column].fillna(imputation_value, inplace=True)
-    print(f'Imputed {column} with {imputation_method}: {imputation_value}')
+    print(f'Imputed {column} with {"mean" if abs(skewness) < 0.5 else "median"}: {imputation_value}')
 
 # Apply imputation to each column with null values
 print("Starting imputation process...")
