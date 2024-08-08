@@ -899,14 +899,7 @@ merged_df
 
 
 
-```ruby
-merged_df = hdi_df.merge(dev_indicators_df,  left_on='country', right_on='Country Name', how ='outer')
 
-merged_df
-```
-
-> [!WARNING]
-> 
 
 
 
