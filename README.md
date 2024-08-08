@@ -863,6 +863,53 @@ plot_histogram('Birth %')
 
 
 
+## Exploratory Data Analysis (EDA) with Python 
+
+1. **Initial Data Preparation:** Before proceeding with the actual analysis, it was necessary to merge the two datasets into a single dataframe.
+
+2. **Merging Datasets:**
+   - For effective data integration, merging typically requires at least one common column or key from each dataset. In this case, the columns used for merging are country from the HDI dataset and Country Name from the Development Indicators dataset. Before proceeding with the merge, I assessed whether these columns contained matching data to ensure alignment.
+
+```ruby
+# To identify country names in HDI but not in Development Indicators
+missing_in_dev_indicators = set(hdi_df['country']) - set(dev_indicators_df['Country Name'])
+print("Countries in HDI but not in Development Indicators:")
+print(missing_in_dev_indicators)
+
+# To identify country names in Development Indicators but not in HDI
+missing_in_hdi = set(dev_indicators_df['Country Name']) - set(hdi_df['country'])
+print("Countries in Development Indicators but not in HDI:")
+print(missing_in_hdi)
+```
+![image](https://github.com/user-attachments/assets/ad72f14a-0447-4913-b66c-fd0b5b78675d)
+
+   - Given that the columns did not have exact matches, I chose to perform an outer join to include all records from both datasets, even with discrepancies.
+ 
+```ruby
+merged_df = hdi_df.merge(dev_indicators_df,  left_on='country', right_on='Country Name', how ='outer')
+
+merged_df
+```
+
+> [!CAUTION]
+> This approach caused performance issues, including extended processing times and eventual it crashed the Python kernel.
+
+> [!TIP]
+> To address this, I adopted a more focused approach by merging only the columns necessary to address specific research questions.
+
+
+
+```ruby
+merged_df = hdi_df.merge(dev_indicators_df,  left_on='country', right_on='Country Name', how ='outer')
+
+merged_df
+```
+
+> [!WARNING]
+> 
+
+
+
 
 
 
