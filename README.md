@@ -140,7 +140,7 @@ This comparative study will provide insights into the strengths and limitations 
        
   C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
        
- ## Cleaning Process with Power BI and Python - HDI dataset
+ ## Cleaning Process with Power BI and Python 
 
 ***
   > [!IMPORTANT]
@@ -697,7 +697,7 @@ analyze_column('hdi_2005')
         However, please note that I was unable to fully validate the GDP per capita (USD) values because the dataset does not include a direct population column. GDP per capita is calculated as GDP divided by the total population, and without the population data, I could not verify the accuracy of this metric.
 
 
- ## Cleaning Process with Python - Development Indicators 
+ ## Cleaning Process with Python 
 
   * The field names listed above have been renamed to shorter versions.
 
