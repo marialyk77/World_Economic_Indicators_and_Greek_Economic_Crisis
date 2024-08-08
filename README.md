@@ -542,8 +542,9 @@ df.loc[df['country'].isin(mena), 'region'] = 'MENA'
  
 
  ### 🐍 Implementation with Python:
- 
-I applied a script that automates the process, eliminating the need to repeat the same steps for multiple columns. 
+
+> [!NOTE]
+> I implemented a script that automates the process of analyzing and visualizing multiple columns, thus eliminating the need to manually repeat the same steps for each column. This script not only streamlines the workflow but also effectively integrates data analysis with visualization. It calculates important statistics such as skewness and determines the appropriate imputation method for missing values. Additionally, it generates histograms for each column, complete with annotations that provide context about the data distribution and imputation choices. :joy:
 
 My script in Python is: 
 
@@ -763,6 +764,9 @@ df['Region'] = df['Region'].replace(region_name)
 df.isna().sum()
 ```
 ![image](https://github.com/user-attachments/assets/10b2fa66-7423-4de8-9c58-8980a494b4b9)
+
+> [!NOTE]
+> The code follows the same logic as used for the HDI dataset, automating the process of analyzing and visualizing multiple columns in the development indicators dataset. This approach eliminates the need for repetitive manual steps and effectively integrates data analysis with visualization by calculating key statistics and generating annotated histograms. :wink:
 
 
 ``` ruby
