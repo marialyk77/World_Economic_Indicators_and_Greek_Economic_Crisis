@@ -93,7 +93,7 @@ This comparative study will provide insights into the strengths and limitations 
 
 # HDI table
 
-## Exploratory Data Analysis - HDI dataset 
+## Exploratory Data Analysis 
 
 **1.** **Erros & Data Completness**:
    + There were no errors.
@@ -353,7 +353,7 @@ df.loc[df['country'].isin(mena), 'region'] = 'MENA'
 ```
 
 
-   ## Addressing the null values - HDI dataset.
+   ## Addressing the null values
 
    ### 📊 Implementation with Power Query:
     
@@ -670,7 +670,7 @@ analyze_column('hdi_2005')
 
 # Development Indicators table
 
-## Exploratory Data Analysis - Development Indicators
+## Exploratory Data Analysis 
 
 > [!IMPORTANT]   
 > 1. The analysis is focused on the **21st century**. Any non related column was removed. 
@@ -762,7 +762,7 @@ df['Region'] = df['Region'].replace(region_name)
 ```
 
 
-  ## Addressing the null values - Development Indicators Dataset
+  ## Addressing the null values
 
 ``` ruby
 ## Checking if Nulls :  found in 10 columns 
