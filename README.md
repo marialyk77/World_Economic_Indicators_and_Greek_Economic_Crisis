@@ -234,7 +234,7 @@ df['iso3'].tail(10)
 country_rename = {
     "Iran, Islamic Rep": "Iran",
     "United States of America": "USA",
-    "United Kingdom": "UK",
+    "UK": "United Kingdom",
     "Russian Federation": "Russia",
     "Venezuela, Bolivarian Republic of": "Venezuela",
     "Bolivia (Plurinational State of)": "Bolivia",
@@ -252,8 +252,11 @@ country_rename = {
     "Venezuela (Bolivarian Republic of)" : "Venezuela",
     "Viet Nam": "Vietnam",
     "Lao People's Democratic Republic": "Laos",
-    "Iran (Islamic Republic of)": "Iran"
-    
+    "Iran (Islamic Republic of)": "Iran",
+    'Saint Vincent and the Grenadines': 'St. Vincent and the Grenadines',
+    'Saint Kitts and Nevis': 'St. Kitts and Nevis',
+    'Saint Lucia': 'St. Lucia'
+       
 }
 
 df.loc[:, 'country'] = df['country'].replace(country_rename)
@@ -736,7 +739,14 @@ country_rename = {
     'Macao SAR, China': 'Macao',
     'Syrian Arab Republic': 'Syria',
      'Venezuela, RB': 'Venezuela',
-    'Yemen, Rep.': 'Yemen'
+    'Yemen, Rep.': 'Yemen',
+    'Slovak Republic': 'Slovakia',
+    "Cote d'Ivoire": "Côte d'Ivoire",
+    'Czech Republic': 'Czechia' , 
+    'Russian Federation': 'Russia',
+    'Kyrgyz Republic': 'Kyrgyzstan', 
+    'West Bank and Gaza': 'Palestine'
+    
 }
 
 df['Country Name'] = df['Country Name'].replace(country_rename)
