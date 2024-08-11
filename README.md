@@ -903,7 +903,11 @@ merged_df
 
 
 
+Your scatter plot visualizes the relationship between Population Density Growth % and GDP Growth % from 2000 to 2018. The plot shows a wide distribution of GDP growth percentages, with most countries experiencing GDP growth between 0% and 1000%, and population density growth ranging from negative values (indicating a decrease in population density) to over 300%.
 
+Interpretation:
+Positive Correlation: Some correlation might exist where countries with moderate population density growth also have moderate GDP growth. However, there’s a spread, indicating other factors influence GDP growth.
+Outliers: There are a few outliers with extremely high GDP growth but low or negative population density growth.
 
 
 
