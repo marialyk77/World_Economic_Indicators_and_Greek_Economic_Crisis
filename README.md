@@ -98,9 +98,11 @@ This comparative study will provide insights into the strengths and limitations 
 **1.** **Erros & Data Completness**:
    + There were no errors.
    + There were Blanks and Nulls:
-     * Blanks were found in the [hdicode] & [region]:
-
-  ![image](https://github.com/user-attachments/assets/7e0ae7de-2f7e-49ef-8733-2a886d6fd424)
+     
+  * Blanks were found in:
+      1. **Hdicode** column
+         
+      2. **Region** column 
 
   * Nulls were found in:
       1. **HDI** year columns ranging from 2% - 10%.
@@ -266,10 +268,11 @@ print(df['country'])
 ***
    * The **[hdicode]** column contained a total of 15 blank rows. To maintain consistency, I replaced the blanks with Null, and then with N/A. In addition, I replaced the more general categories: Low, Medium, High, Very High with the more informative codes as found earlier in the [ISO 3] (VHHD, HHD, MHD, LHD). 
 ***
-   ![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
-
 
  📊 **Power Query**: The process of handling NaN and replacing categories is straightforward with user-friendly interfaces for _replacing_ values and handling nulls. 
+
+   ![image](https://github.com/user-attachments/assets/5e685cdc-f8bc-4695-b425-e3f505a5da37)
+
 
  🐍 **Pandas**: While more code is required, Pandas offers flexibility and powerful functions like _fillna_ and _replace_ to efficiently handle such data transformations programmatically
 
