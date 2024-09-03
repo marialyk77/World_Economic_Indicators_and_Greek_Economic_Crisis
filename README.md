@@ -887,6 +887,96 @@ print(missing_in_hdi)
 
 ### Question 1: Which countries have experienced the highest growth in population and GDP? Is there overlap?
  
+- To answer this question I used the column [GDP (USD)] and [Population Density] from the Development Indicators dataset.
+- I focused on data from the years 2000 and 2018 to calculate the **percentage growth**, allowing for a clear comparison of long-term trends in **population density and GDP over nearly two decades**. This approach highlights significant changes without the complexity of year-by-year analysis.
+  
+```ruby
+# Filter the data for the years 2000 and 2018
+filtered_data = dev_indicators_df[dev_indicators_df['Year'].isin([2000, 2018])]
+
+# Pivot the data so that each country has its 2000 and 2018 data on the same row
+pivot_data = filtered_data.pivot(index='Country Name', columns='Year', values=['Population Density', 'GDP (USD)'])
+
+# Calculate the growth rate for Population Density and GDP from 2000 to 2018
+pivot_data['Popul. Density Growth %'] = (pivot_data['Population Density'][2018] - pivot_data['Population Density'][2000]) / pivot_data['Population Density'][2000] * 100
+pivot_data['GDP Growth %'] = (pivot_data['GDP (USD)'][2018] - pivot_data['GDP (USD)'][2000]) / pivot_data['GDP (USD)'][2000] * 100
+
+# Display the resulting DataFrame with the growth rates
+pivot_data[['Popul. Density Growth %', 'GDP Growth %']]
+```
+- I plotted a scatter plot:
+
+```ruby
+# Time for the scatterplot 
+
+# Define outlier thresholds
+gdp_threshold = 2500  # Updated threshold for GDP Growth
+pop_density_threshold = 300  # Updated threshold for Population Density Growth
+
+# Define colors
+deep_purple = '#6a0dad'  # Deep purple for scatter plot dots
+background_color = '#D1C4E9'  # Light lavender background color
+
+# Filter for outliers
+outliers = pivot_data[(pivot_data['GDP Growth %_'] > gdp_threshold) | 
+                      (pivot_data['Popul. Density Growth %_'] > pop_density_threshold)]
+
+# Plotting without annotations except for outliers
+plt.figure(figsize=(5, 3))
+sns.regplot(
+    x='Popul. Density Growth %_', 
+    y='GDP Growth %_', 
+    data=pivot_data, 
+    scatter_kws={'color': deep_purple, 's': 100, 'alpha': 0.7, 'edgecolor': 'k'}, 
+    line_kws={'color': 'red', 'linewidth': 2},
+    ci=None
+)
+
+plt.ylim(0, 3500)  # Adjust based on your data range
+
+
+# Annotate only the outliers using the index as the country name
+for idx, row in outliers.iterrows():
+    plt.annotate(
+        idx,  # 'Country Name' is the index of the DF: pivot_data, so i access it by calling the index. 
+        (row['Popul. Density Growth %_'], row['GDP Growth %_']), 
+        textcoords="offset points",
+        xytext=(0, 10),  
+        ha='center',
+        fontsize=8,
+        color='black'
+    )
+
+# Titles and labels
+plt.title('Population Density Growth vs GDP Growth (2000-2018)', fontsize=10)
+plt.xlabel('Population Density Growth (%)', fontsize=8)
+plt.ylabel('GDP Growth (%)', fontsize=8)
+
+# Set plot background color
+plt.gca().set_facecolor(background_color)
+
+# Define the full path to save the plot
+save_path = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\population_density_vs_gdp_growth.png'
+
+# Save the plot
+plt.savefig(save_path, format='png', bbox_inches='tight')
+
+# Show the plot
+plt.show()
+```
+![population_density_vs_gdp_growth](https://github.com/user-attachments/assets/1601b962-b806-456c-934e-7d6d19494a23)
+
+> [!NOTE]
+> For some countries the GDP growth was exceptionally high.
+> Iraq for example has a very high growth rate of over 3000%. This is a result of its economic recovery from a low base, significant increases in oil revenue, and reconstruction efforts following years of conflict and sanctions.
+
+
+
+
+
+
+
+
 
 
 
