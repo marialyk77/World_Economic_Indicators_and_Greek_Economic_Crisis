@@ -904,7 +904,7 @@ pivot_data['GDP Growth %'] = (pivot_data['GDP (USD)'][2018] - pivot_data['GDP (U
 # Display the resulting DataFrame with the growth rates
 pivot_data[['Popul. Density Growth %', 'GDP Growth %']]
 ```
-- I plotted a scatter plot:
+#### 1. I plotted a scatter plot:
 
 ```ruby
 # Time for the scatterplot 
@@ -969,27 +969,146 @@ plt.show()
 ```
 ![population_density_vs_gdp_growth](https://github.com/user-attachments/assets/40a4486c-bd28-4e3a-8dc4-d33b1c064f22)
 
-#### Question 1 Answer: 
+##### Question 1 Answer: 
 
-- The scatter plot suggests a **positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. _However, the strength of this correlation is not clear without quantifing the relationship with regression analysis_.
+- The scatter plot suggests a **positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth.
+- The **data points are widely spread around the trend line**, indicating that the correlation is not strong. Other factors likely contribute to GDP growth beyond just population density growth.
 - The scatter plot shows that **points are clustered at lower growth**. The majority of countries in the scatter plot seem to be clustered at lower levels of both GDP growth and population density growth. This is typical for many countries where economic growth is steady but not explosive, and population density changes are gradual.
 - Qatar and Iraq stand as **notable outliers**.
 - Qatar, in particular, stands out as having both significant GDP growth and a notable increase in population density. Qatar’s exceptional GDP growth can be largely attributed to its abundant oil and natural gas reserves. And its population density growth might be related to the country’s economic boom, as it attracts a large number of foreign workers.
 - Iraq also shows high GDP growth but with a lower population density growth.
 - **Overlap**: Yes, overlap is observed in the case of Qatar as it is experiencing both high population density growth and GDP growth. This suggests that Qatar has been undergoing rapid economic expansion accompanied by a significant increase in population density.
 
+#### 2. I performed Regression Analysis.
+
+Even though the **scatter plot indicated a weak correlation**, **regression analysis is still important**. 
+- It quantifies the relationship more precisely
+- Checks for statistical significance
+- Helps understanding how well the data fits to the model
+- Allows to assess the impact of outliers.
+  
+```ruby
+import statsmodels.api as sm
+
+# The independent variable (Population Density Growth)
+X = pivot_data['Popul. Density Growth %_']
+
+# The dependent variable (GDP Growth)
+y = pivot_data['GDP Growth %_']
+
+# Adding a constant to the model (intercept)
+X_with_const = sm.add_constant(X)
+
+# Fitting the OLS regression model
+model = sm.OLS(y, X_with_const).fit()
+
+# Printing the summary of the regression model
+print(model.summary())
+```
+
+**Results of the regression analysis:**
+
+![image](https://github.com/user-attachments/assets/29125704-3dd5-4b03-a341-644a408e885e)
+
+![image](https://github.com/user-attachments/assets/97e94f6e-a5fc-4b36-a4de-bc6f626bb61b)
+
+- **R-squared**: 0.090 is relatively low. Only 9% of the variability is explained by the model.  
+  This could be due to various reasons, including potential issues with model assumptions, incorrect model specification, or missing important predictors. 
+
+- **Adjusted R-squared**: 0.085 it is also low, reinforcing that the model's explanatory power is limited.
+    
+- **F-statistic**: 20.57 with a p-value of 9.66e-06 (very small) indicates that the model as a whole is statistically significant.
+    
+- **const (Intercept)**: 237.9586, with a standard error of 25.135. The t-value is 9.467, and the p-value is 0.000. This suggests that 
+                         the intercept is significantly different from zero.
+    
+- **Popul. Density Growth % (Predictor)**: 2.1576, with a standard error of 0.476. The t-value is 4.536, and the p-value is 0.000. 
+                                           This indicates that the population density growth percentage has a statistically significant 
+                                           positive effect on GDP growth.   
+ 
+- **Model Fit**: The low R-squared suggests that the model does not fit the data particularly well. 
+                 While the model’s predictor (Population Density Growth %) is statistically significant, it explains only a small 
+                 portion of the variance in GDP Growth %.
+    
+- **Predictor Impact**: The positive coefficient for Population Density Growth % suggests that, holding other factors constant, an 
+                        increase in population density growth is associated with an increase in GDP growth. 
+                        However, given the low R-squared, the practical significance of this relationship might be limited.   
+        
+
+#### 3.I performed residual analysis after noting the low R- squared  value to better assess the model's fit.
+
+```ruby
+import numpy as np
+import scipy.stats as stats
+
+# Calculating residuals and fitted values
+residuals = model.resid
+fitted_values = model.fittedvalues
+
+# Optionally, get influence measures
+influence = model.get_influence()
+leverage = influence.hat_matrix_diag
 
 
+plt.figure(figsize=(10, 7))
+
+# Residuals vs. Fitted Values Plot
+plt.subplot(2, 2, 1)
+sns.scatterplot(x=fitted_values, y=residuals)
+plt.axhline(y=0, color='r', linestyle='--')
+plt.title('Residuals vs. Fitted Values')
+plt.xlabel('Fitted Values')
+plt.ylabel('Residuals')
+
+# Normal Q-Q Plot
+plt.subplot(2, 2, 2)
+stats.probplot(residuals, dist="norm", plot=plt)
+plt.title('Normal Q-Q Plot')
+
+# Scale-Location Plot
+plt.subplot(2, 2, 3)
+sqrt_std_residuals = np.sqrt(np.abs(residuals / np.std(residuals)))
+sns.scatterplot(x=fitted_values, y=sqrt_std_residuals)
+plt.axhline(y=0, color='r', linestyle='--')
+plt.title('Scale-Location Plot')
+plt.xlabel('Fitted Values')
+plt.ylabel('Sqrt(Standardized Residuals)')
+
+# Residuals vs. Leverage Plot
+plt.subplot(2, 2, 4)
+sns.scatterplot(x=leverage, y=residuals)
+plt.axhline(y=0, color='r', linestyle='--')
+plt.title('Residuals vs. Leverage')
+plt.xlabel('Leverage')
+plt.ylabel('Residuals')
+
+plt.tight_layout()
+plt.show()
+```
+![a results](https://github.com/user-attachments/assets/616ba659-9208-49fa-b9b4-d0bea362247d)
 
 
+**Results from the residuals** 
 
+- Linearity: The Residuals vs. Fitted Values plot suggests potential non-linearity in the model.
 
+- Normality: The Q-Q plot shows deviations from normality, particularly in the tails, indicating possible outliers or skewness.
 
+- Homoscedasticity: Both the Residuals vs. Fitted Values and Scale-Location plots suggest heteroscedasticity, where residual variance changes with fitted values.
 
+- Influential Points: The Residuals vs. Leverage plot shows a few high-leverage points, but they do not have a large influence on the model.
+    
+**Final Thoughts** 
 
+- The residuals analysis and low R-squared value indicate that the model, as it currently stands, 
+cannot effectively explain the relationship between GDP growth and population density growth. 
 
+- In other words, the population density growth alone cannot adequately explain GDP growth. 
 
-
+- The regression model shows a weak relationship between the two variables, 
+  as indicated by the low R-squared value and issues with the residuals. 
+  This suggests that GDP growth is likely influenced by a more complex set of factors, 
+  and population density growth by itself is not a strong predictor.
 
 
 ~~1. **Initial Data Preparation:** Before proceeding with the actual analysis, it was necessary to merge the two datasets into a single dataframe.2. **Merging Datasets:**For effective data integration, merging typically requires at least one common column or key from each dataset. In this case, the columns used for merging are country from the HDI dataset and Country Name from the Development Indicators dataset. Before proceeding with the merge, I assessed whether these columns contained matching data to ensure alignment~~
