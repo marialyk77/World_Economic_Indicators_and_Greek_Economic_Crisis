@@ -1102,14 +1102,14 @@ plt.show()
     
 #### 4. Final Thoughts and Interpretation for the Question 1 
 
-- The residuals analysis and low R-squared value indicate that the model, as it currently stands, 
-**cannot effectively explain the relationship between GDP growth and population density growth**. Only a small portion of the variability in GDP growth is explained by population density growth.
-
 - The regression model shows **a weak relationship between the two variables**, 
   as indicated by the low R-squared value and issues with the residuals. 
   This suggests that GDP growth is likely influenced by a more complex set of factors, 
   and population density growth by itself is not a strong predictor.
   
+- The residuals analysis and low R-squared value indicate that the model, as it currently stands, 
+**cannot effectively explain the relationship between GDP growth and population density growth**. Only a small portion of the variability in GDP growth is explained by population density growth.
+
 - Model Improvement: Given these findings, it may be beneficial to explore additional predictors and refine the model to improve its explanatory power. Investigating other variables or employing different modeling techniques could provide a more comprehensive understanding of the factors driving GDP growth.
 
 ~~1. **Initial Data Preparation:** Before proceeding with the actual analysis, it was necessary to merge the two datasets into a single dataframe.2. **Merging Datasets:**For effective data integration, merging typically requires at least one common column or key from each dataset. In this case, the columns used for merging are country from the HDI dataset and Country Name from the Development Indicators dataset. Before proceeding with the merge, I assessed whether these columns contained matching data to ensure alignment~~
