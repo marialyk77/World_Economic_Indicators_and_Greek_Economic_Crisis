@@ -971,9 +971,10 @@ plt.show()
 
 #### Question 1 Answer: 
 
-- The scatter plot suggests a **positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. _However, the strength of this correlation is not clear without statistical analysis_.
+- The scatter plot suggests a **positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. _However, the strength of this correlation is not clear without quantifing the relationship with regression analysis_.
+- The scatter plot shows that **points are clustered at lower growth**. The majority of countries in the scatter plot seem to be clustered at lower levels of both GDP growth and population density growth. This is typical for many countries where economic growth is steady but not explosive, and population density changes are gradual.
 - Qatar and Iraq stand as **notable outliers**.
-- Qatar, in particular, stands out as having both significant GDP growth and a notable increase in population density.
+- Qatar, in particular, stands out as having both significant GDP growth and a notable increase in population density. Qatar’s exceptional GDP growth can be largely attributed to its abundant oil and natural gas reserves. And its population density growth might be related to the country’s economic boom, as it attracts a large number of foreign workers.
 - Iraq also shows high GDP growth but with a lower population density growth.
 - **Overlap**: Yes, overlap is observed in the case of Qatar as it is experiencing both high population density growth and GDP growth. This suggests that Qatar has been undergoing rapid economic expansion accompanied by a significant increase in population density.
 
