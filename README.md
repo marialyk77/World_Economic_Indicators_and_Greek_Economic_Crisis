@@ -969,7 +969,7 @@ plt.show()
 ```
 ![population_density_vs_gdp_growth](https://github.com/user-attachments/assets/40a4486c-bd28-4e3a-8dc4-d33b1c064f22)
 
-#### Answer: 
+#### Question 1 Answer: 
 
 - The scatter plot suggests a **positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. _However, the strength of this correlation is not clear without statistical analysis_.
 - Qatar and Iraq stand as **notable outliers**.
