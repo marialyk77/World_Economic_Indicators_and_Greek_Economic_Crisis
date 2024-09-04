@@ -951,6 +951,9 @@ for idx, row in outliers.iterrows():
 plt.title('Population Density Growth vs GDP Growth (2000-2018)', fontsize=10)
 plt.xlabel('Population Density Growth (%)', fontsize=8)
 plt.ylabel('GDP Growth (%)', fontsize=8)
+plt.xticks(fontsize=6)  # adjusting the values on the x and y 
+plt.yticks(fontsize=6)  
+
 
 # Set plot background color
 plt.gca().set_facecolor(background_color)
@@ -964,30 +967,31 @@ plt.savefig(save_path, format='png', bbox_inches='tight')
 # Show the plot
 plt.show()
 ```
-![population_density_vs_gdp_growth](https://github.com/user-attachments/assets/1601b962-b806-456c-934e-7d6d19494a23)
+![population_density_vs_gdp_growth](https://github.com/user-attachments/assets/40a4486c-bd28-4e3a-8dc4-d33b1c064f22)
 
-> [!NOTE]
-> For some countries the GDP growth was exceptionally high.
-> Iraq for example has a very high growth rate of over 3000%. This is a result of its economic recovery from a low base, significant increases in oil revenue, and reconstruction efforts following years of conflict and sanctions.
+#### Answer: 
 
-
-
-
-
-
+- The scatter plot suggests a **positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. _However, the strength of this correlation is not clear without statistical analysis_.
+- Qatar and Iraq stand as **notable outliers**.
+- Qatar, in particular, stands out as having both significant GDP growth and a notable increase in population density.
+- Iraq also shows high GDP growth but with a lower population density growth.
+- **Overlap**: Yes, overlap is observed in the case of Qatar as it is experiencing both high population density growth and GDP growth. This suggests that Qatar has been undergoing rapid economic expansion accompanied by a significant increase in population density.
 
 
 
 
 
 
----- 
-------1. **Initial Data Preparation:** Before proceeding with the actual analysis, it was necessary to merge the two datasets into a single dataframe.
 
-2. **Merging Datasets:**
-   - For effective data integration, merging typically requires at least one common column or key from each dataset. In this case, the columns used for merging are country from the HDI dataset and Country Name from the Development Indicators dataset. Before proceeding with the merge, I assessed whether these columns contained matching data to ensure alignment.-----
-   - -------
 
+
+
+
+
+
+
+
+~~1. **Initial Data Preparation:** Before proceeding with the actual analysis, it was necessary to merge the two datasets into a single dataframe.2. **Merging Datasets:**For effective data integration, merging typically requires at least one common column or key from each dataset. In this case, the columns used for merging are country from the HDI dataset and Country Name from the Development Indicators dataset. Before proceeding with the merge, I assessed whether these columns contained matching data to ensure alignment~~
 
 
 
