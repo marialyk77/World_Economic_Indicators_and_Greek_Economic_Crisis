@@ -1102,15 +1102,13 @@ plt.show()
     
 #### 4. Final Thoughts and Interpretation for the Question 1 
 
-- The regression model shows **a weak relationship between the two variables**, 
-  as indicated by the low R-squared value and issues with the residuals. 
-  This suggests that GDP growth is likely influenced by a more complex set of factors, 
-  and population density growth by itself is not a strong predictor.
-  
-- The residuals analysis and low R-squared value indicate that the model, as it currently stands, 
-**cannot effectively explain the relationship between GDP growth and population density growth**. Only a small portion of the variability in GDP growth is explained by population density growth.
+- **Scatter Plot Insights**: The scatter plot indicates a positive correlation between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, which signals a weak correlation. Most countries are clustered at lower levels of both GDP and population density growth, reflecting steady but not explosive growth patterns. Notably, Qatar and Iraq are outliers: Qatar shows significant growth in both dimensions, likely driven by its economic boom due to oil and gas reserves, while Iraq exhibits high GDP growth with lower population density growth.
 
-- Model Improvement: Given these findings, it may be beneficial to explore additional predictors and refine the model to improve its explanatory power. Investigating other variables or employing different modeling techniques could provide a more comprehensive understanding of the factors driving GDP growth.
+- **Model Limitations**: The low R-squared value and residuals analysis reveal that the regression model, as it stands, cannot effectively explain the relationship between GDP growth and population density growth. The model only accounts for a small portion of the variability in GDP growth, suggesting that population density growth alone is not a strong predictor.
+
+- **Complex Influences**: The scatter plot and model results imply that GDP growth is influenced by a complex set of factors beyond population density growth. The weak relationship observed underscores the need for a more nuanced approach to understand the drivers of GDP growth.
+
+- **Model Improvement**: To enhance the model’s explanatory power, it would be beneficial to explore additional predictors and refine the model.
 
 ~~1. **Initial Data Preparation:** Before proceeding with the actual analysis, it was necessary to merge the two datasets into a single dataframe.2. **Merging Datasets:**For effective data integration, merging typically requires at least one common column or key from each dataset. In this case, the columns used for merging are country from the HDI dataset and Country Name from the Development Indicators dataset. Before proceeding with the merge, I assessed whether these columns contained matching data to ensure alignment~~
 
