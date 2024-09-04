@@ -1100,7 +1100,7 @@ plt.show()
 
 - Influential Points: The Residuals vs. Leverage plot shows a few high-leverage points, but they do not have a large influence on the model.
     
-#### Final Thoughts and Interpretation for the Question 1 
+#### 4. Final Thoughts and Interpretation for the Question 1 
 
 - The residuals analysis and low R-squared value indicate that the model, as it currently stands, 
 **cannot effectively explain the relationship between GDP growth and population density growth**. Only a small portion of the variability in GDP growth is explained by population density growth.
