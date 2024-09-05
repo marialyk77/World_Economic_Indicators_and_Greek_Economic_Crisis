@@ -633,7 +633,7 @@ analyze_column('hdi_2005')
 
 
  
-# Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
+## Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
 
 > [!NOTE]
 > I explored imputation methods for handling missing values using Power BI and Python. While both approaches aimed to address null values effectively, **the Python method demonstrated clear advantages in automation, consistency, and efficiency.**
