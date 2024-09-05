@@ -1130,6 +1130,8 @@ region_growth = hdi_df_filtered.groupby('region')['hdi_growth'].mean().sort_valu
 print(region_growth)
 ```
 
+#### 2. I plotted a Bar Graph 
+
 ![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
