@@ -1174,7 +1174,7 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
-#### 4. Interpretation for the 2nd Question 
+#### 3. Interpretation for the 2nd Question 
 
 - The chart shows that **South Asia (SA) had the highest HDI growth** from 2000 to 2021, 
 while **Latin America and the Caribbean (LAC) had the lowest**. Other regions like Europe and Central Asia (ECA) and Sub-Saharan Africa (SSA) experienced moderate growth.
