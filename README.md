@@ -1130,11 +1130,14 @@ region_growth = hdi_df_filtered.groupby('region')['hdi_growth'].mean().sort_valu
 print(region_growth)
 ```
 
+![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
+#### 4. Interpretation for the Question 2
 
+- The chart shows that **South Asia (SA) had the highest HDI growth** from 2000 to 2021, 
+while **Latin America and the Caribbean (LAC) had the lowest**. Other regions like Europe and Central Asia (ECA) and Sub-Saharan Africa (SSA) experienced moderate growth.
 
-![hdi_growth_by_region](https://github.com/user-attachments/assets/c8bf1f5d-ae33-4648-818c-7c2974333a46)
 
 
 
