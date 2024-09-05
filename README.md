@@ -7,7 +7,7 @@
 ## Research Questions: 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
 
-2. Where regions saw the most growth in HDI in the 21st century?
+2. In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
 
 3. Which factors are highly correlated with life expectancy?
 
@@ -909,7 +909,7 @@ pivot_data[['Popul. Density Growth %', 'GDP Growth %']]
 ```ruby
 # Time for the scatterplot 
 
-# Define outlier thresholds
+# Defining what will be outliers
 gdp_threshold = 2500  # Updated threshold for GDP Growth
 pop_density_threshold = 300  # Updated threshold for Population Density Growth
 
@@ -917,7 +917,7 @@ pop_density_threshold = 300  # Updated threshold for Population Density Growth
 deep_purple = '#6a0dad'  # Deep purple for scatter plot dots
 background_color = '#D1C4E9'  # Light lavender background color
 
-# Filter for outliers
+# Filtering out the outliers
 outliers = pivot_data[(pivot_data['GDP Growth %_'] > gdp_threshold) | 
                       (pivot_data['Popul. Density Growth %_'] > pop_density_threshold)]
 
@@ -947,7 +947,7 @@ for idx, row in outliers.iterrows():
         color='black'
     )
 
-# Titles and labels
+# Defining titles and labels
 plt.title('Population Density Growth vs GDP Growth (2000-2018)', fontsize=10)
 plt.xlabel('Population Density Growth (%)', fontsize=8)
 plt.ylabel('GDP Growth (%)', fontsize=8)
@@ -955,13 +955,12 @@ plt.xticks(fontsize=6)  # adjusting the values on the x and y
 plt.yticks(fontsize=6)  
 
 
-# Set plot background color
+# Set plot background color with my favorite color 
 plt.gca().set_facecolor(background_color)
 
-# Define the full path to save the plot
+# Save the plot here: 
 save_path = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\population_density_vs_gdp_growth.png'
 
-# Save the plot
 plt.savefig(save_path, format='png', bbox_inches='tight')
 
 # Show the plot
@@ -1114,10 +1113,28 @@ plt.show()
 
 
 
+### Question 2: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
+
+
+#### 1. I calculated the HDI Growth, Grouped by region and Calculated the AVG.
+
+```ruby
+hdi_df['hdi_growth'] = hdi_df['hdi_2021'] - hdi_df['hdi_2000']
+
+# I will exclude the "World" region
+hdi_df_filtered = hdi_df[hdi_df['region'] != 'World']
+
+region_growth = hdi_df_filtered.groupby('region')['hdi_growth'].mean().sort_values(ascending=False)
+
+# Step 3: Display the regions with the most growth
+print(region_growth)
+```
 
 
 
 
+
+![hdi_growth_by_region](https://github.com/user-attachments/assets/c8bf1f5d-ae33-4648-818c-7c2974333a46)
 
 
 
