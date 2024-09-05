@@ -1132,6 +1132,45 @@ print(region_growth)
 
 #### 2. I plotted a Bar Graph 
 
+```ruby
+# setting my favorite color for highest growth with gradient for the rest
+max_growth_color = '#4527A0'  # Deep purple
+light_purple = '#D1C4E9'  # Light purple
+
+# Finding the region with the highest growth
+max_growth_value = region_growth.max()
+
+# Creating a color list where the highest is deep purple, and others are lighter purples
+colors = [
+    max_growth_color if val == max_growth_value else 
+    sns.light_palette("#4527A0", reverse=True, n_colors=len(region_growth))[i]
+    for i, val in enumerate(region_growth)
+]
+
+# Plotting
+plt.figure(figsize=(10, 6))
+bars = plt.bar(region_growth.index, region_growth.values, color=colors)
+
+# The title will be: 
+plt.title('Average HDI Growth by Region (2000-2021)', fontsize=14)
+
+# I dont want x and y axis labels
+plt.xlabel('')
+plt.ylabel('')
+
+# Rotate x-axis labels for better readability and clarity 
+plt.xticks(rotation=45)
+
+# Save the plot
+save_path = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\hdi_growth_by_region.png'
+plt.savefig(save_path, format='png', bbox_inches='tight')
+
+# Time to show the plot
+plt.tight_layout()
+plt.show()
+```
+
+
 ![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
