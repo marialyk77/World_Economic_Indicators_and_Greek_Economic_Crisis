@@ -1099,7 +1099,7 @@ plt.show()
 
 - Influential Points: The Residuals vs. Leverage plot shows a few high-leverage points, but they do not have a large influence on the model.
     
-#### 4. Final Thoughts and Interpretation for the Question 1 
+#### 4. Final Thoughts and Interpretation for the 1st Question 
 
 - **Scatter Plot Insights**: The scatter plot indicates a positive correlation between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, which signals a weak correlation. Most countries are clustered at lower levels of both GDP and population density growth, reflecting steady but not explosive growth patterns. Notably, Qatar and Iraq are outliers: Qatar shows significant growth in both dimensions, likely driven by its economic boom due to oil and gas reserves, while Iraq exhibits high GDP growth with lower population density growth.
 
@@ -1174,7 +1174,7 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
-#### 4. Interpretation for the Question 2
+#### 4. Interpretation for the 2nd Question 
 
 - The chart shows that **South Asia (SA) had the highest HDI growth** from 2000 to 2021, 
 while **Latin America and the Caribbean (LAC) had the lowest**. Other regions like Europe and Central Asia (ECA) and Sub-Saharan Africa (SSA) experienced moderate growth.
