@@ -293,7 +293,7 @@ df.loc[:, 'hdicode'] = df['hdicode'].replace(category_replacing)
    * The **[region]** column contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I **filled the blanks with the appropriate region.**
 ***
 
-## **Implementation with Power Query**  📊:
+### **Implementation with Power Query**  📊:
 
    **1.** I first created a new conditional column called [Region_filled], listing only the countries whose region was missing from the original [region] column:
       
@@ -307,7 +307,7 @@ df.loc[:, 'hdicode'] = df['hdicode'].replace(category_replacing)
 
    ![image](https://github.com/user-attachments/assets/ed0833aa-6a0f-4249-9fee-ff795750c4f4)
 
-## **Implementation with Pandas** 🐍:
+### **Implementation with Pandas** 🐍:
 
 ```ruby
 ## Filling the blanks with the appropriate region
