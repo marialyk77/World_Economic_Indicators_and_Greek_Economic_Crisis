@@ -361,9 +361,9 @@ df.loc[df['country'].isin(mena), 'region'] = 'MENA'
 
    ## Addressing the null values
 
-   ### 📊 Implementation with Power Query:
+   ### Implementation with Power Query 📊:
     
-   #### A. HDI xxxx Fields 
+   🔍 **A. HDI xxxx Fields** 
 
    Initially, I considered using the mode, but due to multiple values sharing the highest frequency in some HDI fields, a clear mode could not be determined. As an alternative, I opted to use either the average or the median as an imputation method. However, the mean is sensitive to outliers. Because, outliers can pull the mean towards them, making it less representative of the central tendency of the data. So, to proceed cautiously, I first had to check for outliers. But the distribution of the data will define first the method to use in order to detect outliers.
 
@@ -440,7 +440,7 @@ df.loc[df['country'].isin(mena), 'region'] = 'MENA'
  > **Imputation Method:** Typically, when outliers are present, we use the median to impute nulls, and when there are no outliers, we use the mean. Here we do not have outliers but the data is left-skewed. The **median** is likely a more appropriate measure of central tendency for imputing the nulls, as it is less affected by skewness compared to the mean.
 
 
-   #### B. Rest Fields 
+  🔍 **B. Rest Fields** 
    
   *For the remaining columns with null values, I will plot histograms to check the distributions but will not perform outlier detection as extensively as for the HDI column. This decision is based on the project's focus on practice and skill development, and to save time. In the case of the HDI column, outlier analysis revealed only left skewness without significant outliers, making a similar in-depth analysis for the remaining columns less critical. In addition, similar to the analysis performed for the HDI columns, the distribution analysis was also conducted for selected years.*
   
@@ -547,7 +547,7 @@ df.loc[df['country'].isin(mena), 'region'] = 'MENA'
  > - **Imputation Method**: Given the observed right skew in the distributions for 2015 and 2020, and considering that 2010 had a normal distribution, I will impute the null values with the **median**. Even though 2010 exhibited a normal distribution there could be variations in skewness across the remaining years in the dataset. 
  
 
- ### 🐍 Implementation with Python:
+ ### Implementation with Python 🐍:
 
 > [!NOTE]
 > I implemented a script that automates the process of analyzing and visualizing multiple columns, thus eliminating the need to manually repeat the same steps for each column. This script not only streamlines the workflow but also effectively integrates data analysis with visualization. It calculates important statistics such as skewness and determines the appropriate imputation method for missing values. Additionally, it generates histograms for each column, complete with annotations that provide context about the data distribution and imputation choices. :joy:
