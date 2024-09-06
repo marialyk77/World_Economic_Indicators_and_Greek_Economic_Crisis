@@ -773,7 +773,34 @@ region_name = {
 
 df['Region'] = df['Region'].replace(region_name)
 ```
+> [!WARNING]
+> By replacing "North America" with "NA," I encountered a new issue: Pandas interpreted "NA" as a missing value and replaced it with NaN.
 
+![image](https://github.com/user-attachments/assets/845f0270-871c-409e-94b5-d2ae98cb9502)
+
+And as a matter of fact here we can see: 
+
+![image](https://github.com/user-attachments/assets/0c5ba8d9-97e8-428a-8ba9-38e08c1f2cf8)
+
+**Conclusion: I had to go back and replace "NA" with "NAM" to avoid confusion with NaN and ensure accurate data representation.**
+
+ ```ruby
+## Replacing Long Regions Names 
+
+region_name = {
+    'South Asia': 'SA',
+    'Europe & Central Asia': 'ECA',
+    'Middle East & North Africa': 'MENA',
+    'East Asia & Pacific': 'EAP',
+     'Sub-Saharan Africa': 'SSA',
+    'Latin America & Caribbean': 'LAC',
+    'North America': 'NAM'
+    
+}
+
+## df['Region'] = df['Region'].replace(region_name)
+df.loc[:, 'Region'] = df['Region'].replace(region_name)
+ ```
 
   ## Addressing the null values
 
