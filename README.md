@@ -1126,7 +1126,7 @@ plt.show()
 
 - Influential Points: The Residuals vs. Leverage plot shows a few high-leverage points, but they do not have a large influence on the model.
     
-#### 4. Final Thoughts and Interpretation for the 1st Question 
+#### 4. Results + Interpretation for the 1st Question 
 
 - **Scatter Plot Insights**: The scatter plot indicates a positive correlation between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, which signals a weak correlation. Most countries are clustered at lower levels of both GDP and population density growth, reflecting steady but not explosive growth patterns. Notably, Qatar and Iraq are outliers: Qatar shows significant growth in both dimensions, likely driven by its economic boom due to oil and gas reserves, while Iraq exhibits high GDP growth with lower population density growth.
 
@@ -1135,9 +1135,6 @@ plt.show()
 - **Complex Influences**: The scatter plot and model results imply that GDP growth is influenced by a complex set of factors beyond population density growth. The weak relationship observed underscores the need for a more nuanced approach to understand the drivers of GDP growth.
 
 - **Model Improvement**: To enhance the model’s explanatory power, it would be beneficial to explore additional predictors and refine the model.
-
-~~1. **Initial Data Preparation:** Before proceeding with the actual analysis, it was necessary to merge the two datasets into a single dataframe.2. **Merging Datasets:**For effective data integration, merging typically requires at least one common column or key from each dataset. In this case, the columns used for merging are country from the HDI dataset and Country Name from the Development Indicators dataset. Before proceeding with the merge, I assessed whether these columns contained matching data to ensure alignment~~
-
 
 
 ### Question 2: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
@@ -1201,30 +1198,84 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
-#### 3. Interpretation for the 2nd Question 
+#### 3. Results + Interpretation for the 2nd Question 
 
 - The chart shows that **South Asia (SA) had the highest HDI growth** from 2000 to 2021, 
 while **Latin America and the Caribbean (LAC) had the lowest**. Other regions like Europe and Central Asia (ECA) and Sub-Saharan Africa (SSA) experienced moderate growth.
 
 
 
+### Question 3: Which factors are highly correlated with life expectancy?
+
+#### 1. I merged the datasets 
+
+```ruby
+merged_df = pd.merge(hdi_df, dev_indicators_df, on=['Country Name', 'Region'], how='inner')
+
+print(merged_df.head())
+```
+
+#### 2. Time for Correlation 
+
+
+## on the following columns 
+
+```ruby
+columns_to_use = [
+    'Life Expectacy', 'GDP per capita (USD)', 'Infant mortality %', 'Electric Power Consumption',
+    'Unemployment %', 'Population % using Internet', 'Population Density', 'hdi_2021',
+    'eys_2021', 'mys_2021', 'gnipc_2021', 'lfpr_f_2021', 'lfpr_m_2021', 'gii_2021'
+]
+
+
+subset_df = merged_df[columns_to_use]
+
+
+correlation_matrix = subset_df.corr()
+
+life_expectancy_corr = correlation_matrix['Life Expectacy'].sort_values(ascending=False)
+print(life_expectancy_corr)
+```
+
+**Resoning for using the above columns for the correlation analysis:**
+
+- **From Development Indicators I used:**
+   - Life Expectacy: It measures the average number of years a person is expected to live based on current mortality rates. It is a key indicator of health and quality of life. 
+   - GDP per capita (USD): It represents the average economic output per person. Higher GDP per capita indicates higher income levels - better access to healthcare. 
+   - Infant mortality %: A higher infant mortality rate indicates poorer health conditions and less effective healthcare systems, which directly impacts life expectancy negatively.
+   - Electric Power Consumption: Higher consumption can be associated with better infrastructure and improved healthcare facilities. 
+   - Unemployment %: Higher unemployment can be linked to lower quality of life.
+   - Population % using Internet: Access to information and technology can influence health awareness, access to healthcare resources, and overall life quality.
+   - Population Density: Population density might affect access to healthcare, pollution levels, and overall quality of life.
+
+- **From Human Development Index(HDI) I used the most recent columns to reflect the latest trends:**
+   - hdi_2021: HDI includes life expectancy, education, and income, and it should have a strong correlation with life expectancy.
+   - eys_2021: It refers to the country's predicted years of schooling.
+   - mys_2021: It refers to the country's average years of education.
+   - gnipc_2021: The gross national income per person is an strong economic indicator.
+   - lfpr_f_2021 + lfpr_m_2021: Female + Male  Labour Force Participation Rate. High rates, especially for women can indicate better access to resources.
+   - gii_2021: Gender Inequality Index. Gender inequality can affect overall societal health
+
+
+ #### 3. Results + Interpretation for the 3rd Question 
+
+
+  ![life_expectancy_corr_heatmap](https://github.com/user-attachments/assets/f298f272-c6c1-4de7-943f-460e7ecd43e4)
+   
+
+**Interpretation**
+
+**Strong Positive Correlations:** HDI, years of schooling (both average and expected), internet usage, and national income per capita are closely linked with higher life expectancy.
+
+**Moderate Positive Correlations:** GDP per capita and electric power consumption show a moderate relationship with life expectancy.
+
+**Strong Negative Correlations:** Gender inequality and infant mortality rates have strong negative impacts on life expectancy.
+
+**Weak or No Significant Correlations:** Population density, unemployment, and labor force participation rates show weak or negligible correlations with life expectancy.
 
 
 
-
-
-
-     
-
-
-
-
-
-    
-
-
-
-
+### Question 4: Which factors differentiate "High Income" vs "Low Income" Countries?
 
 
 
