@@ -1277,9 +1277,108 @@ print(life_expectancy_corr)
 
 ### Question 4: Which factors differentiate "High Income" vs "Low Income" Countries?
 
+#### 1. Definition of Key Indicators 
+
+```ruby
+key_indicators = [
+    'GDP per capita (USD)', 'Life Expectacy', 'Infant mortality %', 
+    'Electric Power Consumption', 'Population % using Internet', 
+    'Unemployment %', 'Population Density', 'hdi_2021', 'eys_2021', 
+    'mys_2021', 'gnipc_2021'
+]
+
+# the mean for high-income countries
+high_income_means = high_income_df[key_indicators].mean()
 
 
+# the mean for low-income countries
+low_income_means = low_income_df[key_indicators].mean()
+
+print("High-income means:")
+print(high_income_means)
+
+print("Low-income means:")
+print(low_income_means)
+```
+
+![image](https://github.com/user-attachments/assets/1abfe4df-7302-4509-bd05-8de3f97a26f4)
+
+![image](https://github.com/user-attachments/assets/b612b72b-1377-4bb6-8ff8-e296ba4094bd)
 
 
+#### 2. Viz the data with a Bar Plot 
 
-     
+```ruby
+# Finally i need to use log scale because the values for some indicators, like GDP per capita, are much bigger than others, like unemployment or infant mortality. 
+# Without the log scale, the larger numbers  make the smaller ones hard to see on the chart.. 
+
+    
+# I need better column names for the plot
+better_labels = [
+    'GDP per Capita', 'Life Expectancy', 'Infant Mortality', 
+    'Electric Power', 'Internet Usage', 'Unemployment', 
+    'Pop. Density', 'HDI (2021)', 'Expected Yrs School (2021)', 
+    'Mean Yrs School (2021)', 'GNI per Capita (2021)'
+]
+
+# Create the bar plot
+plt.figure(figsize=(12, 8))
+high_income_means.plot(kind='bar', color='skyblue', label='High Income')
+low_income_means.plot(kind='bar', color='salmon', label='Low Income', alpha=0.7)
+
+# Set y-scale to logarithmic to handle the wide range of values
+plt.yscale('log')
+
+# Set labels, title, and other parameters
+plt.ylabel('Mean Value (log scale)')
+plt.title('Comparison of Key Indicators Between High-Income and Low-Income Countries (Log Scale)')
+plt.legend(title='Income Group')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# I have to make the ticks to be aligned properly with the bars
+ax = plt.gca()
+ax.set_xticks(range(len(better_labels)))  
+ax.set_xticklabels(better_labels, rotation=45, ha='right')  
+
+# I adjust the layout for better fit
+plt.tight_layout()
+
+# Save the plot to the specified location
+save_path = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\income_group_bar_plot_log.png'
+plt.savefig(save_path, format='png', bbox_inches='tight')
+
+# Show the plot
+plt.show()
+```
+
+![income_group_bar_plot_log](https://github.com/user-attachments/assets/52303f01-968b-4e14-b577-1826a697f2ae)
+
+
+#### 3. Results + Interpretation for the 4th Question
+
+The bar plot reveals significant disparities between high-income and low-income countries across multiple key indicators. These results suggest that **high-income countries generally outperform low-income countries** across most indicators, especially in terms of economic strength, health, infrastructure, and education. However, unemployment seems to be higher in high-income countries.
+
+**Economic Indicators:**
+
+GDP per Capita and GNI per Capita (2021) are starkly higher in high-income countries, reflecting their stronger economic performance. In contrast, low-income countries show considerably lower values, emphasizing their financial challenges.
+
+**Health Indicators:**
+
+Life Expectancy is notably higher in high-income countries, pointing to better healthcare and living standards.
+Infant Mortality is dramatically lower in high-income countries, suggesting better healthcare services for infants and pregnant women.
+
+**Infrastructure and Technology:**
+
+Electric Power Consumption and Internet Usage are significantly greater in high-income countries, reflecting better infrastructure and widespread access to technology. Low-income countries, by comparison, lag far behind, which could hinder their development.
+
+**Education:**
+
+The indicators for Expected Years of Schooling and Mean Years of Schooling are higher in high-income countries, indicating better access to and quality of education.
+
+**Unemployment:**
+
+Interestingly, Unemployment is slightly higher in high-income countries than in low-income ones, possibly reflecting differences in labor market structures or reporting mechanisms.
+
+**Population Density:**
+
+The population density difference is less pronounced but shows some variability. High-income countries exhibit greater density, likely reflecting urbanization trends, while low-income countries tend to be more rural.     
