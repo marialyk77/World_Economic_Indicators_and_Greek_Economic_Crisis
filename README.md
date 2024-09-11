@@ -1138,7 +1138,7 @@ plt.show()
 - **Final Thought**: The scatter plot and regression analysis results imply that GDP growth is influenced by a complex set of factors beyond population density growth. The weak relationship observed underscores the need for a more nuanced approach to understand the drivers of GDP growth. It would be beneficial to explore additional predictors and refine the model.
 
 
-### Question 2 a: Which factors finally drive economic growth (GDP)? 
+### Question 2a: Which factors finally drive economic growth (GDP)? 
 
 The previous Regression analysis proved that population density growth explains only a small portion of the variability in GDP growth (low R-squared value). 
 This suggests that while population growth might contribute to GDP growth, other factors are likely playing a much more significant role in driving economic growth.
@@ -1334,7 +1334,7 @@ Internet access often has a more direct and visible impact on economic growth by
 **4. Autocorrelation:** The Durbin-Watson statistic is quite low (0.131), pointing to possible **autocorrelation in the residuals**.
 **5. Condition Number:** The high condition number (5.24e+04) suggests **potential multicollinearity** or numerical instability in the model, which may need further attention.
 
-#### 6.**Conclusions on 2a question:**
+#### 6. **Conclusions on 2a question:**
 
 The current model offers valuable interpretations and highlights key drivers of GDP growth:
 
