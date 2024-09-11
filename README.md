@@ -1314,7 +1314,7 @@ for these variables are associated with a reduction in the log of GDP.
              numerical instability.** 
 
 
-#### 5. Summary of Findings 
+#### 5. Results on the 2a question
 
 The final regression model, with a log transformation of GDP, explains 26.4% of the variability in GDP. While this is an improvement over the previous model, it still suggests that a significant portion of GDP variation is driven by factors not included in the model.
 
@@ -1416,14 +1416,14 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
-#### 3. Results + Interpretation for the 2nd Question 
+#### 3. Results & Conclusions for the 3rd Question 
 
 - The chart shows that **South Asia (SA) had the highest HDI growth** from 2000 to 2021, 
 while **Latin America and the Caribbean (LAC) had the lowest**. Other regions like Europe and Central Asia (ECA) and Sub-Saharan Africa (SSA) experienced moderate growth.
 
 
 
-### Question 3: Which factors are highly correlated with life expectancy?
+### Question 4: Which factors are highly correlated with life expectancy?
 
 #### 1. I merged the datasets 
 
@@ -1475,13 +1475,11 @@ print(life_expectancy_corr)
    - gii_2021: Gender Inequality Index. Gender inequality can affect overall societal health
 
 
- #### 3. Results + Interpretation for the 3rd Question 
+ #### 3. Results & Conclusions for the 4th Question 
 
 
   ![life_expectancy_corr_heatmap](https://github.com/user-attachments/assets/f298f272-c6c1-4de7-943f-460e7ecd43e4)
    
-
-**Interpretation**
 
 **Strong Positive Correlations:** HDI, years of schooling (both average and expected), internet usage, and national income per capita are closely linked with higher life expectancy.
 
@@ -1493,7 +1491,7 @@ print(life_expectancy_corr)
 
 
 
-### Question 4: Which factors differentiate "High Income" vs "Low Income" Countries?
+### Question 5: Which factors differentiate "High Income" vs "Low Income" Countries?
 
 #### 1. Definition of Key Indicators 
 
@@ -1572,7 +1570,7 @@ plt.show()
 ![income_group_bar_plot_log](https://github.com/user-attachments/assets/52303f01-968b-4e14-b577-1826a697f2ae)
 
 
-#### 3. Results + Interpretation for the 4th Question
+#### 3. Results & Conclusions for the 5th Question
 
 The bar plot reveals significant disparities between high-income and low-income countries across multiple key indicators. These results suggest that **high-income countries generally outperform low-income countries** across most indicators, especially in terms of economic strength, health, infrastructure, and education. However, unemployment seems to be higher in high-income countries.
 
