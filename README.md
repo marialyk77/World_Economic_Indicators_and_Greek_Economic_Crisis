@@ -1129,15 +1129,13 @@ plt.show()
     
 #### 4. Results + Interpretation for the 2nd Question 
 
-- **Scatter Plot Insights**: The scatter plot indicates **a positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, **which signals a weak correlation**. Most countries are clustered at lower levels of both GDP and population density growth, reflecting steady but not explosive growth patterns. Notably, Qatar and Iraq are outliers: Qatar shows significant growth in both dimensions, likely driven by its economic boom due to oil and gas reserves, while Iraq exhibits high GDP growth with lower population density growth.
-
-- **Model Limitations**: The low R-squared value and residuals analysis reveal that the regression model, as it stands, **cannot effectively explain the relationship between GDP growth and population density growth**.
+- **Scatter Plot Insights**: The scatter plot indicates **a positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, **which signals a weak correlation**. Notably, Qatar and Iraq are outliers.
+  
+- **Regression Analysis Limitations**: The low R-squared value and residuals analysis reveal that the regression model, as it stands, **cannot effectively explain the relationship between GDP growth and population density growth**.
 
   **So, population density growth alone is not a strong predictor.**
 
-- **Complex Influences**: The scatter plot and model results imply that GDP growth is influenced by a complex set of factors beyond population density growth. The weak relationship observed underscores the need for a more nuanced approach to understand the drivers of GDP growth.
-
-- **Model Improvement**: To enhance the model’s explanatory power, it would be beneficial to explore additional predictors and refine the model.
+- **Final Thought**: The scatter plot and regression analysis results imply that GDP growth is influenced by a complex set of factors beyond population density growth. The weak relationship observed underscores the need for a more nuanced approach to understand the drivers of GDP growth. It would be beneficial to explore additional predictors and refine the model.
 
 
 ### Question 2 a: Which factors finally drive economic growth (GDP)? 
@@ -1311,6 +1309,46 @@ for these variables are associated with a reduction in the log of GDP.
 - Cond. No.: It remains high (5.24e+04), which could suggest **some multicollinearity or
              numerical instability.** 
 
+
+#### 5. Summary of Findings 
+
+The final regression model, with a log transformation of GDP, explains 26.4% of the variability in GDP. While this is an improvement over the previous model, it still suggests that a significant portion of GDP variation is driven by factors not included in the model.
+
+**Significant Factors:**
+
+**1. Life Expectancy:** Positively correlated with GDP. As life expectancy increases, so does GDP.
+**2. Population % using Internet:** A strong positive relationship with GDP, indicating that higher internet penetration drives economic growth.  
+**3. Electric Power Consumption:** Positively related to GDP, suggesting that higher energy consumption is associated with economic development.
+**4. Population Density:** Shows a negative correlation, meaning countries with higher population density tend to have lower GDP, potentially reflecting constraints in smaller or overpopulated countries.
+**5. Unemployment %:** As unemployment increases, GDP decreases, reflecting the negative economic impact of joblessness.
+
+The variable though with the higher impact on GDP is the **'Population % using Internet'**. This stems from the coefficient. The **'Population % using Internet'** exhibits the largest coefficient compared to the other variables. This suggests that a 1-unit increase in internet use has a more substantial effect on GDP compared to some other variables.
+
+Internet access often has a more direct and visible impact on economic growth by facilitating **communication, trade, education, and innovation**. Hence, while other factors like life expectancy and power consumption are also positive contributors, their impact seems to be smaller in comparison.
+
+**Model Diagnostics:**
+
+**1. Residuals:** The residuals **are not normally distributed**, as evidenced by the Omnibus and Jarque-Bera tests (p-value < 0.05). This indicates potential model specification issues or missing variables.
+**2. Heteroscedasticity:** Residual analysis showed non-constant variance, suggesting **heteroscedasticity**, which violates the assumption of homoscedasticity in linear regression.
+**3. Multicollinearity:** No significant multicollinearity was found, as indicated by low VIF values.
+**4. Autocorrelation:** The Durbin-Watson statistic is quite low (0.131), pointing to possible **autocorrelation in the residuals**.
+**5. Condition Number:** The high condition number (5.24e+04) suggests **potential multicollinearity** or numerical instability in the model, which may need further attention.
+
+#### 6.**Conclusions on 2a question:**
+
+The current model offers valuable interpretations and highlights key drivers of GDP growth:
+
+1. Population using Internet
+2. Life Expectancy
+3. Electric Power Consumption
+4. Unemployment
+5. Population Density
+
+The strongest positive driver of GDP growth is internet usage.
+Life expectancy and electric power consumption also have positive relationships with GDP growth.
+Unemployment and population density are negatively associated with GDP growth.
+
+The analysis underscores the importance of technological development (internet usage) and human capital (life expectancy) in driving economic growth. Despite these valuable insights, the model also reveals the inherent complexity of economic growth and suggests that further refinement and exploration could enhance our understanding.
 
 
 ### Question 3: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
