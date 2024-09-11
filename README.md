@@ -5,15 +5,17 @@
 + The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
   
 ## Research Questions: 
-1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
+1. How does population density growth impact GDP growth across countries from 2000 to 2018?
+
+2. Which factors drive economic growth (GDP)? 
+
+3. Which countries have experienced the highest growth in population and GDP? Is there overlap?
    
-2. How does population density growth impact GDP growth across countries from 2000 to 2018?
+4. In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
 
-3. In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
+5. Which factors are highly correlated with life expectancy?
 
-4. Which factors are highly correlated with life expectancy?
-
-5. Which factors differentiate "High Income" vs "Low Income" Countries?
+6. Which factors differentiate "High Income" vs "Low Income" Countries?
 
 ## Tools used :
 
@@ -1142,7 +1144,7 @@ The analysis reveals that population density growth is weakly correlated with GD
 This suggests that economic growth is driven by a more complex set of factors, and focusing solely on population density growth provides limited insights. To better understand the drivers of GDP growth, it is essential to consider additional variables and refine the model for a more comprehensive analysis.
 
 
-### Question 2a: Which factors finally drive economic growth (GDP)? 
+### Question 2: Which factors drive economic growth (GDP)? 
 
 The previous Regression analysis proved that population density growth explains only a small portion of the variability in GDP growth (low R-squared value). 
 This suggests that while population growth might contribute to GDP growth, other factors are likely playing a much more significant role in driving economic growth.
