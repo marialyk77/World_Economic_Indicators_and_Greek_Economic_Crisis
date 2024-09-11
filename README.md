@@ -1435,9 +1435,6 @@ print(merged_df.head())
 
 #### 2. Time for Correlation 
 
-
-## on the following columns 
-
 ```ruby
 columns_to_use = [
     'Life Expectacy', 'GDP per capita (USD)', 'Infant mortality %', 'Electric Power Consumption',
