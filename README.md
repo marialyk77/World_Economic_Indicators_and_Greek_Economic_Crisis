@@ -6,12 +6,14 @@
   
 ## Research Questions: 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
+   
+2. How does population density growth impact GDP growth across countries from 2000 to 2018?
 
-2. In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
+3. In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
 
-3. Which factors are highly correlated with life expectancy?
+4. Which factors are highly correlated with life expectancy?
 
-4. Which factors differentiate "High Income" vs "Low Income" Countries?
+5. Which factors differentiate "High Income" vs "Low Income" Countries?
 
 ## Tools used :
 
@@ -898,12 +900,12 @@ plot_histogram('Birth %')
 1. **Initial Data Preparation:** I checked if both datasets contain the same country names
 
 ```ruby 
-# To identify country names in HDI but not in Development Indicators
+# Which country names in HDI but not in Development Indicators?
 missing_in_dev_indicators = set(hdi_df['country']) - set(dev_indicators_df['Country Name'])
 print("Countries in HDI but not in Development Indicators:")
 print(missing_in_dev_indicators)
 
-# To identify country names in Development Indicators but not in HDI
+# Which country names in Development Indicators but not in HDI
 missing_in_hdi = set(dev_indicators_df['Country Name']) - set(hdi_df['country'])
 print("Countries in Development Indicators but not in HDI:")
 print(missing_in_hdi)
@@ -912,26 +914,30 @@ print(missing_in_hdi)
 
 2. **I proceeded to address the questions.**
 
-### Question 1: Which countries have experienced the highest growth in population and GDP? Is there overlap?
+### Question 2: How does population density growth impact GDP growth across countries from 2000 to 2018?
  
 - To answer this question I used the column [GDP (USD)] and [Population Density] from the Development Indicators dataset.
 - I focused on data from the years 2000 and 2018 to calculate the **percentage growth**, allowing for a clear comparison of long-term trends in **population density and GDP over nearly two decades**. This approach highlights significant changes without the complexity of year-by-year analysis.
   
 ```ruby
-# Filter the data for the years 2000 and 2018
+# To simplify the analysis, and identify long term growth patterns and overall change:
+# I will focus on the start and end year of my dataset
+# And will not count year to year fluctuations 
+
+# Filtering the data for 2000 and 2018
 filtered_data = dev_indicators_df[dev_indicators_df['Year'].isin([2000, 2018])]
 
-# Pivot the data so that each country has its 2000 and 2018 data on the same row
+# Pivoting, so that each country has its 2000 and 2018 data on the same row
 pivot_data = filtered_data.pivot(index='Country Name', columns='Year', values=['Population Density', 'GDP (USD)'])
 
-# Calculate the growth rate for Population Density and GDP from 2000 to 2018
+# Calculation of Growth Rate for both variables 
 pivot_data['Popul. Density Growth %'] = (pivot_data['Population Density'][2018] - pivot_data['Population Density'][2000]) / pivot_data['Population Density'][2000] * 100
 pivot_data['GDP Growth %'] = (pivot_data['GDP (USD)'][2018] - pivot_data['GDP (USD)'][2000]) / pivot_data['GDP (USD)'][2000] * 100
 
-# Display the resulting DataFrame with the growth rates
+# Showing the results 
 pivot_data[['Popul. Density Growth %', 'GDP Growth %']]
 ```
-#### 1. I plotted a scatter plot:
+#### 1. Scatter plot:
 
 ```ruby
 # Time for the scatterplot 
@@ -985,11 +991,6 @@ plt.yticks(fontsize=6)
 # Set plot background color with my favorite color 
 plt.gca().set_facecolor(background_color)
 
-# Save the plot here: 
-save_path = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\population_density_vs_gdp_growth.png'
-
-plt.savefig(save_path, format='png', bbox_inches='tight')
-
 # Show the plot
 plt.show()
 ```
@@ -1016,10 +1017,10 @@ Even though the **scatter plot indicated a weak correlation**, **regression anal
 ```ruby
 import statsmodels.api as sm
 
-# The independent variable (Population Density Growth)
+# The independent variable:
 X = pivot_data['Popul. Density Growth %_']
 
-# The dependent variable (GDP Growth)
+# The dependent variable:
 y = pivot_data['GDP Growth %_']
 
 # Adding a constant to the model (intercept)
@@ -1073,7 +1074,7 @@ import scipy.stats as stats
 residuals = model.resid
 fitted_values = model.fittedvalues
 
-# Optionally, get influence measures
+# influence measures
 influence = model.get_influence()
 leverage = influence.hat_matrix_diag
 
@@ -1126,18 +1127,193 @@ plt.show()
 
 - Influential Points: The Residuals vs. Leverage plot shows a few high-leverage points, but they do not have a large influence on the model.
     
-#### 4. Results + Interpretation for the 1st Question 
+#### 4. Results + Interpretation for the 2nd Question 
 
-- **Scatter Plot Insights**: The scatter plot indicates a positive correlation between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, which signals a weak correlation. Most countries are clustered at lower levels of both GDP and population density growth, reflecting steady but not explosive growth patterns. Notably, Qatar and Iraq are outliers: Qatar shows significant growth in both dimensions, likely driven by its economic boom due to oil and gas reserves, while Iraq exhibits high GDP growth with lower population density growth.
+- **Scatter Plot Insights**: The scatter plot indicates **a positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, **which signals a weak correlation**. Most countries are clustered at lower levels of both GDP and population density growth, reflecting steady but not explosive growth patterns. Notably, Qatar and Iraq are outliers: Qatar shows significant growth in both dimensions, likely driven by its economic boom due to oil and gas reserves, while Iraq exhibits high GDP growth with lower population density growth.
 
-- **Model Limitations**: The low R-squared value and residuals analysis reveal that the regression model, as it stands, cannot effectively explain the relationship between GDP growth and population density growth. The model only accounts for a small portion of the variability in GDP growth, suggesting that population density growth alone is not a strong predictor.
+- **Model Limitations**: The low R-squared value and residuals analysis reveal that the regression model, as it stands, **cannot effectively explain the relationship between GDP growth and population density growth**.
+
+  **So, population density growth alone is not a strong predictor.**
 
 - **Complex Influences**: The scatter plot and model results imply that GDP growth is influenced by a complex set of factors beyond population density growth. The weak relationship observed underscores the need for a more nuanced approach to understand the drivers of GDP growth.
 
 - **Model Improvement**: To enhance the model’s explanatory power, it would be beneficial to explore additional predictors and refine the model.
 
 
-### Question 2: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
+### Question 2 a: Which factors finally drive economic growth (GDP)? 
+
+The previous Regression analysis proved that population density growth explains only a small portion of the variability in GDP growth (low R-squared value). 
+This suggests that while population growth might contribute to GDP growth, other factors are likely playing a much more significant role in driving economic growth.
+
+To answer the question I will perform multiple regression analysis. 
+
+#### 1. Multiple Regression 
+
+```ruby
+# independent variables and target variable are the following (based on my available data): 
+X = merged_df[['Population Density', 'Life Expectacy', 'Population % using Internet', 'Unemployment %', 'Electric Power Consumption']]
+y = merged_df['GDP (USD)']
+
+# constant term for the intercept
+X = sm.add_constant(X)
+
+# Fitting 
+model = sm.OLS(y, X).fit()
+
+print(model.summary())
+```
+
+![image](https://github.com/user-attachments/assets/5f55490b-2d5e-46f4-aaf6-b454959a9ca7)
+
+![image](https://github.com/user-attachments/assets/f31c1b2e-773c-4323-8461-f443c3adf1b0)
+
+**Interpretation:**
+
+- R-squared: 0.068 This means that the model explains only 6.8% of the variability in GDP.  
+
+- F-statistic (53.09, p-value 2.45e-53): Both indicate that the model is statistically significant. At least one predictor variable has a significant impact on GDP.
+
+Coefficients: 
+
+- Population Density: The coefficient is negative, indicating that as population density increases, GDP decreases. It might reflect countries with smaller land areas and large populations. P-value (0.000) shows this variable is statistically significant.
+
+- Life Expectancy: The coefficient is positive, indicating that higher life expectancy is associated
+with higher GDP. P-value (0.008) shows this variable is statistically significant.
+
+- Population % using Internet: The positive coefficient indicates that as internet usage increases, 
+GDP also increases. P-value (0.000) shows this variable is highly statistically significant.
+
+- Unemployment %: The negative coefficient indicates that higher unemployment rates are associated with lower GDP.
+P-value (0.001) shows this variable is statistically significant.
+
+- Electric Power Consumption: The positive coefficient suggests that higher electricity consumption is associated with higher GDP.
+P-value (0.000) shows this variable is statistically significant.
+
+Residuals (Omnibus and Jarque-Bera Tests):
+
+- The Omnibus and Jarque-Bera tests for normality of the residuals show extreme deviations from normality (p-value = 0.000). This suggests that the residuals are not normally distributed, which can be a sign that your model has specification issues or missing variables.
+
+- Skewness and Kurtosis: The high skewness (9.248) and kurtosis (107.712) values suggest the presence of outliers or extreme values that may be distorting the model.
+
+- Condition Number (5.24e+04):
+
+- A high condition number (above 30 is usually considered problematic) indicates potential multicollinearity or numerical instability in the model. This could mean that some of the predictor variables are highly correlated with each other, which can inflate the standard errors and make the model unstable.
+
+#### 2. Variance Inflation Factor (VIF) analysis
+
+```ruby
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+
+# Calculate VIF for each independent variable
+vif_data = pd.DataFrame()
+vif_data["Feature"] = X.columns
+vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]
+
+print(vif_data)
+```
+
+![image](https://github.com/user-attachments/assets/2f26c74c-21b5-4702-92fb-5e915d743d4d)
+
+**Interpretation:**
+
+Multicollinearity isn’t our problem.!!!!!
+
+All VIF values are below the threshold of 5, and none are above 10, indicating that the predictors are not highly correlated with each other. This means that multicollinearity is unlikely to be causing significant problems with the regression analysis.
+
+#### 3. Residual Analysis 
+
+```ruby
+# Predictions from the model
+y_pred = model.predict(X)
+
+# Residuals
+residuals = y - y_pred
+
+# Plotting residuals
+plt.scatter(y_pred, residuals)
+plt.axhline(0, color='red', linestyle='--')
+plt.title('Residuals vs Fitted Values')
+plt.xlabel('Fitted Values')
+plt.ylabel('Residuals')
+
+plt.show()
+
+# Histogram of residuals
+plt.hist(residuals, bins=30)
+plt.title('Residuals Distribution')
+
+plt.show()
+```
+
+**Interpretation** 
+
+- Residuals vs Fitted Values: The residuals increase as the fitted values increase. There are some strong non-linear patterns in the residuals. The increasing variance and non-linearity suggest that the model **suffers from heteroscedasticity** as it has non-constant variance of residuals.
+
+So, a different technique is needed, maybe log transformations. 
+
+- Residual Distribution 
+
+Most values are on the left and a long tail is extended on the right, typical for right skew. 
+Right-skewness indicates that for some data points, the actual GDP is much larger than what the model predicted.!!
+So, the **residuals are not normally distributed**. 
+
+#### 4. Log Transformation for the Target Variable - GDP 
+
+```ruby
+#  The new target variable for the regression is the Log_GDP and not the original GDP (USD). 
+merged_df['Log_GDP'] = np.log(merged_df['GDP (USD)'])
+
+# The independent variables (same as before)
+X = merged_df[['Population Density', 'Life Expectacy', 'Population % using Internet', 'Unemployment %', 'Electric Power Consumption']]
+
+# The new target variable - the log transformed: 
+y = merged_df['Log_GDP']  
+
+# Constant term for the intercept
+X = sm.add_constant(X)
+
+# Fit the regression model using the log-transformed GDP
+model = sm.OLS(y, X).fit()
+
+print(model.summary())
+```
+
+![image](https://github.com/user-attachments/assets/da555a20-110a-4cea-9bf0-db5134f85e2d)
+
+![image](https://github.com/user-attachments/assets/2385d529-d4ba-4fd0-bfe8-1ae6081d9c91)
+
+**Interpreatation:**
+
+By all means I see some improvement finally! 
+
+- R-squared: 26.4%! This means the independent variables explain about 26.4% of the variation in the log-transformed GDP.
+        
+But there is always a but : 26.4% is still relatively low. So, this suggests other factors not included in the model could
+also be influencing GDP, which is not unexpected given the complexity of an economy.
+
+- P- values of independent variables: All low, so significant! So they significantly contribute in explaining the GDP. 
+    
+- Coefficients:
+    
+The coefficients have changed in scale because now we predict the log of GDP, not the actual values.
+Example, for each 1-unit increase in Life Expectancy, on average, the log of GDP increases by
+0.0541, holding other variables constant.
+
+The negative coefficient for Population Density and Unemployment % indicates that higher values
+for these variables are associated with a reduction in the log of GDP.
+
+- Residuals (Omnibus and Jarque-Bera Tests): The p- value is less than 0.05, so the
+                                             **residuals are not normally distributed**.
+
+- Durbin-Watson: It is still quite low (0.131), suggesting there **may still be autocorrelation
+                 in the residuals.**
+       
+- Cond. No.: It remains high (5.24e+04), which could suggest **some multicollinearity or
+             numerical instability.** 
+
+
+
+### Question 3: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
 
 
 #### 1. I calculated the HDI Growth, Grouped by region and Calculated the AVG.
