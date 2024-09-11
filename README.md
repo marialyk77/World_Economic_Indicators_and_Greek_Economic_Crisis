@@ -1127,7 +1127,7 @@ plt.show()
 
 - Influential Points: The Residuals vs. Leverage plot shows a few high-leverage points, but they do not have a large influence on the model.
     
-#### 4. Results + Interpretation for the 2nd Question 
+#### 4. Results for the 2nd Question 
 
 - **Scatter Plot Insights**: The scatter plot indicates **a positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, **which signals a weak correlation**. Notably, Qatar and Iraq are outliers.
   
