@@ -918,7 +918,67 @@ print(missing_in_hdi)
 
 ### Question 1: Which countries have experienced the highest growth in population and GDP? Is there overlap?
 
+#### 1. Bar Chart 
 
+```ruby
+## Vizualizing the Top Countries with highest GDP & Population Density 
+
+main_color = "#4527A0"
+highlight_color = "green"
+
+# style for the plots
+sns.set(style="whitegrid")
+
+
+fig, ax = plt.subplots(2, 1, figsize=(14, 12))
+
+# Bar chart for Population Density Growth
+palette_population = [highlight_color if country in overlap else main_color for country in top_population_growth.index]
+sns.barplot(x=top_population_growth['Popul. Density Growth %'].index, 
+            y=top_population_growth['Popul. Density Growth %'], 
+            ax=ax[0], palette=palette_population)
+ax[0].set_title('Top 10 Countries by Population Density Growth (2000-2018)')
+ax[0].set_xlabel('Country')
+ax[0].set_ylabel('Population Density Growth %')
+ax[0].tick_params(axis='x', rotation=45)
+
+# Bar chart for GDP Growth
+palette_gdp = [highlight_color if country in overlap else main_color for country in top_gdp_growth.index]
+sns.barplot(x=top_gdp_growth['GDP Growth %'].index, 
+            y=top_gdp_growth['GDP Growth %'], 
+            ax=ax[1], palette=palette_gdp)
+ax[1].set_title('Top 10 Countries by GDP Growth (2000-2018)')
+ax[1].set_xlabel('Country')
+ax[1].set_ylabel('GDP Growth %')
+ax[1].tick_params(axis='x', rotation=45)
+
+# Highlighting overlapping countries with  a border around 
+for country in overlap:
+    # Population Density chart
+    patch_index = top_population_growth.index.get_loc(country)
+    ax[0].patches[patch_index].set_edgecolor('black')
+    ax[0].patches[patch_index].set_linewidth(2)
+    
+    # GDP Growth chart
+    patch_index = top_gdp_growth.index.get_loc(country)
+    ax[1].patches[patch_index].set_edgecolor('black')
+    ax[1].patches[patch_index].set_linewidth(2)
+
+plt.tight_layout()
+plt.show()
+```
+
+![image](https://github.com/user-attachments/assets/9e77df8d-5af1-43cd-aa12-bd9eb5368054)
+
+
+#### Conclusions for the 1st Question 
+
+- Top 10 in population increase: Qatar, Eritrea, and the United Arab Emirates
+- Top 10 in GDP increase: Eritrea, Faroe Islands, and Greenland  
+- Overlap is observed for: Eritrea, Equatorial Guinea and Angola
+
+This overlap indicates that these countries experienced both rapid growth in population density 
+and significant economic expansion. 
 
 ### Question 2: How does population density growth impact GDP growth across countries from 2000 to 2018?
  
