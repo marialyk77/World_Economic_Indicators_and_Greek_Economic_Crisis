@@ -1633,15 +1633,15 @@ better_labels = [
 
 # Create the bar plot
 plt.figure(figsize=(12, 8))
-high_income_means.plot(kind='bar', color='skyblue', label='High Income')
-low_income_means.plot(kind='bar', color='salmon', label='Low Income', alpha=0.7)
+high_income_means.plot(kind='bar', color= '#4527A0', label='High Income')
+low_income_means.plot(kind='bar', color= '#D1C4E9', label='Low Income', alpha=0.7)
 
 # Set y-scale to logarithmic to handle the wide range of values
 plt.yscale('log')
 
 # Set labels, title, and other parameters
 plt.ylabel('Mean Value (log scale)')
-plt.title('Comparison of Key Indicators Between High-Income and Low-Income Countries (Log Scale)')
+plt.title('')
 plt.legend(title='Income Group')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 
@@ -1653,15 +1653,12 @@ ax.set_xticklabels(better_labels, rotation=45, ha='right')
 # I adjust the layout for better fit
 plt.tight_layout()
 
-# Save the plot to the specified location
-save_path = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\income_group_bar_plot_log.png'
-plt.savefig(save_path, format='png', bbox_inches='tight')
-
 # Show the plot
 plt.show()
+
 ```
 
-![income_group_bar_plot_log](https://github.com/user-attachments/assets/52303f01-968b-4e14-b577-1826a697f2ae)
+![income_group_bar_plot_log](https://github.com/user-attachments/assets/9e9547e6-95fc-43eb-bf9a-0453f35608ad)
 
 
 #### 3. Results & Conclusions for the 6th Question
