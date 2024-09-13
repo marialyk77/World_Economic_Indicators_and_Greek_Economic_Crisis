@@ -916,6 +916,10 @@ print(missing_in_hdi)
 
 2. **I proceeded to address the questions.**
 
+### Question 1: Which countries have experienced the highest growth in population and GDP? Is there overlap?
+
+
+
 ### Question 2: How does population density growth impact GDP growth across countries from 2000 to 2018?
  
 - To answer this question I used the column [GDP (USD)] and [Population Density] from the Development Indicators dataset.
