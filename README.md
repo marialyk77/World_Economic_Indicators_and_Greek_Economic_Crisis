@@ -5,11 +5,11 @@
 + The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
   
 ## Research Questions: 
-1. How does population density growth impact GDP growth across countries from 2000 to 2018?
+1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
+   
+2. How does population density growth impact GDP growth across countries from 2000 to 2018?
 
-2. Which factors drive economic growth (GDP)? 
-
-3. Which countries have experienced the highest growth in population and GDP? Is there overlap?
+3. Which factors drive economic growth (GDP)? 
    
 4. In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
 
@@ -1144,7 +1144,7 @@ The analysis reveals that population density growth is weakly correlated with GD
 This suggests that economic growth is driven by a more complex set of factors, and focusing solely on population density growth provides limited insights. To better understand the drivers of GDP growth, it is essential to consider additional variables and refine the model for a more comprehensive analysis.
 
 
-### Question 2: Which factors drive economic growth (GDP)? 
+### Question 3: Which factors drive economic growth (GDP)? 
 
 The previous Regression analysis proved that population density growth explains only a small portion of the variability in GDP growth (low R-squared value). 
 This suggests that while population growth might contribute to GDP growth, other factors are likely playing a much more significant role in driving economic growth.
@@ -1316,7 +1316,7 @@ for these variables are associated with a reduction in the log of GDP.
              numerical instability.** 
 
 
-#### 5. Results on the 2a question
+#### 5. Results on the 3rd question
 
 The final regression model, with a log transformation of GDP, explains 26.4% of the variability in GDP. While this is an improvement over the previous model, it still suggests that a significant portion of GDP variation is driven by factors not included in the model.
 
@@ -1340,7 +1340,7 @@ Internet access often has a more direct and visible impact on economic growth by
 **4. Autocorrelation:** The Durbin-Watson statistic is quite low (0.131), pointing to possible **autocorrelation in the residuals**.
 **5. Condition Number:** The high condition number (5.24e+04) suggests **potential multicollinearity** or numerical instability in the model, which may need further attention.
 
-#### 6. **Conclusions on 2a question:**
+#### 6. **Conclusions on 3rd question:**
 
 The current model offers valuable interpretations and highlights key drivers of GDP growth:
 
@@ -1357,7 +1357,7 @@ Unemployment and population density are negatively associated with GDP growth.
 The analysis underscores the importance of technological development (internet usage) and human capital (life expectancy) in driving economic growth. Despite these valuable insights, the model also reveals the inherent complexity of economic growth and suggests that further refinement and exploration could enhance our understanding.
 
 
-### Question 3: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
+### Question 4: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
 
 
 #### 1. I calculated the HDI Growth, Grouped by region and Calculated the AVG.
@@ -1418,14 +1418,14 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
-#### 3. Results & Conclusions for the 3rd Question 
+#### 3. Results & Conclusions for the 4th Question 
 
 - The chart shows that **South Asia (SA) had the highest HDI growth** from 2000 to 2021, 
 while **Latin America and the Caribbean (LAC) had the lowest**. Other regions like Europe and Central Asia (ECA) and Sub-Saharan Africa (SSA) experienced moderate growth.
 
 
 
-### Question 4: Which factors are highly correlated with life expectancy?
+### Question 5: Which factors are highly correlated with life expectancy?
 
 #### 1. I merged the datasets 
 
@@ -1474,7 +1474,7 @@ print(life_expectancy_corr)
    - gii_2021: Gender Inequality Index. Gender inequality can affect overall societal health
 
 
- #### 3. Results & Conclusions for the 4th Question 
+ #### 3. Results & Conclusions for the 5th Question 
 
 
   ![life_expectancy_corr_heatmap](https://github.com/user-attachments/assets/f298f272-c6c1-4de7-943f-460e7ecd43e4)
@@ -1490,7 +1490,7 @@ print(life_expectancy_corr)
 
 
 
-### Question 5: Which factors differentiate "High Income" vs "Low Income" Countries?
+### Question 6: Which factors differentiate "High Income" vs "Low Income" Countries?
 
 #### 1. Definition of Key Indicators 
 
@@ -1569,7 +1569,7 @@ plt.show()
 ![income_group_bar_plot_log](https://github.com/user-attachments/assets/52303f01-968b-4e14-b577-1826a697f2ae)
 
 
-#### 3. Results & Conclusions for the 5th Question
+#### 3. Results & Conclusions for the 6th Question
 
 The bar plot reveals significant disparities between high-income and low-income countries across multiple key indicators. These results suggest that **high-income countries generally outperform low-income countries** across most indicators, especially in terms of economic strength, health, infrastructure, and education. However, unemployment seems to be higher in high-income countries.
 
