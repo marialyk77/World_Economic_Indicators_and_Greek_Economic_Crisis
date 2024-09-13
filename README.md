@@ -1499,20 +1499,54 @@ print(merged_df.head())
 #### 2. Time for Correlation 
 
 ```ruby
+from matplotlib.colors import LinearSegmentedColormap
+
+
 columns_to_use = [
     'Life Expectacy', 'GDP per capita (USD)', 'Infant mortality %', 'Electric Power Consumption',
     'Unemployment %', 'Population % using Internet', 'Population Density', 'hdi_2021',
     'eys_2021', 'mys_2021', 'gnipc_2021', 'lfpr_f_2021', 'lfpr_m_2021', 'gii_2021'
 ]
 
+# Simplified column names
+simplified_column_names = {
+    'Life Expectacy': 'Life Expectancy',
+    'GDP per capita (USD)': 'GDP per Capita',
+    'Infant mortality %': 'Infant Mortality',
+    'Electric Power Consumption': 'Electric Power',
+    'Unemployment %': 'Unemployment',
+    'Population % using Internet': 'Internet Usage',
+    'Population Density': 'Pop Density',
+    'hdi_2021': 'HDI',
+    'eys_2021': 'Exp Yrs School',
+    'mys_2021': 'Mean Yrs School',
+    'gnipc_2021': 'GNI per Capita',
+    'lfpr_f_2021': 'Female Labor Force',
+    'lfpr_m_2021': 'Male Labor Force',
+    'gii_2021': 'Gender Inequality'
+}
 
-subset_df = merged_df[columns_to_use]
+# a subset of the DataFrame and renaming the columns
+subset_df = merged_df[columns_to_use].rename(columns=simplified_column_names)
 
-
+# correlation matrix
 correlation_matrix = subset_df.corr()
 
-life_expectancy_corr = correlation_matrix['Life Expectacy'].sort_values(ascending=False)
+# With Life Expectancy (now renamed)
+life_expectancy_corr = correlation_matrix['Life Expectancy'].sort_values(ascending=False)
 print(life_expectancy_corr)
+
+# Define a custom color map where deep purple represents strong positive correlation
+colors = ["#ffffff", "#d1c4e9", "#4527A0"]  # White for weak, light purple for moderate, deep purple for strong positive
+n_bins = 100  # Number of bins for the color map
+cmap_name = "custom_purple"
+custom_cmap = LinearSegmentedColormap.from_list(cmap_name, colors, N=n_bins)
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap=custom_cmap, fmt='.2f', center=0, vmin=-1, vmax=1, linewidths=0.5)
+plt.title('') 
+
+plt.show()
 ```
 
 **Resoning for using the above columns for the correlation analysis:**
@@ -1538,9 +1572,9 @@ print(life_expectancy_corr)
  #### 3. Results & Conclusions for the 5th Question 
 
 
-  ![life_expectancy_corr_heatmap](https://github.com/user-attachments/assets/f298f272-c6c1-4de7-943f-460e7ecd43e4)
-   
+ ![life_expectancy_corr_heatmap_purple](https://github.com/user-attachments/assets/2ac75898-b140-49f3-9df4-f2dee1e916d0)
 
+   
 **Strong Positive Correlations:** HDI, years of schooling (both average and expected), internet usage, and national income per capita are closely linked with higher life expectancy.
 
 **Moderate Positive Correlations:** GDP per capita and electric power consumption show a moderate relationship with life expectancy.
