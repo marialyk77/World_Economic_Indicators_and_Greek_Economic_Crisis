@@ -1060,17 +1060,17 @@ plt.gca().set_facecolor(background_color)
 # Show the plot
 plt.show()
 ```
-![population_density_vs_gdp_growth](https://github.com/user-attachments/assets/40a4486c-bd28-4e3a-8dc4-d33b1c064f22)
+![Impact of Population Density Growth on GDP Growth (2000-2018)](https://github.com/user-attachments/assets/6ce8e080-44c2-4b57-8ed9-cce6e31fa9b0)
+
 
 🔍 **Scatter plot Interpretation:** 
 
 - The scatter plot suggests a **positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth.
 - The **data points are widely spread around the trend line**, indicating that the correlation is not strong. Other factors likely contribute to GDP growth beyond just population density growth.
 - The scatter plot shows that **points are clustered at lower growth**. The majority of countries in the scatter plot seem to be clustered at lower levels of both GDP growth and population density growth. This is typical for many countries where economic growth is steady but not explosive, and population density changes are gradual.
-- Qatar and Iraq stand as **notable outliers**.
-- Qatar, in particular, stands out as having both significant GDP growth and a notable increase in population density. Qatar’s exceptional GDP growth can be largely attributed to its abundant oil and natural gas reserves. And its population density growth might be related to the country’s economic boom, as it attracts a large number of foreign workers.
-- Iraq also shows high GDP growth but with a lower population density growth.
-- **Overlap**: Yes, overlap is observed in the case of Qatar as it is experiencing both high population density growth and GDP growth. This suggests that Qatar has been undergoing rapid economic expansion accompanied by a significant increase in population density.
+- Qatar and Eritrea stand as **notable outliers**.
+- Qatar, in particular, stands out as having a notable increase in population density while having relatively modest GDP growth compared to other countries. This indicates that Qatar's economy, being largely driven by its oil wealth, remains steady, but the country’s rapid population growth is likely due to its attractiveness as a destination for foreign workers.
+- Eritrea emerges presents an extraordinary GDP growth rate of approximately 2000%. This dramatic increase makes Eritrea an exceptional case in the dataset. Its remarkable GDP growth might be attributed to recent significant economic changes or exceptional circumstances. 
 
 #### 2. Regression Analysis.
 
@@ -1081,10 +1081,8 @@ Even though the **scatter plot indicated a weak correlation**, **regression anal
 - Allows to assess the impact of outliers.
   
 ```ruby
-import statsmodels.api as sm
-
 # The independent variable:
-X = pivot_data['Popul. Density Growth %_']
+X = pivot_data[['Popul. Density Growth %_']]
 
 # The dependent variable:
 y = pivot_data['GDP Growth %_']
@@ -1101,32 +1099,31 @@ print(model.summary())
 
 🔍 **Regression analysis Interpretation:**
 
-![image](https://github.com/user-attachments/assets/29125704-3dd5-4b03-a341-644a408e885e)
+![image](https://github.com/user-attachments/assets/55125be2-1f69-4dc6-80d8-21768e63deda)
 
-![image](https://github.com/user-attachments/assets/97e94f6e-a5fc-4b36-a4de-bc6f626bb61b)
+![image](https://github.com/user-attachments/assets/c5ef00d2-803b-4cd7-9091-ac2ac520f4d4)
 
-- **R-squared**: 0.090 is relatively low. Only 9% of the variability is explained by the model.  
-  This could be due to various reasons, including potential issues with model assumptions, incorrect model specification, or missing important predictors. 
+- **R-squared**: 0.102 indicates that about 10% of the variability in GDP growth is explained by population density growth. This is a                    modest proportion, suggesting that while there is some relationship, the model does not capture most of the variance                    in GDP growth. 
 
-- **Adjusted R-squared**: 0.085 it is also low, reinforcing that the model's explanatory power is limited.
+- **Adjusted R-squared**: 0.097, slightly lower than R-squared, further reinforces the limited explanatory power of the model.
     
-- **F-statistic**: 20.57 with a p-value of 9.66e-06 (very small) indicates that the model as a whole is statistically significant.
+- **F-statistic**: is 23.66 with a p-value of 2.26e-06, it means that the model is statistically significant. So, the relationship 
+                   between population density growth and GDP growth is unlikely to be due to random chance.
     
-- **const (Intercept)**: 237.9586, with a standard error of 25.135. The t-value is 9.467, and the p-value is 0.000. This suggests that 
-                         the intercept is significantly different from zero.
+- **const (Intercept)**: is 259.98. This means that if the population density growth were zero, the GDP growth would still be around 
+                         259.98
     
-- **Popul. Density Growth % (Predictor)**: 2.1576, with a standard error of 0.476. The t-value is 4.536, and the p-value is 0.000. 
-                                           This indicates that the population density growth percentage has a statistically significant 
-                                           positive effect on GDP growth.   
+- **Popul. Density Growth % (Predictor)**: is 2.3627 with a standard error of 0.486. So, if we had 1% increas in population density 
+                                           growth, GDP growth would be expected to grow by 2.36%.
+                                     
  
 - **Model Fit**: The low R-squared suggests that the model does not fit the data particularly well. 
-                 While the model’s predictor (Population Density Growth %) is statistically significant, it explains only a small 
+                 While the model’s predictor (Population Density Growth %) is statistically significant, it explains only a small  
                  portion of the variance in GDP Growth %.
     
-- **Predictor Impact**: The positive coefficient for Population Density Growth % suggests that, holding other factors constant, an 
-                        increase in population density growth is associated with an increase in GDP growth. 
-                        However, given the low R-squared, the practical significance of this relationship might be limited.   
-        
+- **Final Thoughts**: The model shows statistical significance, but the explanatory power is limited. There is positive relationship 
+                     between population density growth and GDP growth. But the low R-squared value suggests that other variables or 
+                     factors may be influencing GDP growth.
 
 #### 3. Residual Analysis 
 
