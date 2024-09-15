@@ -1688,4 +1688,114 @@ Interestingly, Unemployment is slightly higher in high-income countries than in 
 
 **Population Density:**
 
-The population density difference is less pronounced but shows some variability. High-income countries exhibit greater density, likely reflecting urbanization trends, while low-income countries tend to be more rural.     
+The population density difference is less pronounced but shows some variability. High-income countries exhibit greater density, likely reflecting urbanization trends, while low-income countries tend to be more rural.    
+
+
+### Question 7: How labor force participation rates (male and female) relate to GDP growth and GDP per capita?
+    
+#### 1. Viz the data with a Scater Plots
+
+```ruby
+sns.set(style='whitegrid')
+
+# save here: 
+save_path_growth = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\lfpr_vs_gdp_growth_pretty.png'
+save_path_per_capita = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\lfpr_vs_gdp_per_capita_pretty.png'
+
+# Line color
+dark_gray_color = '#707070'  
+
+# Plot 1: Labor Force Participation Rates vs. GDP Growth 
+plt.figure(figsize=(14, 6))
+
+# Plot Female Labor Force Participation with adjusted scatter and regression
+plt.subplot(1, 2, 1)
+sns.regplot(data=subset_df, x='lfpr_f_2018', y='GDP Growth', color='#4527A0', 
+            scatter_kws={'s': 80, 'alpha': 0.7, 'edgecolor': 'w'},  
+            line_kws={"color": dark_gray_color, 'linewidth': 1.5}, 
+            ci=None)  # I prefer not to have confidence interval 
+plt.title('Female Labor Force Participation vs. GDP Growth')
+plt.xlabel('Female Labor Force Participation Rate (%)')
+plt.ylabel('GDP Growth (%)')
+
+# Plot Male Labor Force Participation 
+plt.subplot(1, 2, 2)
+sns.regplot(data=subset_df, x='lfpr_m_2018', y='GDP Growth', color='blue', 
+            scatter_kws={'s': 80, 'alpha': 0.7, 'edgecolor': 'w'},  
+            line_kws={"color": dark_gray_color, 'linewidth': 1.5},  
+            ci=None)  
+plt.title('Male Labor Force Participation vs. GDP Growth')
+plt.xlabel('Male Labor Force Participation Rate (%)')
+plt.ylabel('GDP Growth (%)')
+
+plt.tight_layout()
+plt.savefig(save_path_growth, format='png', bbox_inches='tight')
+plt.show()
+
+# Plot 2: Labor Force Participation Rates vs. GDP per capita 
+plt.figure(figsize=(14, 6))
+
+# Plot Female Labor Force Participation 
+plt.subplot(1, 2, 1)
+sns.regplot(data=subset_df, x='lfpr_f_2018', y='GDP per capita (USD)', color='#4527A0', 
+            scatter_kws={'s': 80, 'alpha': 0.7, 'edgecolor': 'w'},  
+            line_kws={"color": dark_gray_color, 'linewidth': 1.5},  
+            ci=None)  
+plt.title('Female Labor Force Participation vs. GDP per capita (2018)')
+plt.xlabel('Female Labor Force Participation Rate (%)')
+plt.ylabel('GDP per capita (USD)')
+
+# Plot Male Labor Force Participation 
+plt.subplot(1, 2, 2)
+sns.regplot(data=subset_df, x='lfpr_m_2018', y='GDP per capita (USD)', color='blue', 
+            scatter_kws={'s': 80, 'alpha': 0.7, 'edgecolor': 'w'},  
+            line_kws={"color": dark_gray_color, 'linewidth': 1.5},  
+            ci=None)  
+plt.title('Male Labor Force Participation vs. GDP per capita (2018)')
+plt.xlabel('Male Labor Force Participation Rate (%)')
+plt.ylabel('GDP per capita (USD)')
+
+plt.tight_layout()
+plt.savefig(save_path_per_capita, format='png', bbox_inches='tight')
+plt.show()
+```
+
+![lfpr_vs_gdp_growth_pretty](https://github.com/user-attachments/assets/28af3f88-5901-4dfa-92ef-a69386162fd4)
+
+
+![lfpr_vs_gdp_per_capita_pretty](https://github.com/user-attachments/assets/ecc49323-c050-4c80-82a1-07abc19d3176)
+
+
+#### 3. Results & Conclusions for the 7th Question
+
+**A. Female and Male Labor Force Participation vs. GDP Growth** 
+
+ **- Female:**
+
+1. Very weak positive relationship betweem female labor force and GDP growth.
+2. The scatter points are clustered between 30% - 70%. 
+3. There are many outliers, with some countries having very high GDP growth rates (above 1000%).
+
+ **- Male:**
+1. Weak positive relationship between male labor force and GDP growth.
+2. The scatter points are clustered between 50% - 90%, while GDP growth remains in lower levels. This suggests that GDP is not really influenced by changes in male labor force participation.
+3. There are many outliers. 
+
+
+**B. Female and Male Labor Force Participation vs. GDP per Capita Growth** 
+
+ **- Female:**
+1. Very weak positive relationship betweem female labor force and GDP per Capita.
+2. Most of the data points are concetrated between 30%-70% participation, and GDP per Capita ranges between 0$ - 175.000$.
+3. Outliers are also observed when participation is arounf 50%-60% and GDP per capita over 175.000$.
+
+ **- Male:**
+ 1. Very weak or almost neutral relationship. The line of best fit seems to be flat or moving slightly downward.
+ 2. Most data points are concetrated between 60%-80% of participation and GDP per Capita ranges between 0$ - 175.000$.
+
+**Final thoughts:**
+Weak correlations: The scatter plots show that there is slight to no relationship between participation rates of both genders with the economic facts of: GDP and GDP per Capita. 
+This indicates that while labor force participation may have some relationship with economic progress, it is likely not the dominant factor influecing GDP growth and per capita income. 
+The high GDP growth and GDP per capita outliers may be linked to other factors - natural resources, trade, investements etc.
+So, the current analysis suggests that simply increasing labor force participation rates will not lead to high GDP growth and high GDP per capita. 
+     
