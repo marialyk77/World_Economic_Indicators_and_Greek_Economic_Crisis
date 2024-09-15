@@ -1794,8 +1794,9 @@ plt.show()
  2. Most data points are concetrated between 60%-80% of participation and GDP per Capita ranges between 0$ - 175.000$.
 
 **Final thoughts:**
-Weak correlations: The scatter plots show that there is slight to no relationship between participation rates of both genders with the economic facts of: GDP and GDP per Capita. 
-This indicates that while labor force participation may have some relationship with economic progress, it is likely not the dominant factor influecing GDP growth and per capita income. 
+Weak correlations: The scatter plots show that there is weak correlation with GDP growth and GDP per capita. This indicates that while labor force participation may have some relationship with economic progress, **it is likely not the dominant factor influencing GDP growth and per capita income**. 
+
 The high GDP growth and GDP per capita outliers may be linked to other factors - natural resources, trade, investements etc.
+
 So, the current analysis suggests that simply increasing labor force participation rates will not lead to high GDP growth and high GDP per capita. 
      
