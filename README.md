@@ -16,6 +16,10 @@
 5. Which factors are highly correlated with life expectancy?
 
 6. Which factors differentiate "High Income" vs "Low Income" Countries?
+   
+7. How labor force participation rates (male and female) relate to GDP growth and GDP per capita?
+
+
 
 ## Tools used :
 
