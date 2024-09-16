@@ -1843,7 +1843,7 @@ plt.show()
 #### 2. Conclusions 
 
 
-## Question 8: Which countries had the highest CO2 emissions in 2018 within each income group?
+## Question 9: Which countries had the highest CO2 emissions in 2018 within each income group?
 
 #### 1. Box Plot 
 
