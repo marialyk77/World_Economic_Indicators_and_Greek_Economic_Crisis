@@ -1841,3 +1841,50 @@ plt.show()
 ![co2_emissions_vs_income_group_pretty](https://github.com/user-attachments/assets/2e02e028-42f4-4904-be41-841eef677f8f)
 
 #### 2. Conclusions 
+
+
+## Question 8: Which countries had the highest CO2 emissions in 2018 within each income group?
+
+#### 1. Box Plot 
+
+```ruby
+### COLORS COLORS COLORS 
+
+custom_palette = {
+    'High income: nonOECD': '#FF0000',   # Red
+    'High income: OECD': '#FF7F0E',      # Orange
+    'Upper middle income': '#4527A0',    # Deep Purple
+    'Lower middle income': '#4527A0',    # Deep Purple
+    'Low income': '#A48BD0'               # Lavender
+}
+
+
+plt.figure(figsize=(14, 8))
+##sns.barplot(data=plot_data, x='Country Name', y='co2_prod_2018', hue='Income Group', palette='tab10')
+
+
+sns.barplot(data=plot_data, x='Country Name', y='co2_prod_2018', hue='Income Group', palette=custom_palette)
+
+# I need annotations 
+for p in plt.gca().patches:
+    plt.annotate(format(p.get_height(), '.2f'), 
+                 (p.get_x() + p.get_width() / 2., p.get_height()), 
+                 ha='center', va='center', 
+                 xytext=(0, 5), 
+                 textcoords='offset points')
+
+plt.title('Top CO2 Emission Outliers by Income Group (2018)')
+plt.xlabel('')
+plt.ylabel('CO2 Emissions per Capita (tonnes)')
+plt.xticks(rotation=45, ha='right')  # i have to rotate a bit so that they fit better 
+plt.tight_layout()
+
+
+plt.savefig('C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\top_co2_emission_outliers_combined_plot.png', format='png', bbox_inches='tight')
+plt.show()
+```
+
+![top_co2_emission_outliers_combined_plot](https://github.com/user-attachments/assets/609a3dbe-5df8-4036-8e41-87e4420c2e11)
+
+
+#### 2. Conclusions 
