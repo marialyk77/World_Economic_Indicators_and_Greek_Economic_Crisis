@@ -684,12 +684,12 @@ analyze_column('hdi_2005')
 
 # Development Indicators table
 
-## Exploratory Data Analysis 
+#### 1. Exploratory Data Analysis 
 
 > [!IMPORTANT]   
 > 1. The analysis is focused on the **21st century**. Any non related column was removed. 
 
-2. **Erros & Data Completness**:
++ **Erros & Data Completness**:
    + There were no errors.
    + There were Nulls:
      
