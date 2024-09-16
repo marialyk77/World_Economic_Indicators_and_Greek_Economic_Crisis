@@ -920,9 +920,9 @@ print(missing_in_hdi)
 
 2. **I proceeded to address the questions.**
 
-### Question 1: Which countries have experienced the highest growth in population and GDP? Is there overlap?
+## Question 1: Which countries have experienced the highest growth in population and GDP? Is there overlap?
 
-**- 1. Bar Chart**
+#### 1. Bar Chart
 
 ```ruby
 ## Vizualizing the Top Countries with highest GDP & Population Density 
@@ -975,7 +975,7 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/9e77df8d-5af1-43cd-aa12-bd9eb5368054)
 
 
-**2. Conclusions**
+#### 2. Conclusions
 
 - Top 10 in population increase: Qatar, Eritrea, and the United Arab Emirates
 - Top 10 in GDP increase: Eritrea, Faroe Islands, and Greenland  
@@ -984,9 +984,11 @@ plt.show()
 This overlap indicates that these countries experienced both rapid growth in population density 
 and significant economic expansion. 
 
-### Question 2: How does population density growth impact GDP growth across countries from 2000 to 2018?
+## Question 2: How does population density growth impact GDP growth across countries from 2000 to 2018?
  
 - To answer this question I used the column [GDP (USD)] and [Population Density] from the Development Indicators dataset.
+  
+#### 1. Data Filtering
 - I focused on data from the years 2000 and 2018 to calculate the **percentage growth**, allowing for a clear comparison of long-term trends in **population density and GDP over nearly two decades**. This approach highlights significant changes without the complexity of year-by-year analysis.
   
 ```ruby
@@ -1007,7 +1009,7 @@ pivot_data['GDP Growth %'] = (pivot_data['GDP (USD)'][2018] - pivot_data['GDP (U
 # Showing the results 
 pivot_data[['Popul. Density Growth %', 'GDP Growth %']]
 ```
-#### 1. Scatter plot:
+#### 2. Scatter plot:
 
 ```ruby
 # Time for the scatterplot 
@@ -1076,7 +1078,7 @@ plt.show()
 - Qatar, in particular, stands out as having a notable increase in population density while having relatively modest GDP growth compared to other countries. This indicates that Qatar's economy, being largely driven by its oil wealth, remains steady, but the country’s rapid population growth is likely due to its attractiveness as a destination for foreign workers.
 - Eritrea emerges presents an extraordinary GDP growth rate of approximately 2000%. This dramatic increase makes Eritrea an exceptional case in the dataset. Its remarkable GDP growth might be attributed to recent significant economic changes or exceptional circumstances. 
 
-#### 2. Regression Analysis.
+#### 3. Regression Analysis.
 
 Even though the **scatter plot indicated a weak correlation**, **regression analysis is still important**. 
 - It quantifies the relationship more precisely
@@ -1129,7 +1131,7 @@ print(model.summary())
                      between population density growth and GDP growth. But the low R-squared value suggests that other variables or 
                      factors may be influencing GDP growth.
 
-#### 3. Residual Analysis 
+#### 4. Residual Analysis 
 
 I performed residual analysis after noting the low R- squared  value to better assess the model's fit.
 
@@ -1194,22 +1196,16 @@ plt.show()
 
 - Influential Points: The Residuals vs. Leverage plot shows a few high-leverage points, but they do not have a large influence on the model.
     
-#### 4. Results for the 2nd Question 
+#### 5. Conclusions
 
-- **Scatter Plot Insights**: The scatter plot indicates **a positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, **which signals a weak correlation**. Notably, Qatar and Iraq are outliers.
+- **Scatter Plot Insights**: The scatter plot indicates **a positive correlation** between population density growth and GDP growth, suggesting that, on average, countries with increasing population densities tend to have higher GDP growth. However, the data points are widely spread around the trend line, **which signals a weak correlation**. 
   
 - **Regression Analysis Limitations**: The low R-squared value and residuals analysis reveal that the regression model, as it stands, **cannot effectively explain the relationship between GDP growth and population density growth**.
 
-  **So, population density growth alone is not a strong predictor.**
-
-#### 5. Conclusions for the 2nd Question: 
-
-The analysis reveals that population density growth is weakly correlated with GDP growth. While the scatter plot shows a positive trend, the widely scattered data points and the presence of outliers (such as Qatar and Iraq) indicate that this relationship is not strong. Furthermore, the low R-squared value from the regression analysis confirms that population density growth alone is not a reliable predictor of GDP growth.
-
-This suggests that economic growth is driven by a more complex set of factors, and focusing solely on population density growth provides limited insights. To better understand the drivers of GDP growth, it is essential to consider additional variables and refine the model for a more comprehensive analysis.
+  **Therefore, population density growth alone is not a strong predictor. Economic growth is driven by a more complex set of factors, and focusing solely on population density growth provides limited insights. To better understand the drivers of GDP growth, it is essential to consider additional variables and refine the model for a more comprehensive analysis.**
 
 
-### Question 3: Which factors drive economic growth (GDP)? 
+## Question 3: Which factors drive economic growth (GDP)? 
 
 The previous Regression analysis proved that population density growth explains only a small portion of the variability in GDP growth (low R-squared value). 
 This suggests that while population growth might contribute to GDP growth, other factors are likely playing a much more significant role in driving economic growth.
@@ -1381,7 +1377,7 @@ for these variables are associated with a reduction in the log of GDP.
              numerical instability.** 
 
 
-#### 5. Results on the 3rd question
+#### 5. Results 
 
 The final regression model, with a log transformation of GDP, explains 26.4% of the variability in GDP. While this is an improvement over the previous model, it still suggests that a significant portion of GDP variation is driven by factors not included in the model.
 
@@ -1405,7 +1401,7 @@ Internet access often has a more direct and visible impact on economic growth by
 **4. Autocorrelation:** The Durbin-Watson statistic is quite low (0.131), pointing to possible **autocorrelation in the residuals**.
 **5. Condition Number:** The high condition number (5.24e+04) suggests **potential multicollinearity** or numerical instability in the model, which may need further attention.
 
-#### 6. **Conclusions on 3rd question:**
+#### 6. **Conclusions**
 
 The current model offers valuable interpretations and highlights key drivers of GDP growth:
 
@@ -1422,10 +1418,10 @@ Unemployment and population density are negatively associated with GDP growth.
 The analysis underscores the importance of technological development (internet usage) and human capital (life expectancy) in driving economic growth. Despite these valuable insights, the model also reveals the inherent complexity of economic growth and suggests that further refinement and exploration could enhance our understanding.
 
 
-### Question 4: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
+## Question 4: In which regions of the world did Human Development Index (HDI) grow the most during the 21st century?
 
 
-#### 1. I calculated the HDI Growth, Grouped by region and Calculated the AVG.
+#### 1. Avg HDI Growth grouped by region.
 
 ```ruby
 hdi_df['hdi_growth'] = hdi_df['hdi_2021'] - hdi_df['hdi_2000']
@@ -1439,7 +1435,7 @@ region_growth = hdi_df_filtered.groupby('region')['hdi_growth'].mean().sort_valu
 print(region_growth)
 ```
 
-#### 2. I plotted a Bar Graph 
+#### 2. Bar Graph 
 
 ```ruby
 # setting my favorite color for highest growth with gradient for the rest
@@ -1483,16 +1479,16 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/c284d08e-766a-466a-b8ff-26ff9311471b)
 
 
-#### 3. Results & Conclusions for the 4th Question 
+#### 3. Conclusions
 
 - The chart shows that **South Asia (SA) had the highest HDI growth** from 2000 to 2021, 
 while **Latin America and the Caribbean (LAC) had the lowest**. Other regions like Europe and Central Asia (ECA) and Sub-Saharan Africa (SSA) experienced moderate growth.
 
 
 
-### Question 5: Which factors are highly correlated with life expectancy?
+## Question 5: Which factors are highly correlated with life expectancy?
 
-#### 1. I merged the datasets 
+#### 1. Dataframes merging 
 
 ```ruby
 merged_df = pd.merge(hdi_df, dev_indicators_df, on=['Country Name', 'Region'], how='inner')
@@ -1500,7 +1496,7 @@ merged_df = pd.merge(hdi_df, dev_indicators_df, on=['Country Name', 'Region'], h
 print(merged_df.head())
 ```
 
-#### 2. Time for Correlation 
+#### 2. Correlation 
 
 ```ruby
 from matplotlib.colors import LinearSegmentedColormap
@@ -1573,7 +1569,7 @@ plt.show()
    - gii_2021: Gender Inequality Index. Gender inequality can affect overall societal health
 
 
- #### 3. Results & Conclusions for the 5th Question 
+ #### 3. Conclusions  
 
 
  ![life_expectancy_corr_heatmap_purple](https://github.com/user-attachments/assets/2ac75898-b140-49f3-9df4-f2dee1e916d0)
@@ -1589,7 +1585,7 @@ plt.show()
 
 
 
-### Question 6: Which factors differentiate "High Income" vs "Low Income" Countries?
+## Question 6: Which factors differentiate "High Income" vs "Low Income" Countries?
 
 #### 1. Definition of Key Indicators 
 
@@ -1620,7 +1616,7 @@ print(low_income_means)
 ![image](https://github.com/user-attachments/assets/b612b72b-1377-4bb6-8ff8-e296ba4094bd)
 
 
-#### 2. Viz the data with a Bar Plot 
+#### 2. Bar Plot 
 
 ```ruby
 # Finally i need to use log scale because the values for some indicators, like GDP per capita, are much bigger than others, like unemployment or infant mortality. 
@@ -1665,7 +1661,7 @@ plt.show()
 ![income_group_bar_plot_log](https://github.com/user-attachments/assets/9e9547e6-95fc-43eb-bf9a-0453f35608ad)
 
 
-#### 3. Results & Conclusions for the 6th Question
+#### 3. Conclusions 
 
 The bar plot reveals significant disparities between high-income and low-income countries across multiple key indicators. These results suggest that **high-income countries generally outperform low-income countries** across most indicators, especially in terms of economic strength, health, infrastructure, and education. However, unemployment seems to be higher in high-income countries.
 
@@ -1695,9 +1691,9 @@ Interestingly, Unemployment is slightly higher in high-income countries than in 
 The population density difference is less pronounced but shows some variability. High-income countries exhibit greater density, likely reflecting urbanization trends, while low-income countries tend to be more rural.    
 
 
-### Question 7: How labor force participation rates (male and female) relate to GDP growth and GDP per capita?
+## Question 7: How labor force participation rates (male and female) relate to GDP growth and GDP per capita?
     
-#### 1. Viz the data with a Scater Plots
+#### 1. Scater Plots
 
 ```ruby
 sns.set(style='whitegrid')
@@ -1766,7 +1762,7 @@ plt.show()
 ![lfpr_vs_gdp_per_capita_pretty](https://github.com/user-attachments/assets/ecc49323-c050-4c80-82a1-07abc19d3176)
 
 
-#### 3. Results & Conclusions for the 7th Question
+#### 3. Conclusions 
 
 **A. Female and Male Labor Force Participation vs. GDP Growth** 
 
