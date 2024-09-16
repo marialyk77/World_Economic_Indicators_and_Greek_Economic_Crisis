@@ -101,7 +101,7 @@ This comparative study will provide insights into the strengths and limitations 
 
 # HDI table
 
-## Exploratory Data Analysis 
+#### 1. Exploratory Data Analysis 
 
 **1.** **Erros & Data Completness**:
    + There were no errors.
@@ -150,7 +150,7 @@ This comparative study will provide insights into the strengths and limitations 
        
   C. Egypt: Initially assigned to "Asia" instead of "Middle East & North Africa (MENA)
        
- ## Cleaning Process with Power BI and Python 
+ #### 2. Cleaning Process with Power BI and Python 
 
 ***
   > [!IMPORTANT]
@@ -301,7 +301,7 @@ df.loc[:, 'hdicode'] = df['hdicode'].replace(category_replacing)
    * The **[region]** column contained 55 blank rows. However, instead of filling the blanks with N/A, I found it easier to identify the correct region for each country. Therefore, I **filled the blanks with the appropriate region.**
 ***
 
-### **Implementation with Power Query**  📊:
+ **Implementation with Power Query**  📊:
 
    **1.** I first created a new conditional column called [Region_filled], listing only the countries whose region was missing from the original [region] column:
       
@@ -315,7 +315,7 @@ df.loc[:, 'hdicode'] = df['hdicode'].replace(category_replacing)
 
    ![image](https://github.com/user-attachments/assets/ed0833aa-6a0f-4249-9fee-ff795750c4f4)
 
-### **Implementation with Pandas** 🐍:
+**Implementation with Pandas** 🐍:
 
 ```ruby
 ## Filling the blanks with the appropriate region
@@ -367,9 +367,9 @@ df.loc[df['country'].isin(mena), 'region'] = 'MENA'
 ```
 
 
-   ## Addressing the null values
+#### 3. Addressing the null values
 
-   ### Implementation with Power Query 📊:
+   ##### A. Implementation with Power Query 📊:
     
    🔍 **A. HDI xxxx Fields** 
 
@@ -555,7 +555,7 @@ df.loc[df['country'].isin(mena), 'region'] = 'MENA'
  > - **Imputation Method**: Given the observed right skew in the distributions for 2015 and 2020, and considering that 2010 had a normal distribution, I will impute the null values with the **median**. Even though 2010 exhibited a normal distribution there could be variations in skewness across the remaining years in the dataset. 
  
 
- ### Implementation with Python 🐍:
+ ##### B. Implementation with Python 🐍:
 
 > [!NOTE]
 > I implemented a script that automates the process of analyzing and visualizing multiple columns, thus eliminating the need to manually repeat the same steps for each column. This script not only streamlines the workflow but also effectively integrates data analysis with visualization. It calculates important statistics such as skewness and determines the appropriate imputation method for missing values. Additionally, it generates histograms for each column, complete with annotations that provide context about the data distribution and imputation choices. :joy:
@@ -641,7 +641,7 @@ analyze_column('hdi_2005')
 
 
  
-## Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
+##### C. Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
 
 > [!NOTE]
 > I explored imputation methods for handling missing values using Power BI and Python. While both approaches aimed to address null values effectively, **the Python method demonstrated clear advantages in automation, consistency, and efficiency.**
