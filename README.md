@@ -810,7 +810,7 @@ region_name = {
 df.loc[:, 'Region'] = df['Region'].replace(region_name)
  ```
 
-  ## Addressing the null values
+#### 3. Addressing the null values
 
 ``` ruby
 ## Checking if Nulls :  found in 10 columns 
