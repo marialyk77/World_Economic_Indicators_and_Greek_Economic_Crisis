@@ -4,7 +4,7 @@
 
 + The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
   
-## Research Questions: 
+#### 1. Research Questions: 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
    
 2. How does population density growth impact GDP growth across countries from 2000 to 2018?
@@ -21,7 +21,7 @@
 
 
 
-## Tools used :
+#### 2. Tools used :
 
 Power BI, Python 
 
@@ -29,7 +29,7 @@ Power BI, Python
 > In this analysis, I aim to explore and compare the effectiveness of Power BI and Python in handling and analyzing data. I will focus particularly on the World Economic Indicators dataset that requires imputation techniques, using descriptive statistics to address missing values. By applying methods such as mean and median imputation, I will assess how each tool manages data preprocessing and its impact on the accuracy and reliability of the analysis. 
 This comparative study will provide insights into the strengths and limitations of Power BI and Python in dealing with incomplete data and performing robust statistical analyses.
 
-## Dataset exploration 
+#### 3. Dataset exploration 
 + The dataset contains 2 seperate Excel files :
   
 **1. Human Development Index(HDI):**
@@ -810,7 +810,7 @@ region_name = {
 df.loc[:, 'Region'] = df['Region'].replace(region_name)
  ```
 
-#### 3. Addressing the null values
+#### 3. Addressing the null values with Python
 
 ``` ruby
 ## Checking if Nulls :  found in 10 columns 
