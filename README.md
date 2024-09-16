@@ -704,14 +704,14 @@ analyze_column('hdi_2005')
      - Population density (people per sq. km of land area): 1%
      - Unemployment (% of total labor force) (modeled ILO estimate): 13%
     
- 3.  **Data Consistency**:
+ +  **Data Consistency**:
 
       + The data has been reviewed for consistency, and no significant issues were identified. All columns, including GDP and other economic indicators, are consistent and aligned with expected values.
 
         However, please note that I was unable to fully validate the GDP per capita (USD) values because the dataset does not include a direct population column. GDP per capita is calculated as GDP divided by the total population, and without the population data, I could not verify the accuracy of this metric.
 
 
- ## Cleaning Process with Python 
+ #### 2. Cleaning Process with Python 
 
   * The field names listed above have been renamed to shorter versions.
 
