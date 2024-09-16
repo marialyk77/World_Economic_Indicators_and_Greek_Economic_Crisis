@@ -19,6 +19,8 @@
    
 7. How labor force participation rates (male and female) relate to GDP growth and GDP per capita?
 
+8. How do CO2 emissions per capita in 2018 vary across different income groups?
+
 
 
 #### 2. Tools used 
@@ -1796,3 +1798,46 @@ The high GDP growth and GDP per capita outliers may be linked to other factors -
 
 So, the current analysis suggests that simply increasing labor force participation rates will not lead to high GDP growth and high GDP per capita. 
      
+
+## Question 8: How do CO2 emissions per capita in 2018 vary across different income groups?
+
+#### 1. Box Plot 
+
+```ruby
+# The avg CO2 emissions by Income Group for 2018
+avg_co2_by_income_2018 = merged_df.groupby('IncomeGroup')['co2_prod_2018'].mean().reset_index()
+
+# Sort by avg CO2 to identify the group with the highest and second-highest emissions
+avg_co2_by_income_2018 = avg_co2_by_income_2018.sort_values(by='co2_prod_2018', ascending=False)
+
+# Red for the highest group, orange for the second-highest, purple for the middle group, and 
+colors = ['#FF0000', '#FF7F0E', '#4527A0', '#4527A0', '#17BECF']  
+
+colors.extend(remaining_colors)
+
+# assigning incomeGroups to their respective color
+income_color_map = dict(zip(avg_co2_by_income_2018['IncomeGroup'], colors))
+
+# Step 4: Boxplot 
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=merged_df, x='IncomeGroup', y='co2_prod_2018', palette=income_color_map)
+plt.title('Distribution of CO2 Emissions by Income Group (2018)')
+plt.xlabel('')
+plt.ylabel('CO2 Emissions per Capita (tonnes)')
+##plt.xticks(rotation=45)
+
+# Finnaly I prefer straight x- labels: rotation to 0 and smaller font size
+plt.xticks(rotation=0, fontsize=10) 
+
+plt.tight_layout()
+
+## I finally want the lables to look dif on the x axis : 
+
+plt.ylabel('CO2 Emissions per Capita (tonnes)')
+
+plt.show()
+```
+
+![co2_emissions_vs_income_group_pretty](https://github.com/user-attachments/assets/2e02e028-42f4-4904-be41-841eef677f8f)
+
+#### 2. Conclusions 
