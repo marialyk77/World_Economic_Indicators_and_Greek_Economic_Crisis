@@ -922,7 +922,7 @@ print(missing_in_hdi)
 
 ### Question 1: Which countries have experienced the highest growth in population and GDP? Is there overlap?
 
-#### 1. Bar Chart 
+**- 1. Bar Chart**
 
 ```ruby
 ## Vizualizing the Top Countries with highest GDP & Population Density 
@@ -975,7 +975,7 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/9e77df8d-5af1-43cd-aa12-bd9eb5368054)
 
 
-#### Conclusions for the 1st Question 
+**2. Conclusions**
 
 - Top 10 in population increase: Qatar, Eritrea, and the United Arab Emirates
 - Top 10 in GDP increase: Eritrea, Faroe Islands, and Greenland  
@@ -1701,10 +1701,6 @@ The population density difference is less pronounced but shows some variability.
 
 ```ruby
 sns.set(style='whitegrid')
-
-# save here: 
-save_path_growth = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\lfpr_vs_gdp_growth_pretty.png'
-save_path_per_capita = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\lfpr_vs_gdp_per_capita_pretty.png'
 
 # Line color
 dark_gray_color = '#707070'  
