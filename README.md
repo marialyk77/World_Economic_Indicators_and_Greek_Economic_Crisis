@@ -1888,3 +1888,40 @@ plt.show()
 
 
 #### 2. Conclusions 
+
+
+## Question 10: What was the average annual growth rate of Greece's GDP over the period 2000-2018?
+
+#### 1. Line graph 
+```ruby
+import matplotlib.pyplot as plt
+
+# The df has to be sorted by Year
+Greece_gdp = Greece_gdp.sort_values(by='Year')
+
+# Ploting 
+plt.figure(figsize=(12, 6))
+plt.plot(Greece_gdp['Year'], Greece_gdp['GDP Growth Rate (%)'], marker='o', linestyle='-', color='#4527A0')
+
+# Better to have annotations to show the greek economy in all it's drama 
+for i, row in Greece_gdp.iterrows():
+    plt.text(row['Year'], row['GDP Growth Rate (%)'], f"{row['GDP Growth Rate (%)']:.2f}", 
+             ha='right', va='bottom', fontsize=9)
+
+plt.title('Annual GDP Growth Rate of Greece (2000-2018)')
+plt.xlabel('')
+plt.ylabel('GDP Growth Rate (%)')
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+plt.show()
+```
+
+![greece_gdp_growth_rate](https://github.com/user-attachments/assets/2e728f63-a3b2-4ed6-a197-6aeac7eddb6e)
+
+
+#### 2. Conclusions 
+
+
+## Question 11: How did Greece’s economic indicators (GDP, unemployment) compare with those of other countries in the same region?
