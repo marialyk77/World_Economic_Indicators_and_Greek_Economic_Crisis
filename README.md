@@ -4,7 +4,7 @@
 
 + The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
   
-#### 1. Research Questions: 
+#### 1. Research Questions 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
    
 2. How does population density growth impact GDP growth across countries from 2000 to 2018?
@@ -21,7 +21,7 @@
 
 
 
-#### 2. Tools used :
+#### 2. Tools used 
 
 Power BI, Python 
 
