@@ -1842,6 +1842,24 @@ plt.show()
 
 #### 2. Conclusions 
 
+**High-Income (nonOECD):**  
+ - Is the group with the **highest emissions**. 
+ - The **median** indicates assymetry in distribution: It is closer to the lower bound (around 6 tonnes) of the box: This shows that  there are **more countries with lower CO2 emissions**. But a few countries with significantly higher emissions are pulling the overall distribution upward, creating a wide spread of values in the upper range.
+
+**High-Income: OECD:**
+- Here half of the countries emit less than 8 tonnes of CO2 per capita.
+- The spread of the middle 50% of countries (IQR) is more compact compared to the more variable, higher-emitting High-Income (nonOECD) countries.
+
+**Upper Middle Income:**
+-  Here half of the countries emit less than $ tonnes of CO2 per capita.
+-  The **spread** of the middle half of the data ranges between 2-5 tonnes, but there are a few extreme outliers, showing that emissions vary significantly in this category.
+
+**Lower Middle Income:**
+- Here half of the countries emit less than 1 tonne of CO2 per capita.
+
+ **Low Income:**
+ - This group has the lowest emissions.
+ - The median is near zero, indicating very low CO2 emissions per capita, with almost no outliers.
 
 ## Question 9: Which countries had the highest CO2 emissions in 2018 within each income group?
 
@@ -1889,6 +1907,22 @@ plt.show()
 
 #### 2. Conclusions 
 
+- High-Income (nonOECD) – **Qatar & Trinidad and Tobago** stand out with extremely high emissions per capita, at 38.44 tonnes and 29.12 tonnes, respectively.
+
+- High-Income (OECD)– **Australia, the United States, and Luxembourg** lead this group with emissions between 15-17 tonnes per capita. These values are lower than the highest nonOECD countries but still significant.
+
+- Upper Middle Income  – **Kazakhstan and Mongolia** have the highest emissions in this group, with Kazakhstan leading at 17.32 tonnes. Other countries, like Turkmenistan, also show relatively high emissions, but they remain much lower than high-income countries.
+
+- Lower Middle Income – **Ukraine and Zimbabwe** are among the top emitters in this group, though their emissions (5.24 tonnes for Ukraine) are far lower compared to the upper middle or high-income countries.
+
+- Low Income – The lowest emitters, like **Cambodia and Benin**, have emissions less than 1 tonne per capita, demonstrating minimal CO2 output compared to wealthier nations.
+
+- **Strong correlation between Income group and CO2 emissions per capita.**
+- The highest CO2 emitters tend to be high-income countries, especially resource-rich ones like Qatar.
+- Countries from lower income groups have significantly lower emissions. This emphasizes **global disparities in emissions based on economic status.**
+- There are **notable outliers within each income group**, such as Kazakhstan for upper-middle income, showing the **uneven distribution of emissions even within the same income classification**.
+
+
 
 ## Question 10: What was the average annual growth rate of Greece's GDP over the period 2000-2018?
 
@@ -1923,5 +1957,19 @@ plt.show()
 
 #### 2. Conclusions 
 
+The word "economy" itself comes from the Greek word "οἰκονομία" (oikos + nemein), meaning "management of the household".  Quite ironic, isn’t it? As the very country that invented the term, one would think Greece would have had it all figured out. Yet, there’s another word Greece gave the world: "drama". And during the financial crisis, Greece certainly lived up to its reputation for dramatic flair.
+
+**Volatile Growth:** The graph demonstrates Greece's volatile economic performance over this period, strongly tied to external and internal shocks, including the global financial crisis, the Eurozone debt crisis, and Greece's own fiscal troubles.
+
+Greece experienced **significant growth in the early 2000s**, with the GDP growth rate peaking at 31.17% in 2004. This could have been influenced by preparations for the 2004 Athens Olympics, which involved substantial investment and infrastructure projects.
+
+The **years following 2008 Greece's economy sharply declined**, with a growth rate falling to -6.77% in 2009.
+The economic decline worsened during the Eurozone crisis, reaching its lowest point in 2011, with a -14.55% contraction.
+
+The **years between 2010 - 2016 the growth rates were consistently negative**. This was a period marked by austerity measures, bailouts, and high levels of debt, which significantly impacted the Greek economy.
+
+**After 2016** GDP growth rate were gradually following an **upward tragectory**. 
+
+While Greece has shown signs of improvement, the steep declines and fluctuations underscore the importance of sustained economic reforms and growth strategies to prevent further downturns.
 
 ## Question 11: How did Greece’s economic indicators (GDP, unemployment) compare with those of other countries in the same region?
