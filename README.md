@@ -2097,3 +2097,60 @@ plt.show()
 
 
 ## Question 13: Which factors influenced Greece's GDP fluctuations and recovery between 2000 and 2018?
+
+#### 1. Correlation Matrix 
+
+```ruby
+from matplotlib.colors import LinearSegmentedColormap
+
+# Select relevant columns for correlation
+columns_to_use = [
+    'Life Expectacy', 'GDP per capita (USD)', 'Infant mortality %', 'Electric Power Consumption',
+    'Unemployment %', 'Population % using Internet', 'Population Density', 
+]
+
+# Simplified column names
+simplified_column_names = {
+    'Life Expectacy': 'Life Expectancy',
+    'GDP per capita (USD)': 'GDP per Capita',
+    'Infant mortality %': 'Infant Mortality',
+    'Electric Power Consumption': 'Electric Power',
+    'Unemployment %': 'Unemployment',
+    'Population % using Internet': 'Internet Usage',
+    'Population Density': 'Pop Density',
+
+}
+
+# Filter the dataset for Greece
+greece_data = merged_df[merged_df['Country Name'] == 'Greece']
+
+# Select and rename the columns
+subset_df = greece_data[columns_to_use].rename(columns=simplified_column_names)
+
+# Compute the correlation matrix
+correlation_matrix = subset_df.corr()
+
+# Define a custom colormap with shades of purple
+colors = ["#ffffff", "#d1c4e9", "#4527A0"]  # White for weak, light purple for moderate, deep purple for strong positive
+n_bins = 100  # Number of bins for the color map
+cmap_name = "custom_purple"
+custom_cmap = LinearSegmentedColormap.from_list(cmap_name, colors, N=n_bins)
+
+# Plot the heatmap with the custom colormap
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap=custom_cmap, fmt='.2f', center=0, vmin=-1, vmax=1, linewidths=0.5)
+plt.title('Correlation Matrix of Economic Indicators in Greece (2000-2018)', fontsize=13)
+
+save_path = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\greece_correlation_matrix.png'
+plt.savefig(save_path, format='png', bbox_inches='tight')
+
+plt.show()
+```
+
+
+![greece_correlation_matrix](https://github.com/user-attachments/assets/0924d4b3-51fd-4ee1-bb13-f211f45f8209)
+
+
+#### 2. Conclusions 
+
+
