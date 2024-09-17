@@ -2166,5 +2166,5 @@ plt.show()
 #### 2. Conclusions 
 
 - **Economic Growth & Well-being**: Higher GDP per capita is associated with better **health outcomes (lower infant mortality) and higher electric consumption**, reflecting development.
-- **Unemployment**: Surprisingly, there's **a strong positive correlation between unemployment and internet usage**, likely reflecting a shift towards online services or education during high unemployment periods.
+- **Unemployment**: Surprisingly, there's **a strong positive correlation between unemployment and internet usage**, likely reflecting a shift towards online services during high unemployment periods.
 - **Population Density**: Positively correlates with GDP per capita and electric power, which are both typical indicators of economic development and urbanization.
