@@ -2039,6 +2039,12 @@ plt.show()
 
 #### 2. Conclusions  
 
+**General Trend**: Most countries in this region have experienced GDP growth between 2010 and 2018, except for Greece, showing its distinct financial trajectory during the Eurozone crisis.
+
+**Greece** (red):   Noticeable decline between 2010 to 2018, reflecting the economic impact of the debt crisis and subsequent austerity measures. While most countries show a GDP increase in 2018, Greece's economic struggles are evident.
+
+**Other countries**: Large economies like **Germany**, **France**, and **United Kingdom** have a significant increase in their GDP, reaching into the trillions. Smaller economies like **Kazakhstan** and **Armenia** also see some growth, though at a much smaller scale.
+
 
 ## Question 12: How has the unemployment rate in Greece changed between 2000 and 2018?
 
@@ -2094,6 +2100,12 @@ plt.show()
 
 
 #### 2. Conclusions  
+
+
+ - **2000-2008**: The unemployment rate was relatively stable, fluctuating around 10% but gradually declining to 7.8% in 2008.
+  - **2009-2013**: A steep increase in unemployment begins in 2009, coinciding with the global financial crisis and Greece's own debt crisis. Unemployment peaks at **27.5%** in 2013.
+  - **2014-2018**: Following the peak, the unemployment rate slowly decreases year by year, reaching **19.2%** in 2018. **Despite the improvement, this is still much higher than pre-crisis levels.**
+
 
 
 ## Question 13: Which factors influenced Greece's GDP fluctuations and recovery between 2000 and 2018?
@@ -2153,4 +2165,6 @@ plt.show()
 
 #### 2. Conclusions 
 
-
+- **Economic Growth & Well-being**: Higher GDP per capita is associated with better **health outcomes (lower infant mortality) and higher electric consumption**, reflecting development.
+- **Unemployment**: Surprisingly, there's **a strong positive correlation between unemployment and internet usage**, likely reflecting a shift towards online services or education during high unemployment periods.
+- **Population Density**: Positively correlates with GDP per capita and electric power, which are both typical indicators of economic development and urbanization.
