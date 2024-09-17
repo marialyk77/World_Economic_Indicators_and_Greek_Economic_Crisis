@@ -2094,3 +2094,6 @@ plt.show()
 
 
 #### 2. Conclusions  
+
+
+## Question 13: Which factors influenced Greece's GDP fluctuations and recovery between 2000 and 2018?
