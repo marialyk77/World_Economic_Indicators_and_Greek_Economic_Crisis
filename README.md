@@ -21,7 +21,7 @@ Parallel to the research on economic indicators, I aimed to explore the **streng
 
 
   
-#### 1. Research Questions 
+#### 2. Research Questions 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
    
 2. How does population density growth impact GDP growth across countries from 2000 to 2018?
@@ -48,7 +48,7 @@ Parallel to the research on economic indicators, I aimed to explore the **streng
 
 
 
-#### 2. Tools used 
+#### 3. Tools used 
 
 Power BI, Python 
 
