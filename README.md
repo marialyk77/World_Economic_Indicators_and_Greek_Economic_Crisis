@@ -15,6 +15,9 @@ Parallel to the research on economic indicators, I aimed to explore the **streng
 
 >  ![image](https://github.com/user-attachments/assets/9951b42e-66db-4780-a9df-e7cddea9085f)
 
+> ![image](https://github.com/user-attachments/assets/3639c221-6e36-4b98-b517-fc29c48e58da)
+
+
 
 
   
