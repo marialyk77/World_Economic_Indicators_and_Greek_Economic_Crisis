@@ -9,6 +9,9 @@ This project explores global economic trends using data from the **World Bank an
 As a Greek, I was particularly interested in exploring **Greece's economic performance during the financial crisis**. This dataset provided an ideal opportunity to examine the country's GDP growth and unemployment trends between 2000 and 2018, offering insights into the economic challenges Greece faced and its path to recovery.
 
 Parallel to the research on economic indicators, I aimed to explore the **strengths and limitations** of both **Power BI and Python** for data analysis. I used Power BI primarily for cleaning, checking distributions, and imputing missing values in the HDI dataset as part of an experimentation process. However, for the current dataset, Python proved to be more efficient for both preprocessing and analysis. As a result, I continued with Python for the exploratory data analysis (EDA) and visualizations, as it was better suited for handling the larger datasets and automating tasks effectively.
+
+> [!NOTE]
+> As my project is quite extensive and the README file contains a lot of detailed information, I recommend using GitHub’s automatically generated table of contents to quickly navigate through the sections of the README. This feature functions like an index, allowing you to jump directly to the parts of the analysis you are most interested in exploring.
   
 #### 1. Research Questions 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
