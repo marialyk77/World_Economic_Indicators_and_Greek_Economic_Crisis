@@ -20,6 +20,12 @@
 7. How labor force participation rates (male and female) relate to GDP growth and GDP per capita?
 
 8. How do CO2 emissions per capita in 2018 vary across different income groups?
+   
+9. Which countries had the highest CO2 emissions in 2018 within each income group?
+    
+10. What was the average annual growth rate of Greece's GDP over the period 2000-2018?
+
+11. How did Greece’s GDP compare with those of other countries in the same region?
 
 
 
@@ -1972,4 +1978,117 @@ The **years between 2010 - 2016 the growth rates were consistently negative**. T
 
 While Greece has shown signs of improvement, the steep declines and fluctuations underscore the importance of sustained economic reforms and growth strategies to prevent further downturns.
 
-## Question 11: How did Greece’s economic indicators (GDP, unemployment) compare with those of other countries in the same region?
+## Question 11: How did Greece’s GDP compare with those of other countries in the same region?
+
+#### 1. Bar Chart 
+
+```ruby
+#years for comparison
+selected_years = [2010, 2018]
+
+gdp_subset = eca_data[eca_data['Year'].isin(selected_years)][['Year', 'Country Name', 'GDP (USD)']]
+
+# Pivoting because i need countries as index and years as columns
+gdp_pivot = gdp_subset.pivot(index='Country Name', columns='Year', values='GDP (USD)')
+
+# colors
+colors = {
+    2010: 'lightgray',   # Color for 2010
+    2018: '#4527A0'     # Deep purple for 2018
+}
+
+# And since Greece is the subject of research, is better to have a dif color 
+greece_colors = {
+    2010: '#FF6F61',    # Bright red for 2010
+    2018: '#FF4C4C'     # darker red for 2018
+}
+
+# Plot  bar chart
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Width of bars
+width = 0.35
+
+# positions for bars
+positions = list(range(len(gdp_pivot.index)))
+
+# bars for each year
+for i, year in enumerate(selected_years):
+    # Define color for Greece and other countries
+    bar_colors = [greece_colors[year] if country == 'Greece' else colors[year] for country in gdp_pivot.index]
+    # Plot bars
+    ax.bar([p + width * i for p in positions], gdp_pivot[year], width=width, color=bar_colors, edgecolor='black', label=f'GDP in {year}')
+
+# And the labels, title, and legend
+ax.set_title('GDP Comparison: Greece vs Other ECA Countries')
+ax.set_xlabel('')
+ax.set_ylabel('GDP (USD)')
+ax.set_xticks([p + width for p in positions])
+ax.set_xticklabels(gdp_pivot.index, rotation=45, ha='right')
+ax.legend(title='Years')
+
+plt.tight_layout()
+
+plt.show()
+```
+
+![gdp_comparison_greece_vs_eca_shaded](https://github.com/user-attachments/assets/4c042fc9-1fae-4e82-8eff-384e46dbebf5)
+
+
+#### 2. Conclusions  
+
+
+## Question 12: How has the unemployment rate in Greece changed between 2000 and 2018?
+
+
+#### 1. Line Graph 
+
+```ruby
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample data loading (replace this with actual data loading)
+# merged_df = pd.read_csv('path_to_your_data.csv')
+
+# Country under exam is Greece 
+greece_unemployment = merged_df[merged_df['Country Name'] == 'Greece']
+
+# Check if 2018 is in the data
+if 2018 not in greece_unemployment['Year'].values:
+    print("Year 2018 is missing from the data.")
+else:
+    # Plotting 
+    plt.figure(figsize=(10, 6))
+    plt.plot(greece_unemployment['Year'], greece_unemployment['Unemployment %'], marker='o', color='#4527A0', linestyle='-', linewidth=2)
+    plt.title('Unemployment % in Greece')
+    plt.xlabel('')
+    plt.ylabel('')  
+    plt.grid(True)
+    
+# Set all years on x-axis
+    plt.xticks(range(2000, 2019))  
+    
+# Annotations to make the greek drama more readable 
+    for i, row in greece_unemployment.iterrows():
+        plt.annotate(f'{row["Unemployment %"]:.1f}%', 
+                     (row['Year'], row['Unemployment %']), 
+                     textcoords="offset points", 
+                     xytext=(0,5), 
+                     ha='center',
+                     fontsize=9,
+                     color='#4527A0')
+    
+    plt.tight_layout()
+
+# Save the plot to the specified directory
+save_path = 'C:\\Users\\Mar\\Documents\\Data Analytics\\AProjects 2024\\World Economic Indicators\\greece_unemployment_rate.png'
+plt.savefig(save_path, format='png', bbox_inches='tight')
+
+# Show the plot
+plt.show()
+```
+
+![greece_unemployment_rate](https://github.com/user-attachments/assets/17bd540e-5546-4c65-9983-3c0dd2bd00b6)
+
+
+#### 2. Conclusions  
