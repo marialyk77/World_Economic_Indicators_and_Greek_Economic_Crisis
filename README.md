@@ -2,7 +2,11 @@
 
 # World Economic Indicators
 
-+ The dataset is sourced from the Maven Analytics platform: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators
+#### 1. Introduction 
+
+This project explores global economic trends using data from the **World Bank and the United Nations (UN)**. The World Bank, which funds infrastructure projects in developing nations, releases an annual report on key economic indicators, covering fields such as electricity consumption, GDP per capita, life expectancy, and more. To supplement this, Human Development Index (HDI) data provided by the UN offers a composite measure of a country's development, based on life expectancy, GDP per capita, and educational attainment. The HDI dataset, spanning from 1990 to 2021, also tracks additional indicators related to development, environmental impact, and inequality. The combined dataset used in this analysis includes key indicators from 1960 to 2018, sourced from the **Maven Analytics platform** ([Maven Analytics Data Playground](https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=World%20Economic%20Indicators)).
+
+As a Greek, I was particularly interested in exploring **Greece's economic performance during the financial crisis**. This dataset provided an ideal opportunity to examine the country's GDP growth and unemployment trends between 2000 and 2018, offering insights into the economic challenges Greece faced and its path to recovery.
   
 #### 1. Research Questions 
 1. Which countries have experienced the highest growth in population and GDP? Is there overlap?
