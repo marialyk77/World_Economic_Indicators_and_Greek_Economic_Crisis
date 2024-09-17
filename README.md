@@ -53,11 +53,10 @@ Parallel to the research on economic indicators, I aimed to explore the **streng
 Power BI, Python 
 
 > [!NOTE]
-> In this analysis, I aim to explore and compare the effectiveness of Power BI and Python in handling and analyzing data. I will focus particularly on the World Economic Indicators dataset that requires imputation techniques, using descriptive statistics to address missing values. By applying methods such as mean and median imputation, I will assess how each tool manages data preprocessing and its impact on the accuracy and reliability of the analysis. 
-This comparative study will provide insights into the strengths and limitations of Power BI and Python in dealing with incomplete data and performing robust statistical analyses.
+> In this analysis, I aimed to explore and compare the effectiveness of Power BI and Python in handling and analyzing data. I focused particularly on the Human Development Index (HDI) dataset, which required imputation techniques, using descriptive statistics to address missing values. By applying methods such as mean and median imputation, I assessed how each tool managed data preprocessing and its impact on the accuracy and reliability of the analysis. This comparative study provided insights into the strengths and limitations of Power BI and Python in dealing with incomplete data and performing robust statistical analyses.
 
 #### 3. Dataset exploration 
-+ The dataset contains 2 seperate Excel files :
++ The dataset contains 2 seperate Excel files:
   
 **1. Human Development Index(HDI):**
    * **Column Num**: 1008,   **Row Num**: 206
