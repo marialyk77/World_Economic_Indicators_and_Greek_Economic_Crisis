@@ -182,7 +182,7 @@ Power BI, Python
 
 ***
   > [!IMPORTANT]
- > * The analysis is focused on the **21st century**. Any non related column was removed.
+ > * The analysis is focused on the **21st century**. Any non related columns were removed.
 ***
 
   📊 **Power Query**: The process is very straightforward—simply uncheck the columns using the _Choose Columns_ functionality.
@@ -393,6 +393,16 @@ mena = [
 df.loc[df['country'].isin(mena), 'region'] = 'MENA'
 
 ```
+
+##### C. Conclusions on: 📊 vs 🐍 for Data Cleaning 
+
+In my experience, the data cleaning process with both Power BI and Python was straightforward and efficient, without any major challenges or time-consuming steps. For tasks like removing unwanted columns, filtering rows, and replacing or imputing missing values, both tools performed well.
+
+Power BI (Power Query): The interface made tasks like unselecting columns, filtering rows, and replacing values extremely intuitive through its user-friendly functionality. Tasks such as renaming country names and handling missing values in columns like hdicode and region were completed smoothly using built-in options like replace and fill.
+
+Python (Pandas): Although more coding was involved, Pandas provided flexibility and power through concise and effective commands. Creating dictionaries for renaming countries, replacing NaNs, and updating incorrect regions required minimal lines of code and offered precise control over the transformations.
+
+Overall, I found the cleaning process in both Power BI and Python to be easy and efficient. While Power BI’s graphical interface made it simpler for quick transformations, Pandas allowed for more customization and scalability, especially when handling larger datasets or more complex logic.
 
 
 #### 3. Addressing the null values
@@ -2199,4 +2209,8 @@ plt.show()
 
 # Conclusions 
 
+This analysis of global economic indicators revealed key insights into population growth, GDP, and the drivers of economic development. Countries like Eritrea exhibited overlap in both population and GDP growth, though population density alone was not a strong predictor of economic performance. Critical drivers identified in the analysis include technological development (internet usage) and life expectancy, while stark disparities between high- and low-income countries were particularly evident in health, education, and infrastructure.
 
+The focused analysis on Greece highlighted the profound impact of the financial crisis, with severe GDP contractions and a sharp rise in unemployment. Despite recent signs of recovery, the volatility of Greece’s economy underscored the long-lasting effects of economic instability and the need for continued reforms.
+
+It’s important to note that additional factors likely influencing GDP—such as political stability, foreign investment, innovation, and trade policies—were not available in the dataset used. Including these variables could further enhance the understanding of what drives economic growth. This study ultimately highlights the complexity of economic development and the need for a comprehensive approach, integrating a wider range of economic, social, and political factors.
