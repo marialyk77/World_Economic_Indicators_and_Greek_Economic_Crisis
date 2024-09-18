@@ -2207,10 +2207,18 @@ plt.show()
 - **Population Density**: Positively correlates with GDP per capita and electric power, which are both typical indicators of economic development and urbanization.
 - 
 
-# Conclusions 
+# Closing Remarks 
 
 This analysis of global economic indicators revealed key insights into population growth, GDP, and the drivers of economic development. Countries like Eritrea exhibited overlap in both population and GDP growth, though population density alone was not a strong predictor of economic performance. Critical drivers identified in the analysis include technological development (internet usage) and life expectancy, while stark disparities between high- and low-income countries were particularly evident in health, education, and infrastructure.
 
 The focused analysis on Greece highlighted the profound impact of the financial crisis, with severe GDP contractions and a sharp rise in unemployment. Despite recent signs of recovery, the volatility of Greece’s economy underscored the long-lasting effects of economic instability and the need for continued reforms.
 
 It’s important to note that additional factors likely influencing GDP—such as political stability, foreign investment, innovation, and trade policies—were not available in the dataset used. Including these variables could further enhance the understanding of what drives economic growth. This study ultimately highlights the complexity of economic development and the need for a comprehensive approach, integrating a wider range of economic, social, and political factors.
+
+Finally, in addition to exploring global economic trends and Greece's financial performance, I also conducted a comparative evaluation of Power BI and Python for data cleaning, distribution analysis, and handling missing values. This provided an opportunity to assess the strengths and limitations of both tools in real-world data processing tasks.
+
+The data cleaning process was straightforward with both tools. Power BI's graphical interface proved very intuitive for quick, manual transformations, making it ideal for users who prefer a hands-on approach. On the other hand, Python’s Pandas library offered greater flexibility and scalability, especially for larger datasets, by allowing complex transformations with minimal code.
+
+When it came to checking data distributions and imputing missing values, I found Python to be more efficient due to its automation capabilities. While Power BI allowed for detailed visual analysis, this manual approach was more time-consuming. Python, in contrast, streamlined the process, reducing the chance of human error and providing more consistent results.
+
+In summary, Power BI is excellent for users who value an interactive, visual interface and are working with smaller datasets, while Python is better suited for tasks that require scalability, automation, and customization. For this project, Python was ultimately the more efficient choice for processing and analyzing the dataset, though both tools have clear strengths depending on the use case.
