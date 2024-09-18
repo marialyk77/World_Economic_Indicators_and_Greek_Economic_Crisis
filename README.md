@@ -405,7 +405,7 @@ Python (Pandas): Although more coding was involved, Pandas provided flexibility 
 Overall, I found the cleaning process in both Power BI and Python to be easy and efficient. While Power BI’s graphical interface made it simpler for quick transformations, Pandas allowed for more customization and scalability, especially when handling larger datasets or more complex logic.
 
 
-#### 3. Addressing the null values
+#### 4. Addressing the null values
 
    ##### A. Implementation with Power Query 📊:
     
@@ -679,7 +679,7 @@ analyze_column('hdi_2005')
 
 
  
-#### 4. Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
+#### 5. Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
 
 > [!NOTE]
 > I explored imputation methods for handling missing values using Power BI and Python. While both approaches aimed to address null values effectively, **the Python method demonstrated clear advantages in automation, consistency, and efficiency.**
