@@ -46,6 +46,8 @@ Parallel to the research on economic indicators, I aimed to explore the **streng
 
 12. How has the unemployment rate in Greece changed between 2000 and 2018?
 
+13. Which factors influenced Greece's GDP fluctuations and recovery between 2000 and 2018?
+
 
 
 #### 3. Tools used 
