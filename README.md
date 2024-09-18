@@ -1405,28 +1405,37 @@ for these variables are associated with a reduction in the log of GDP.
              numerical instability.** 
 
 
-#### 5. Results 
+#### 5. Log Transformation Results 
 
 The final regression model, with a log transformation of GDP, explains 26.4% of the variability in GDP. While this is an improvement over the previous model, it still suggests that a significant portion of GDP variation is driven by factors not included in the model.
 
 **Significant Factors:**
 
 **1. Life Expectancy:** Positively correlated with GDP. As life expectancy increases, so does GDP.
+
 **2. Population % using Internet:** A strong positive relationship with GDP, indicating that higher internet penetration drives economic growth.  
+
 **3. Electric Power Consumption:** Positively related to GDP, suggesting that higher energy consumption is associated with economic development.
+
 **4. Population Density:** Shows a negative correlation, meaning countries with higher population density tend to have lower GDP, potentially reflecting constraints in smaller or overpopulated countries.
+
 **5. Unemployment %:** As unemployment increases, GDP decreases, reflecting the negative economic impact of joblessness.
 
-The variable though with the higher impact on GDP is the **'Population % using Internet'**. This stems from the coefficient. The **'Population % using Internet'** exhibits the largest coefficient compared to the other variables. This suggests that a 1-unit increase in internet use has a more substantial effect on GDP compared to some other variables.
+> [!TIP]
+> The variable with the **higher impact on GDP** is the **'Population % using Internet'**, as suggested by the coefficient. The **'Population % using Internet'** exhibits the largest coefficient compared to the other variables. This suggests that a 1-unit increase in internet use has a more substantial effect on GDP compared to some other variables.
 
-Internet access often has a more direct and visible impact on economic growth by facilitating **communication, trade, education, and innovation**. Hence, while other factors like life expectancy and power consumption are also positive contributors, their impact seems to be smaller in comparison.
+> Internet access often has a more direct and visible impact on economic growth by facilitating **communication, trade, education, and innovation**. Hence, while other factors like life expectancy and power consumption are also positive contributors, their impact seems to be smaller in comparison.
 
 **Model Diagnostics:**
 
 **1. Residuals:** The residuals **are not normally distributed**, as evidenced by the Omnibus and Jarque-Bera tests (p-value < 0.05). This indicates potential model specification issues or missing variables.
+
 **2. Heteroscedasticity:** Residual analysis showed non-constant variance, suggesting **heteroscedasticity**, which violates the assumption of homoscedasticity in linear regression.
+
 **3. Multicollinearity:** No significant multicollinearity was found, as indicated by low VIF values.
+
 **4. Autocorrelation:** The Durbin-Watson statistic is quite low (0.131), pointing to possible **autocorrelation in the residuals**.
+
 **5. Condition Number:** The high condition number (5.24e+04) suggests **potential multicollinearity** or numerical instability in the model, which may need further attention.
 
 #### 6. **Conclusions**
