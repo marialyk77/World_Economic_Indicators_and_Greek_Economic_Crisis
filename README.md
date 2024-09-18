@@ -394,7 +394,7 @@ df.loc[df['country'].isin(mena), 'region'] = 'MENA'
 
 ```
 
-##### C. Conclusions on: 📊 vs 🐍 for Data Cleaning 
+#### 3. Conclusions on: 📊 vs 🐍 for Data Cleaning 
 
 In my experience, the data cleaning process with both Power BI and Python was straightforward and efficient, without any major challenges or time-consuming steps. For tasks like removing unwanted columns, filtering rows, and replacing or imputing missing values, both tools performed well.
 
@@ -679,7 +679,7 @@ analyze_column('hdi_2005')
 
 
  
-##### C. Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
+#### 4. Conclusions on: 📊 vs 🐍 for Checking Distribution & Imputing Nulls.
 
 > [!NOTE]
 > I explored imputation methods for handling missing values using Power BI and Python. While both approaches aimed to address null values effectively, **the Python method demonstrated clear advantages in automation, consistency, and efficiency.**
