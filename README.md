@@ -1,5 +1,4 @@
 
-
 # World Economic Indicators & Greek Economic Crisis 
 
 #### 1. Introduction 
@@ -52,10 +51,11 @@ Parallel to the research on economic indicators, I aimed to explore the **streng
 
 #### 3. Tools used 
 
-Power BI, Python 
+Power BI, Python, Power Point 
 
 > [!NOTE]
 > In this analysis, I aimed to explore and compare the effectiveness of Power BI and Python in handling and analyzing data. I focused particularly on the Human Development Index (HDI) dataset, which required imputation techniques, using descriptive statistics to address missing values. By applying methods such as mean and median imputation, I assessed how each tool managed data preprocessing and its impact on the accuracy and reliability of the analysis. This comparative study provided insights into the strengths and limitations of Power BI and Python in dealing with incomplete data and performing robust statistical analyses.
+> For the presentation of my findings, I utilized PowerPoint to effectively communicate the visualizations and insights derived from the data analysis. This choice allowed me to present complex information in a clear and engaging format.
 
 #### 4. Dataset exploration 
 + The dataset contains 2 seperate Excel files:
